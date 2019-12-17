@@ -1,5 +1,6 @@
 <%@ page import="vn.edu.nlu.fit.model.Category" %>
 <%@ page import="java.util.List" %>
+<%@ page import="java.net.URLEncoder" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <div class="header">
     <div class="container">
@@ -17,8 +18,10 @@
             </div>
             <div class="header-grid-right animated wow slideInRight" data-wow-delay=".5s">
                 <ul class="login-register">
-                    <li><i class="glyphicon glyphicon-log-in" aria-hidden="true"></i><a href="login.html">Login</a></li>
-                    <li><i class="glyphicon glyphicon-book" aria-hidden="true"></i><a href="register.html">Register</a>
+                    <li><i class="glyphicon glyphicon-log-in" aria-hidden="true"></i>
+                        <a
+                            href="/login?from=${URLEncoder.encode(requestScope['javax.servlet.forward.request_uri'].concat("?".concat(requestScope['javax.servlet.forward.query_string'])) ,"UTF-8")}">Login</a></li>
+                      <li><i class="glyphicon glyphicon-book" aria-hidden="true"></i><a href="/signup">Register</a>
                     </li>
                 </ul>
             </div>
@@ -42,7 +45,7 @@
                     </div>
                     <div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
                         <ul class="nav navbar-nav">
-                            <li class="active"><a href="index.jsp" class="act">Home</a></li>
+                            <li class="active"><a href="" class="act">Home</a></li>
                             <!-- Mega Menu -->
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Categories <b
@@ -56,7 +59,9 @@
                                                     List<Category> categoryList = (List<Category>) request.getAttribute("listCategories");
                                                     for (Category category : categoryList) {
                                                 %>
-                                                <li><a href="products.html"><%=category.getName()%></a></li>
+                                                <li>
+                                                    <a href="products?type=<%=category.getCategoryID()%>&page=1"><%=category.getName()%>
+                                                    </a></li>
                                                 <%
                                                     }
                                                 %>

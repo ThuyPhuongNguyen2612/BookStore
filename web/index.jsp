@@ -1,5 +1,6 @@
 <%@ page import="java.util.List" %>
 <%@ page import="vn.edu.nlu.fit.model.Category" %>
+<%@ page import="vn.edu.nlu.fit.model.Book" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -164,13 +165,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <div class="container">
         <h3 class="animated wow zoomIn" data-wow-delay=".5s">NEW BOOKS</h3>
         <div class="new-collections-grids">
+            <%
+                List<Book> newBooks = (List<Book>) request.getAttribute("newBooks");
+                for (int i=0;i<4;i++) {
+            %>
             <div class="col-md-3 new-collections-grid">
                 <div class="new-collections-grid1 animated wow slideInUp" data-wow-delay=".5s">
                     <div class="new-collections-grid1-image">
-                        <a href="single.html" class="product-image"><img src="img/7.1.jpg" alt=" "
-                                                                         class="img-responsive"/></a>
+                        <a href="bookDetail?bookID=<%= newBooks.get(i).getBookID()%>" class="product-image"><img src="<%=newBooks.get(i).getImage()%>" alt=" "
+                                                                        class="img-responsive"/></a>
                         <div class="new-collections-grid1-image-pos">
-                            <a href="single.html">Quick View</a>
+                            <a href="bookDetail?bookID=<%=newBooks.get(i).getBookID()%>">Quick View</a>
                         </div>
                         <div class="new-collections-grid1-right">
                             <div class="rating">
@@ -193,140 +198,32 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             </div>
                         </div>
                     </div>
-                    <h4><a href="single.html">Abraham Lincoln-1</a></h4>
-                    <p>Vel illum qui dolorem eum fugiat.</p>
+                    <h4><a href="bookDetail?bookID=<%= newBooks.get(i).getBookID()%>"><%=newBooks.get(i).getTitle()%></a></h4>
+                    <p>By <%=newBooks.get(i).getAuthor()%></p>
                     <div class="new-collections-grid1-left simpleCart_shelfItem">
-                        <p><i>$325</i> <span class="item_price">$250</span><a class="item_add">add to cart </a>
+                        <p><i>$<%=newBooks.get(i).getPrice()%></i> <span class="item_price">$<%=newBooks.get(i).getPrice()%></span><a class="item_add">add to cart </a>
                         </p>
                     </div>
                 </div>
-
             </div>
-            <div class="col-md-3 new-collections-grid">
-                <div class="new-collections-grid1 animated wow slideInUp" data-wow-delay=".5s">
-                    <div class="new-collections-grid1-image">
-                        <a href="single.html" class="product-image"><img src="img/rise.jpg" alt=" "
-                                                                         class="img-responsive"/></a>
-                        <div class="new-collections-grid1-image-pos">
-                            <a href="single.html">Quick View</a>
-                        </div>
-                        <div class="new-collections-grid1-right">
-                            <div class="rating">
-                                <div class="rating-left">
-                                    <img src="images/2.png" alt=" " class="img-responsive"/>
-                                </div>
-                                <div class="rating-left">
-                                    <img src="images/2.png" alt=" " class="img-responsive"/>
-                                </div>
-                                <div class="rating-left">
-                                    <img src="images/2.png" alt=" " class="img-responsive"/>
-                                </div>
-                                <div class="rating-left">
-                                    <img src="images/1.png" alt=" " class="img-responsive"/>
-                                </div>
-                                <div class="rating-left">
-                                    <img src="images/1.png" alt=" " class="img-responsive"/>
-                                </div>
-                                <div class="clearfix"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <h4><a href="single.html">Archangel Down</a></h4>
-                    <p>Vel illum qui dolorem eum fugiat.</p>
-                    <div class="new-collections-grid1-left simpleCart_shelfItem">
-                        <p><i>$325</i> <span class="item_price">$250</span><a class="item_add">add to cart </a>
-                        </p>
-                    </div>
-                </div>
-
-            </div>
-            <div class="col-md-3 new-collections-grid">
-                <div class="new-collections-grid1 animated wow slideInUp" data-wow-delay=".5s">
-                    <div class="new-collections-grid1-image">
-                        <a href="single.html" class="product-image"><img src="img/first.jpg" alt=" "
-                                                                         class="img-responsive"/></a>
-                        <div class="new-collections-grid1-image-pos">
-                            <a href="single.html">Quick View</a>
-                        </div>
-                        <div class="new-collections-grid1-right">
-                            <div class="rating">
-                                <div class="rating-left">
-                                    <img src="images/2.png" alt=" " class="img-responsive"/>
-                                </div>
-                                <div class="rating-left">
-                                    <img src="images/2.png" alt=" " class="img-responsive"/>
-                                </div>
-                                <div class="rating-left">
-                                    <img src="images/2.png" alt=" " class="img-responsive"/>
-                                </div>
-                                <div class="rating-left">
-                                    <img src="images/1.png" alt=" " class="img-responsive"/>
-                                </div>
-                                <div class="rating-left">
-                                    <img src="images/1.png" alt=" " class="img-responsive"/>
-                                </div>
-                                <div class="clearfix"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <h4><a href="single.html">First Strike </a></h4>
-                    <p>Vel illum qui dolorem eum fugiat.</p>
-                    <div class="new-collections-grid1-left simpleCart_shelfItem">
-                        <p><i>$325</i> <span class="item_price">$250</span><a class="item_add">add to cart </a>
-                        </p>
-                    </div>
-                </div>
-
-            </div>
-            <div class="col-md-3 new-collections-grid">
-                <div class="new-collections-grid1 animated wow slideInUp" data-wow-delay=".5s">
-                    <div class="new-collections-grid1-image">
-                        <a href="single.html" class="product-image"><img src="img/licon.jpg" alt=" "
-                                                                         class="img-responsive"/></a>
-                        <div class="new-collections-grid1-image-pos">
-                            <a href="single.html">Quick View</a>
-                        </div>
-                        <div class="new-collections-grid1-right">
-                            <div class="rating">
-                                <div class="rating-left">
-                                    <img src="images/2.png" alt=" " class="img-responsive"/>
-                                </div>
-                                <div class="rating-left">
-                                    <img src="images/2.png" alt=" " class="img-responsive"/>
-                                </div>
-                                <div class="rating-left">
-                                    <img src="images/2.png" alt=" " class="img-responsive"/>
-                                </div>
-                                <div class="rating-left">
-                                    <img src="images/1.png" alt=" " class="img-responsive"/>
-                                </div>
-                                <div class="rating-left">
-                                    <img src="images/1.png" alt=" " class="img-responsive"/>
-                                </div>
-                                <div class="clearfix"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <h4><a href="single.html">Abraham Lincoln-2</a></h4>
-                    <p>Vel illum qui dolorem eum fugiat.</p>
-                    <div class="new-collections-grid1-left simpleCart_shelfItem">
-                        <p><i>$325</i> <span class="item_price">$250</span><a class="item_add">add to cart </a>
-                        </p>
-                    </div>
-                </div>
-
-            </div>
+            <%
+                }
+            %>
             <div class="clearfix"></div>
         </div>
         <h3 class="animated wow zoomIn" data-wow-delay=".5s">BEST SELLER</h3>
         <div class="new-collections-grids">
+            <%
+                List<Book> highlighedBooks = (List<Book>) request.getAttribute("highlighedBooks");
+                for (int i=0;i<4;i++) {
+            %>
             <div class="col-md-3 new-collections-grid">
                 <div class="new-collections-grid1 animated wow slideInUp" data-wow-delay=".5s">
                     <div class="new-collections-grid1-image">
-                        <a href="single.html" class="product-image"><img src="img/7.2.jpg" alt=" "
-                                                                         class="img-responsive"/></a>
+                        <a href="bookDetail?bookID=<%= highlighedBooks.get(i).getBookID()%>" class="product-image"><img src="<%=highlighedBooks.get(i).getImage()%>" alt=" "
+                                                                        class="img-responsive"/></a>
                         <div class="new-collections-grid1-image-pos">
-                            <a href="single.html">Quick View</a>
+                            <a href="bookDetail?bookID=<%= highlighedBooks.get(i).getBookID()%>">Quick View</a>
                         </div>
                         <div class="new-collections-grid1-right">
                             <div class="rating">
@@ -349,140 +246,32 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             </div>
                         </div>
                     </div>
-                    <h4><a href="single.html">The History of Herodotus 1</a></h4>
-                    <p>Vel illum qui dolorem eum fugiat.</p>
+                    <h4><a href="bookDetail?bookID=<%= highlighedBooks.get(i).getBookID()%>"><%=highlighedBooks.get(i).getTitle()%></a></h4>
+                    <p>By <%=highlighedBooks.get(i).getAuthor()%></p>
                     <div class="new-collections-grid1-left simpleCart_shelfItem">
-                        <p><i>$325</i> <span class="item_price">$250</span><a class="item_add">add to cart </a>
+                        <p><i>$<%=highlighedBooks.get(i).getPrice()%></i> <span class="item_price">$<%=highlighedBooks.get(i).getPrice()%></span><a class="item_add">add to cart </a>
                         </p>
                     </div>
                 </div>
-
             </div>
-            <div class="col-md-3 new-collections-grid">
-                <div class="new-collections-grid1 animated wow slideInUp" data-wow-delay=".5s">
-                    <div class="new-collections-grid1-image">
-                        <a href="single.html" class="product-image"><img src="img/7.3.jpg" alt=" "
-                                                                         class="img-responsive"/></a>
-                        <div class="new-collections-grid1-image-pos">
-                            <a href="single.html">Quick View</a>
-                        </div>
-                        <div class="new-collections-grid1-right">
-                            <div class="rating">
-                                <div class="rating-left">
-                                    <img src="images/2.png" alt=" " class="img-responsive"/>
-                                </div>
-                                <div class="rating-left">
-                                    <img src="images/2.png" alt=" " class="img-responsive"/>
-                                </div>
-                                <div class="rating-left">
-                                    <img src="images/2.png" alt=" " class="img-responsive"/>
-                                </div>
-                                <div class="rating-left">
-                                    <img src="images/1.png" alt=" " class="img-responsive"/>
-                                </div>
-                                <div class="rating-left">
-                                    <img src="images/1.png" alt=" " class="img-responsive"/>
-                                </div>
-                                <div class="clearfix"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <h4><a href="single.html">The History of Herodotus 2</a></h4>
-                    <p>Vel illum qui dolorem eum fugiat.</p>
-                    <div class="new-collections-grid1-left simpleCart_shelfItem">
-                        <p><i>$325</i> <span class="item_price">$250</span><a class="item_add">add to cart </a>
-                        </p>
-                    </div>
-                </div>
-
-            </div>
-            <div class="col-md-3 new-collections-grid">
-                <div class="new-collections-grid1 animated wow slideInUp" data-wow-delay=".5s">
-                    <div class="new-collections-grid1-image">
-                        <a href="single.html" class="product-image"><img src="img/7.4.jpg" alt=" "
-                                                                         class="img-responsive"/></a>
-                        <div class="new-collections-grid1-image-pos">
-                            <a href="single.html">Quick View</a>
-                        </div>
-                        <div class="new-collections-grid1-right">
-                            <div class="rating">
-                                <div class="rating-left">
-                                    <img src="images/2.png" alt=" " class="img-responsive"/>
-                                </div>
-                                <div class="rating-left">
-                                    <img src="images/2.png" alt=" " class="img-responsive"/>
-                                </div>
-                                <div class="rating-left">
-                                    <img src="images/2.png" alt=" " class="img-responsive"/>
-                                </div>
-                                <div class="rating-left">
-                                    <img src="images/1.png" alt=" " class="img-responsive"/>
-                                </div>
-                                <div class="rating-left">
-                                    <img src="images/1.png" alt=" " class="img-responsive"/>
-                                </div>
-                                <div class="clearfix"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <h4><a href="single.html">History of the Peloponnesian War</a></h4>
-                    <p>Vel illum qui dolorem eum fugiat.</p>
-                    <div class="new-collections-grid1-left simpleCart_shelfItem">
-                        <p><i>$325</i> <span class="item_price">$250</span><a class="item_add">add to cart </a>
-                        </p>
-                    </div>
-                </div>
-
-            </div>
-            <div class="col-md-3 new-collections-grid">
-                <div class="new-collections-grid1 animated wow slideInUp" data-wow-delay=".5s">
-                    <div class="new-collections-grid1-image">
-                        <a href="single.html" class="product-image"><img src="img/tom.jpg" alt=" "
-                                                                         class="img-responsive"/></a>
-                        <div class="new-collections-grid1-image-pos">
-                            <a href="single.html">Quick View</a>
-                        </div>
-                        <div class="new-collections-grid1-right">
-                            <div class="rating">
-                                <div class="rating-left">
-                                    <img src="images/2.png" alt=" " class="img-responsive"/>
-                                </div>
-                                <div class="rating-left">
-                                    <img src="images/2.png" alt=" " class="img-responsive"/>
-                                </div>
-                                <div class="rating-left">
-                                    <img src="images/2.png" alt=" " class="img-responsive"/>
-                                </div>
-                                <div class="rating-left">
-                                    <img src="images/1.png" alt=" " class="img-responsive"/>
-                                </div>
-                                <div class="rating-left">
-                                    <img src="images/1.png" alt=" " class="img-responsive"/>
-                                </div>
-                                <div class="clearfix"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <h4><a href="single.html">The History of Tom Jones, a Foundling</a></h4>
-                    <p>Vel illum qui dolorem eum fugiat.</p>
-                    <div class="new-collections-grid1-left simpleCart_shelfItem">
-                        <p><i>$325</i> <span class="item_price">$250</span><a class="item_add">add to cart </a>
-                        </p>
-                    </div>
-                </div>
-
-            </div>
+            <%
+                }
+            %>
             <div class="clearfix"></div>
         </div>
         <h3 class="animated wow zoomIn" data-wow-delay=".5s">RECOMMENDED</h3>
         <div class="new-collections-grids">
+            <%
+                List<Book> randomBooks = (List<Book>) request.getAttribute("randomBooks");
+                for (int i=0;i<4;i++) {
+            %>
             <div class="col-md-3 new-collections-grid">
                 <div class="new-collections-grid1 animated wow slideInUp" data-wow-delay=".5s">
                     <div class="new-collections-grid1-image">
-                        <a href="single.html" class="product-image"><img src="img/comic%20(11).jpg" alt=" "
-                                                                         class="img-responsive"/></a>
+                        <a href="bookDetail?bookID=<%= randomBooks.get(i).getBookID()%>" class="product-image"><img src="<%=randomBooks.get(i).getImage()%>" alt=" "
+                                                                        class="img-responsive"/></a>
                         <div class="new-collections-grid1-image-pos">
-                            <a href="single.html">Quick View</a>
+                            <a href="bookDetail?bookID=<%= randomBooks.get(i).getBookID()%>">Quick View</a>
                         </div>
                         <div class="new-collections-grid1-right">
                             <div class="rating">
@@ -505,224 +294,24 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             </div>
                         </div>
                     </div>
-                    <h4><a href="single.html">Squinty the Comical Pig</a></h4>
-                    <p>His Many Adventures</p>
+                    <h4><a href="bookDetail?bookID=<%= randomBooks.get(i).getBookID()%>"><%=randomBooks.get(i).getTitle()%></a></h4>
+                    <p>By <%=randomBooks.get(i).getAuthor()%></p>
                     <div class="new-collections-grid1-left simpleCart_shelfItem">
-                        <p><i>$325</i> <span class="item_price">$250</span><a class="item_add">add to cart </a>
+                        <p><i>$<%=randomBooks.get(i).getPrice()%></i> <span class="item_price">$<%=randomBooks.get(i).getPrice()%></span><a class="item_add">add to cart </a>
                         </p>
                     </div>
                 </div>
-
             </div>
-
-            <div class="col-md-3 new-collections-grid">
-                <div class="new-collections-grid1 animated wow slideInUp" data-wow-delay=".5s">
-                    <div class="new-collections-grid1-image">
-                        <a href="single.html" class="product-image"><img src="img/comic%20(14).jpg" alt=" "
-                                                                         class="img-responsive"/></a>
-                        <div class="new-collections-grid1-image-pos">
-                            <a href="single.html">Quick View</a>
-                        </div>
-                        <div class="new-collections-grid1-right">
-                            <div class="rating">
-                                <div class="rating-left">
-                                    <img src="images/2.png" alt=" " class="img-responsive"/>
-                                </div>
-                                <div class="rating-left">
-                                    <img src="images/2.png" alt=" " class="img-responsive"/>
-                                </div>
-                                <div class="rating-left">
-                                    <img src="images/2.png" alt=" " class="img-responsive"/>
-                                </div>
-                                <div class="rating-left">
-                                    <img src="images/1.png" alt=" " class="img-responsive"/>
-                                </div>
-                                <div class="rating-left">
-                                    <img src="images/1.png" alt=" " class="img-responsive"/>
-                                </div>
-                                <div class="clearfix"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <h4><a href="single.html">Comic Bible Sketches</a></h4>
-                    <p>The Freethinker</p>
-                    <div class="new-collections-grid1-left simpleCart_shelfItem">
-                        <p><i>$325</i> <span class="item_price">$250</span><a class="item_add">add to cart </a>
-                        </p>
-                    </div>
-                </div>
-
-            </div>
-            <div class="col-md-3 new-collections-grid">
-                <div class="new-collections-grid1 animated wow slideInUp" data-wow-delay=".5s">
-                    <div class="new-collections-grid1-image">
-                        <a href="single.html" class="product-image"><img src="img/comic%20(15).jpg" alt=" "
-                                                                         class="img-responsive"/></a>
-                        <div class="new-collections-grid1-image-pos">
-                            <a href="single.html">Quick View</a>
-                        </div>
-                        <div class="new-collections-grid1-right">
-                            <div class="rating">
-                                <div class="rating-left">
-                                    <img src="images/2.png" alt=" " class="img-responsive"/>
-                                </div>
-                                <div class="rating-left">
-                                    <img src="images/2.png" alt=" " class="img-responsive"/>
-                                </div>
-                                <div class="rating-left">
-                                    <img src="images/2.png" alt=" " class="img-responsive"/>
-                                </div>
-                                <div class="rating-left">
-                                    <img src="images/1.png" alt=" " class="img-responsive"/>
-                                </div>
-                                <div class="rating-left">
-                                    <img src="images/1.png" alt=" " class="img-responsive"/>
-                                </div>
-                                <div class="clearfix"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <h4><a href="single.html">Comic Tragedies</a></h4>
-                    <p>Little Women</p>
-                    <div class="new-collections-grid1-left simpleCart_shelfItem">
-                        <p><i>$325</i> <span class="item_price">$250</span><a class="item_add">add to cart </a>
-                        </p>
-                    </div>
-                </div>
-
-            </div>
-            <div class="col-md-3 new-collections-grid">
-                <div class="new-collections-grid1 animated wow slideInUp" data-wow-delay=".5s">
-                    <div class="new-collections-grid1-image">
-                        <a href="single.html" class="product-image"><img src="img/comic%20(16).jpg" alt=" "
-                                                                         class="img-responsive"/></a>
-                        <div class="new-collections-grid1-image-pos">
-                            <a href="single.html">Quick View</a>
-                        </div>
-                        <div class="new-collections-grid1-right">
-                            <div class="rating">
-                                <div class="rating-left">
-                                    <img src="images/2.png" alt=" " class="img-responsive"/>
-                                </div>
-                                <div class="rating-left">
-                                    <img src="images/2.png" alt=" " class="img-responsive"/>
-                                </div>
-                                <div class="rating-left">
-                                    <img src="images/2.png" alt=" " class="img-responsive"/>
-                                </div>
-                                <div class="rating-left">
-                                    <img src="images/1.png" alt=" " class="img-responsive"/>
-                                </div>
-                                <div class="rating-left">
-                                    <img src="images/1.png" alt=" " class="img-responsive"/>
-                                </div>
-                                <div class="clearfix"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <h4><a href="single.html">Gallery of Comicalities</a></h4>
-                    <p>Embracing Humorous Sketches</p>
-                    <div class="new-collections-grid1-left simpleCart_shelfItem">
-                        <p><i>$325</i> <span class="item_price">$250</span><a class="item_add">add to cart </a>
-                        </p>
-                    </div>
-                </div>
-
-            </div>
+            <%
+                }
+            %>
             <div class="clearfix"></div>
         </div>
     </div>
 </div>
 <!-- //collections-bottom -->
 <!-- footer -->
-<div class="footer">
-    <div class="container">
-        <div class="footer-grids">
-            <div class="col-md-3 footer-grid animated wow slideInLeft" data-wow-delay=".5s">
-                <h3>About Us</h3>
-                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse.<span>Excepteur sint occaecat cupidatat
-						non proident, sunt in culpa qui officia deserunt mollit.</span></p>
-            </div>
-            <div class="col-md-3 footer-grid animated wow slideInLeft" data-wow-delay=".6s">
-                <h3>Contact Info</h3>
-                <ul>
-                    <li><i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i>1234k Avenue, 4th block, <span>New York City.</span>
-                    </li>
-                    <li><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i><a
-                            href="mailto:info@example.com">info@example.com</a></li>
-                    <li><i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>+1234 567 567</li>
-                </ul>
-            </div>
-            <div class="col-md-3 footer-grid animated wow slideInLeft" data-wow-delay=".7s">
-                <h3>Flickr Posts</h3>
-                <div class="footer-grid-left">
-                    <a href="single.html"><img src="img/footer(1).png" alt=" " class="img-responsive"/></a>
-                </div>
-                <div class="footer-grid-left">
-                    <a href="single.html"><img src="img/footer(2).png" alt=" " class="img-responsive"/></a>
-                </div>
-                <div class="footer-grid-left">
-                    <a href="single.html"><img src="img/footer(3).png" alt=" " class="img-responsive"/></a>
-                </div>
-                <div class="footer-grid-left">
-                    <a href="single.html"><img src="img/footer(4).png" alt=" " class="img-responsive"/></a>
-                </div>
-                <div class="footer-grid-left">
-                    <a href="single.html"><img src="img/footer(5).png" alt=" " class="img-responsive"/></a>
-                </div>
-                <div class="footer-grid-left">
-                    <a href="single.html"><img src="img/footer(6).png" alt=" " class="img-responsive"/></a>
-                </div>
-                <div class="footer-grid-left">
-                    <a href="single.html"><img src="img/footer(7).png" alt=" " class="img-responsive"/></a>
-                </div>
-                <div class="footer-grid-left">
-                    <a href="single.html"><img src="img/footer(8).png" alt=" " class="img-responsive"/></a>
-                </div>
-                <div class="footer-grid-left">
-                    <a href="single.html"><img src="img/footer(2).png" alt=" " class="img-responsive"/></a>
-                </div>
-                <div class="footer-grid-left">
-                    <a href="single.html"><img src="img/footer(5).png" alt=" " class="img-responsive"/></a>
-                </div>
-                <div class="footer-grid-left">
-                    <a href="single.html"><img src="img/footer(1).png" alt=" " class="img-responsive"/></a>
-                </div>
-                <div class="footer-grid-left">
-                    <a href="single.html"><img src="img/footer(4).png" alt=" " class="img-responsive"/></a>
-                </div>
-                <div class="clearfix"></div>
-            </div>
-            <div class="col-md-3 footer-grid animated wow slideInLeft" data-wow-delay=".8s">
-                <h3>Blog Posts</h3>
-                <div class="footer-grid-sub-grids">
-                    <div class="footer-grid-sub-grid-left">
-                        <a href="single.html"><img src="img/imgfooter%20(1).jpg" alt=" " class="img-responsive"/></a>
-                    </div>
-                    <div class="footer-grid-sub-grid-right">
-                        <h4><a href="single.html">culpa qui officia deserunt</a></h4>
-                        <p>Posted On 25/3/2016</p>
-                    </div>
-                    <div class="clearfix"></div>
-                </div>
-                <div class="footer-grid-sub-grids">
-                    <div class="footer-grid-sub-grid-left">
-                        <a href="single.html"><img src="img/imgfooter(2).jpg" alt=" " class="img-responsive"/></a>
-                    </div>
-                    <div class="footer-grid-sub-grid-right">
-                        <h4><a href="single.html">Quis autem vel eum iure</a></h4>
-                        <p>Posted On 25/3/2016</p>
-                    </div>
-                    <div class="clearfix"></div>
-                </div>
-            </div>
-            <div class="clearfix"></div>
-        </div>
-        <div class="footer-logo animated wow slideInUp" data-wow-delay=".5s">
-            <h2><a href="index.jsp">Best Store <span>shop anywhere</span></a></h2>
-        </div>
-    </div>
-</div>
+<jsp:include page="/footer"></jsp:include>
 <!-- //footer -->
 </body>
 </html>

@@ -1,7 +1,8 @@
 package vn.edu.nlu.fit.servlet;
 
 import vn.edu.nlu.fit.model.User;
-import vn.edu.nlu.fit.database.DBConnect;
+import vn.edu.nlu.fit.service.UserService;
+import vn.edu.nlu.fit.service.UserServiceImpl;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -10,45 +11,35 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
+import java.net.URLDecoder;
+import java.net.URLEncoder;
 import java.sql.SQLException;
 
 @WebServlet("/login")
 public class LoginServlet extends HttpServlet {
 
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.getRequestDispatcher("login.jsp").forward(request, response);
+    }
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String uname = request.getParameter("uname");
         String pass = request.getParameter("pass");
-        String sql = "SELECT * FROM user WHERE UserName=? AND Password=? AND Active=1";
-        ResultSet rs = null;
-        try{
-            PreparedStatement psupdate = DBConnect.getConnection().prepareStatement(sql);
-            psupdate.setString(1, uname);
-            psupdate.setString(2, pass);
-            rs = psupdate.executeQuery();
-            rs.last();
-            if (rs!=null & rs.getRow()==1){
-                User u = new User();
-//                u.setUname(rs.getString("UserName"));
-//                u.setPass(rs.getString("Password"));
-//                u.setActive(rs.getInt("Active"));
-//                u.setIdgroup(rs.getInt("Group"));
-//                u.setId(rs.getInt("UserID"));
+//        String uname = "abc";
+//        String pass = "123";
+        UserService userService = new UserServiceImpl();
+        try {
+            User user = userService.getUser(uname, pass);
+            if (user != null) {
                 HttpSession session = request.getSession();
-                session.setAttribute("user",u);
-                request.getRequestDispatcher("web/user/index.jsp").forward(request, response);
-            } else{
-//                request.setAttribute("err", "Wrong email or password");
-//                request.getRequestDispatcher("web/user/login.jsp").forward(request, response);
-                response.setContentType("text/plain");
-                response.getWriter().print("wrong");
+                session.setAttribute("user", user);
+
+                response.sendRedirect(URLDecoder.decode(request.getParameter("from"), "UTF-8"));
+            } else {
+                response.sendRedirect("/login?error=\"Username or Password is wrong\"&from=" + request.getParameter("from"));
             }
-        } catch ( SQLException e){
-            e.printStackTrace();
-            System.out.println("Lỗi kết nói tới database");
-            request.setAttribute("err", "Sai Username hoặc Password");
-            request.getRequestDispatcher("web/user/login.jsp").forward(request, response);
+        } catch (SQLException ignored) {
+
         }
     }
 }

@@ -1,6 +1,7 @@
 package vn.edu.nlu.fit.servlet;
 
 import vn.edu.nlu.fit.database.DBConnect;
+import vn.edu.nlu.fit.model.User;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -15,13 +16,16 @@ import java.util.regex.Pattern;
 @WebServlet("/signup")
 public class SignupServlet extends HttpServlet {
 
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.getRequestDispatcher("register.jsp").forward(request, response);
+    }
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String uname = request.getParameter("uname")==null?"":request.getParameter("uname").trim();
         String phone = request.getParameter("phone")==null?"":request.getParameter("phone").trim();
         String code = request.getParameter("code")==null?"":request.getParameter("code").trim();
-        String email = request.getParameter("email")==null?"":request.getParameter("email").trim();
         String pass = request.getParameter("pass")==null?"":request.getParameter("pass").trim();
-        String retype_pass = request.getParameter("retype_pass")==null?"":request.getParameter("retype_pass").trim();
+        String retypePass = request.getParameter("retypePass")==null?"":request.getParameter("retypePass").trim();
         String checkbox = request.getParameter("checkbox");
 
         boolean checkInf = true;
@@ -31,7 +35,7 @@ public class SignupServlet extends HttpServlet {
             checkInf=false;
         }
         pat = Pattern.compile("^[\\w-_\\.+]*[\\w-_\\.]\\@([\\w]+\\.)+[\\w]+[\\w]$");
-        if (!pat.matcher(email).matches()){
+        if (!pat.matcher(uname).matches()){
             checkInf=false;
             error = "Email invalid";
         }
@@ -40,7 +44,7 @@ public class SignupServlet extends HttpServlet {
             checkInf=false;
             error = "Phone invalid";
         }
-        if (!retype_pass.equals(pass)){
+        if (!retypePass.equals(pass)){
             checkInf=false;
             error = "User name or Password is not true";
         }
@@ -49,24 +53,14 @@ public class SignupServlet extends HttpServlet {
 
         }
 
-        try {
-            if (checkInf){
-                PreparedStatement psupdate = DBConnect.getConnection().prepareStatement("INSERT INTO user(UserID, UserName, Password, Email, Phone) VALUES ("+4+"?,?,?,?,?)");
-                psupdate.setString(1,uname);
-                psupdate.setString(2,pass);
-                psupdate.setString(3,uname);
-                psupdate.setString(4,email);
-                psupdate.setString(5,phone);
-                psupdate.executeUpdate();
-            } else {
-                request.setAttribute("err","<div class=\"alert alert-danger\" role=\"alert\">\n" +
-                        "            <strong>Error </strong>User name or Password is not true!\n" +
-                        "        </div>");
-                request.getRequestDispatcher("web/user/register.jsp").forward(request, response);
-            }
-
-        } catch (SQLException e){
-            e.printStackTrace();
-        }
+//        try {
+//            if (checkInf){
+//                User user = new User(uname,pass,phone);
+//            }
+//
+//
+//        } catch (SQLException e){
+//            e.printStackTrace();
+//        }
     }
 }

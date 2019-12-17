@@ -1,5 +1,8 @@
 package vn.edu.nlu.fit.servlet;
 
+import vn.edu.nlu.fit.model.Book;
+import vn.edu.nlu.fit.service.BookService;
+import vn.edu.nlu.fit.service.BookServiceImpl;
 import vn.edu.nlu.fit.service.CategoryService;
 import vn.edu.nlu.fit.service.CategoryServiceImpl;
 import vn.edu.nlu.fit.database.DBConnect;
@@ -13,6 +16,7 @@ import java.io.IOException;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 
 @WebServlet("/products")
 public class ListProductServlet extends HttpServlet {
@@ -21,27 +25,25 @@ public class ListProductServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String type = request.getParameter("type");
+        String typeString = request.getParameter("type");
+        String pageString = request.getParameter("page");
 
+        int type = Integer.parseInt(typeString);
+        int page = Integer.parseInt(pageString);
+
+        CategoryService categoryService = new CategoryServiceImpl();
+        BookService bookService = new BookServiceImpl();
         try {
-            CategoryService categoryService = new CategoryServiceImpl();
-            request.setAttribute("listCategories", categoryService.getCategories());
-
-            String sql2 = "SELECT img, name, author, price FROM book WHERE";
-            if (type!=null) {
-                sql2+=" categoryID="+type;
-            }
-            PreparedStatement ps2 = DBConnect.getConnection().prepareStatement(sql2);
-            ResultSet book = ps2.executeQuery();
-            request.setAttribute("book",book);
-
-            request.getRequestDispatcher("web/user/products.jsp").forward(request, response);
-//        } catch (ClassNotFoundException e){
-//            e.printStackTrace();
-//            System.out.println("Class not found");
-        } catch (SQLException e){
-            e.printStackTrace();
-            System.out.println("Connect database error");
+            request.setAttribute("categories", categoryService.getCategories());
+            request.setAttribute("newBooks", bookService.getNewBook());
+            request.setAttribute("books", bookService.getBooksWithPageType(type, page));
+            List<Book> books = bookService.getBooksWithType(type);
+            double sumPages = books.size()/9;
+            request.setAttribute("sumPages",sumPages);
+            request.setAttribute("page",page);
+            request.setAttribute("type",type);
+        } catch (SQLException ignored) {
         }
+        request.getRequestDispatcher("products.jsp").forward(request, response);
     }
 }

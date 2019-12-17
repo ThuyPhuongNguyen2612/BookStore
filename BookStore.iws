@@ -6,7 +6,35 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0d357641-bbbd-4759-b636-0ddeaa3b4d02" name="Default Changelist" comment="" />
+    <list default="true" id="0d357641-bbbd-4759-b636-0ddeaa3b4d02" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/service/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/service/UserServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/servlet/BookDetailServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/servlet/FooterSevlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/include/footer.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookStore.iws" beforeDir="false" afterPath="$PROJECT_DIR$/BookStore.iws" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/vn/edu/nlu/fit/model/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/model/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/vn/edu/nlu/fit/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/vn/edu/nlu/fit/service/BookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/service/BookService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/vn/edu/nlu/fit/service/BookServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/service/BookServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/vn/edu/nlu/fit/servlet/HeaderServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/servlet/HeaderServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/vn/edu/nlu/fit/servlet/IndexServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/servlet/IndexServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/vn/edu/nlu/fit/servlet/ListProductServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/servlet/ListProductServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/vn/edu/nlu/fit/servlet/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/servlet/LoginServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/vn/edu/nlu/fit/servlet/SignupServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/servlet/SignupServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/account.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/account.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/checkout.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/checkout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/include/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/include/header.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/mail.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/mail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/order1.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/order1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/order2.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/order2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/order3.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/order3.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/products.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/products.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/register.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/single.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/single.jsp" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +52,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
@@ -33,6 +62,7 @@
     <option name="CUSTOM_FILTER" />
   </component>
   <component name="ProjectId" id="1TpIiq0Za8LBzA2OVnqAU0lPlSG" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
@@ -75,7 +105,8 @@
       </method>
     </configuration>
     <configuration name="TOMCAT" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.45" ALTERNATIVE_JRE_ENABLED="false">
-      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/" />
+      <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
+      <option name="UPDATE_CLASSES_ON_FRAME_DEACTIVATION" value="true" />
       <option name="UPDATING_POLICY" value="redeploy-artifacts" />
       <deployment>
         <artifact name="BookStore:war exploded">
@@ -193,10 +224,24 @@
       <workItem from="1576411763355" duration="606000" />
       <workItem from="1576422003255" duration="2908000" />
       <workItem from="1576469807170" duration="16619000" />
+      <workItem from="1576547543325" duration="13092000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
