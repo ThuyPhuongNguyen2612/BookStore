@@ -25,15 +25,12 @@ public class LoginServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String uname = request.getParameter("uname");
         String pass = request.getParameter("pass");
-//        String uname = "abc";
-//        String pass = "123";
         UserService userService = new UserServiceImpl();
         try {
             User user = userService.getUser(uname, pass);
             if (user != null) {
                 HttpSession session = request.getSession();
                 session.setAttribute("user", user);
-
                 response.sendRedirect(URLDecoder.decode(request.getParameter("from"), "UTF-8"));
             } else {
                 response.sendRedirect("/login?error=\"Username or Password is wrong\"&from=" + request.getParameter("from"));
