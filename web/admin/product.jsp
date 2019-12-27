@@ -1,3 +1,5 @@
+<%@ page import="java.util.List" %>
+<%@ page import="vn.edu.nlu.fit.model.Book" %>
 <!DOCTYPE html>
 <head>
     <title>Admin</title>
@@ -13,26 +15,26 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         window.scrollTo(0, 1);
     } </script>
     <!-- bootstrap-css -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="admin/css/bootstrap.min.css">
     <!-- //bootstrap-css -->
     <!-- Custom CSS -->
-    <link href="css/style.css" rel='stylesheet' type='text/css'/>
-    <link href="css/style-responsive.css" rel="stylesheet"/>
+    <link href="admin/css/style.css" rel='stylesheet' type='text/css'/>
+    <link href="admin/css/style-responsive.css" rel="stylesheet"/>
     <!-- font CSS -->
     <link href='//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic'
           rel='stylesheet' type='text/css'>
     <!-- font-awesome icons -->
-    <link rel="stylesheet" href="css/font.css" type="text/css"/>
-    <link href="css/font-awesome.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/morris.css" type="text/css"/>
+    <link rel="stylesheet" href="admin/css/font.css" type="text/css"/>
+    <link href="admin/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="admin/css/morris.css" type="text/css"/>
     <!-- calendar -->
-    <link rel="stylesheet" href="css/monthly.css">
+    <link rel="stylesheet" href="admin/css/monthly.css">
     <!-- //calendar -->
     <!-- //font-awesome icons -->
-    <script src="js/jquery2.0.3.min.js"></script>
-    <script src="js/raphael-min.js"></script>
-    <script src="js/morris.js"></script>
-    <link rel="stylesheet" href="css/table.css">
+    <script src="admin/js/jquery2.0.3.min.js"></script>
+    <script src="admin/js/raphael-min.js"></script>
+    <script src="admin/js/morris.js"></script>
+    <link rel="stylesheet" href="admin/css/table.css">
 </head>
 <body>
 <section id="container">
@@ -40,7 +42,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <header class="header fixed-top clearfix">
         <!--logo start-->
         <div class="brand">
-            <a href="index.html" class="logo">
+            <a href="index.jsp" class="logo">
                 ADMIN
             </a>
             <div class="sidebar-toggle-box">
@@ -259,7 +261,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <div class="leftside-navigation">
                 <ul class="sidebar-menu" id="nav-accordion">
                     <li>
-                        <a href="index.html">
+                        <a href="index.jsp">
                             <i class="fa fa-home"></i>
                             <span>Home</span>
                         </a>
@@ -271,7 +273,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         </a>
                     </li>
                     <li>
-                        <a class="active" href="product.html">
+                        <a class="active" href="product.jsp">
                             <i class="fa fa-product-hunt"></i>
                             <span>Product</span>
                         </a>
@@ -342,7 +344,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                     <option value="1">New</option>
                                     <option value="2">Highlight</option>
                                 </select>
-                                <a href="addProduct.html"><button class="btn btn-sm btn-default" style="float: right">Add<i class="fa fa-plus"></i></button></a>
+                                <a href="addProduct.jsp"><button class="btn btn-sm btn-default" style="float: right">Add<i class="fa fa-plus"></i></button></a>
                             </div>
                         </div>
                         <table class="col-xs-12 col-md-12">
@@ -358,97 +360,26 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 <td>Display</td>
                                 <td>Active</td>
                             </tr>
+                            <%
+                                List<Book> books = (List<Book>) request.getAttribute("books");
+                                for (Book book:books) {
+                            %>
                             <tr>
                                 <td><input type="checkbox"></td>
-                                <td>B001</td>
-                                <td>Romance</td>
-                                <td>Alice in wonderland</td>
-                                <td><img src="../user/img/B002.jpg"/></td>
-                                <td>50</td>
+                                <td><%=book.getBookID()%></td>
+                                <td></td>
+                                <td><%=book.getTitle()%></td>
+                                <td><img src="<%=book.getImage()%>"/></td>
+                                <td></td>
                                 <td><input type="checkbox"></td>
                                 <td><input type="checkbox"></td>
                                 <td><input type="checkbox" checked></td>
                                 <td><span><a href="#"><i class="fa fa-edit"></i></a>  <a href="#"><i
                                         class="fa fa-times-circle"></i></a></span></td>
                             </tr>
-                            <tr>
-                                <td><input type="checkbox"></td>
-                                <td>B001</td>
-                                <td>Romance</td>
-                                <td>Alice in wonderland</td>
-                                <td><img src="../user/img/B002.jpg"/></td>
-                                <td>50</td>
-                                <td><input type="checkbox"></td>
-                                <td><input type="checkbox"></td>
-                                <td><input type="checkbox" checked></td>
-                                <td><span><a href="#"><i class="fa fa-edit"></i></a>  <a href="#"><i
-                                        class="fa fa-times-circle"></i></a></span></td>
-                            </tr>
-                            <tr>
-                                <td><input type="checkbox"></td>
-                                <td>B001</td>
-                                <td>Romance</td>
-                                <td>Alice in wonderland</td>
-                                <td><img src="../user/img/B002.jpg"/></td>
-                                <td>50</td>
-                                <td><input type="checkbox"></td>
-                                <td><input type="checkbox"></td>
-                                <td><input type="checkbox" checked></td>
-                                <td><span><a href="#"><i class="fa fa-edit"></i></a>  <a href="#"><i
-                                        class="fa fa-times-circle"></i></a></span></td>
-                            </tr>
-                            <tr>
-                                <td><input type="checkbox"></td>
-                                <td>B001</td>
-                                <td>Romance</td>
-                                <td>Alice in wonderland</td>
-                                <td><img src="../user/img/B002.jpg"/></td>
-                                <td>50</td>
-                                <td><input type="checkbox"></td>
-                                <td><input type="checkbox"></td>
-                                <td><input type="checkbox" checked></td>
-                                <td><span><a href="#"><i class="fa fa-edit"></i></a>  <a href="#"><i
-                                        class="fa fa-times-circle"></i></a></span></td>
-                            </tr>
-                            <tr>
-                                <td><input type="checkbox"></td>
-                                <td>B001</td>
-                                <td>Romance</td>
-                                <td>Alice in wonderland</td>
-                                <td><img src="../user/img/B002.jpg"/></td>
-                                <td>50</td>
-                                <td><input type="checkbox"></td>
-                                <td><input type="checkbox"></td>
-                                <td><input type="checkbox" checked></td>
-                                <td><span><a href="#"><i class="fa fa-edit"></i></a>  <a href="#"><i
-                                        class="fa fa-times-circle"></i></a></span></td>
-                            </tr>
-                            <tr>
-                                <td><input type="checkbox"></td>
-                                <td>B001</td>
-                                <td>Romance</td>
-                                <td>Alice in wonderland</td>
-                                <td><img src="../user/img/B002.jpg"/></td>
-                                <td>50</td>
-                                <td><input type="checkbox"></td>
-                                <td><input type="checkbox"></td>
-                                <td><input type="checkbox" checked></td>
-                                <td><span><a href="#"><i class="fa fa-edit"></i></a>  <a href="#"><i
-                                        class="fa fa-times-circle"></i></a></span></td>
-                            </tr>
-                            <tr>
-                                <td><input type="checkbox"></td>
-                                <td>B001</td>
-                                <td>Romance</td>
-                                <td>Alice in wonderland</td>
-                                <td><img src="../user/img/B002.jpg"/></td>
-                                <td>50</td>
-                                <td><input type="checkbox"></td>
-                                <td><input type="checkbox"></td>
-                                <td><input type="checkbox" checked></td>
-                                <td><span><a href="#"><i class="fa fa-edit"></i></a>  <a href="#"><i
-                                        class="fa fa-times-circle"></i></a></span></td>
-                            </tr>
+                            <%
+                                }
+                            %>
                         </table>
                         <footer class="panel-footer col-xs-12 col-md-12">
                             <div class="row">

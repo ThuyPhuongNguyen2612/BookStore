@@ -1,13 +1,20 @@
 package vn.edu.nlu.fit.model;
 
+import java.util.Objects;
+
 public class Book {
     private int bookID;
+    private int categoryID;
     private String title;
     private String author;
     private String image;
     private int price;
     private String description;
     private String detail;
+    private int quantity;
+
+    public Book() {
+    }
 
     public Book(int bookID, String title, String author, String image, int price, String description, String detail) {
         this.bookID = bookID;
@@ -45,5 +52,18 @@ public class Book {
 
     public String getDetail() {
         return detail;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Book book = (Book) o;
+        return bookID == book.bookID;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(bookID);
     }
 }

@@ -8,7 +8,7 @@
             <div class="header-grid-left animated wow slideInLeft" data-wow-delay=".5s">
                 <ul>
                     <li><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i><a
-                            href="mailto:info@example.com">@example.com</a></li>
+                            href="mailto:info@example.com">beststore@gmail.com</a></li>
                     <li><i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>+1234 567 892</li>
                     <li><a><i class="fab fa-facebook-f fa-lg"></i></a></li>
                     <li><a><i class="fab fa-twitter fa-lg"></i></a></li>
@@ -18,18 +18,40 @@
             </div>
             <div class="header-grid-right animated wow slideInRight" data-wow-delay=".5s">
                 <ul class="login-register">
+                    <%
+                        if (session.getAttribute("user")!=null){
+                    %>
+                    <li class="dropdown">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <img alt="" src="images/2.png">
+                            <span class="username">John Doe</span>
+                            <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu extended logout">
+                            <li><a href="profile.html"><i class=" fa fa-suitcase"></i> Profile</a></li>
+                            <li><a href="#"><i class="fa fa-cog"></i> Settings</a></li>
+                            <li><a href="login.html"><i class="fa fa-key"></i> Log Out</a></li>
+                        </ul>
+                    </li>
+                    <%
+                        } else {
+                    %>
                     <li><i class="glyphicon glyphicon-log-in" aria-hidden="true"></i>
                         <a
-                            href="/login?from=${URLEncoder.encode(requestScope['javax.servlet.forward.request_uri'].concat("?".concat(requestScope['javax.servlet.forward.query_string'])) ,"UTF-8")}">Login</a></li>
-                      <li><i class="glyphicon glyphicon-book" aria-hidden="true"></i><a href="/signup">Register</a>
+                                href="/login?from=${URLEncoder.encode(requestScope['javax.servlet.forward.request_uri'].concat("?".concat(requestScope['javax.servlet.forward.query_string'])) ,"UTF-8")}">Login</a>
                     </li>
+                    <li><i class="glyphicon glyphicon-book" aria-hidden="true"></i><a href="/signup">Register</a>
+                    </li>
+                    <%
+                        }
+                    %>
                 </ul>
             </div>
             <div class="clearfix"></div>
         </div>
         <div class="logo-nav">
             <div class="logo-nav-left animated wow zoomIn" data-wow-delay=".5s">
-                <h1><a href="index.jsp">Best Store <span>Shop anywhere</span></a></h1>
+                <h1><a href="/">Best Store <span>Shop anywhere</span></a></h1>
             </div>
             <div class="logo-nav-left1">
                 <nav class="navbar navbar-default">
@@ -94,6 +116,22 @@
                         </form>
                     </div>
                 </div>
+                <div class="header-right">
+                    <div class="cart box_1">
+                        <a href="/cart">
+                            <i class="fa fa-shopping-cart fa-lg"></i>
+                        </a>
+                        <%
+                            int amount = (int) request.getAttribute("amount");
+                            if (amount!=0){
+                        %>
+                        <span class="badge bg-warning"><%=amount%></span>
+                        <%
+                            }
+                        %>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
                 <!-- search-scripts -->
                 <script src="js/classie.js"></script>
                 <script src="js/uisearch.js"></script>
@@ -101,14 +139,6 @@
                     new UISearch(document.getElementById('sb-search'));
                 </script>
                 <!-- //search-scripts -->
-            </div>
-            <div class="header-right">
-                <div class="cart box_1">
-                    <a href="checkout.html">
-                        <i class="fa fa-shopping-cart fa-lg"></i>
-                    </a>
-                    <div class="clearfix"></div>
-                </div>
             </div>
             <div class="clearfix"></div>
         </div>

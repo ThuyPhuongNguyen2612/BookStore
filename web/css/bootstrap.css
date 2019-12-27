@@ -3430,8 +3430,8 @@ tbody.collapse.in {
   display: none;
   float: left;
   min-width: 160px;
-  padding: 5px 0;
-  margin: 2px 0 0;
+  /*padding: 5px 0;*/
+  /*margin: 2px 0 0;*/
   font-size: 14px;
   text-align: left;
   list-style: none;
@@ -4815,8 +4815,12 @@ a.label:focus {
   text-align: center;
   white-space: nowrap;
   vertical-align: baseline;
-  background-color: #777;
+  background-color: #ffc229;
   border-radius: 10px;
+  /**/
+  position: absolute;
+  right: -10px;
+  top: -5px;
 }
 .badge:empty {
   display: none;

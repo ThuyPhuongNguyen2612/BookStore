@@ -9,3 +9,7 @@
     float: right;
     margin: 20px;
 }
+.dropdown-menu li{
+    width: 100%;
+    margin: unset;
+}

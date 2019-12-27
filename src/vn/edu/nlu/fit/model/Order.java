@@ -12,7 +12,7 @@ public class Order {
     private String phone;
     private int status;
     private String note;
-    private ArrayList<OrderDetail> orders;
+    private Cart cart;
 
     public Order() {
     }

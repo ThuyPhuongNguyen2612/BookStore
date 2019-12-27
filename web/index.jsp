@@ -10,7 +10,12 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="keywords" content="Best Store Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design"/>
-    <script type="application/x-javascript"> addEventListener("load", function () {
+    <script type="application/x-javascript">
+         function addBookToCart(bookId) {
+            var response =  fetch('http://localhost:8080/cart/add?bookID=' + bookId);
+
+        }
+    addEventListener("load", function () {
         setTimeout(hideURLbar, 0);
     }, false);
 
@@ -297,7 +302,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <h4><a href="bookDetail?bookID=<%= randomBooks.get(i).getBookID()%>"><%=randomBooks.get(i).getTitle()%></a></h4>
                     <p>By <%=randomBooks.get(i).getAuthor()%></p>
                     <div class="new-collections-grid1-left simpleCart_shelfItem">
-                        <p><i>$<%=randomBooks.get(i).getPrice()%></i> <span class="item_price">$<%=randomBooks.get(i).getPrice()%></span><a class="item_add">add to cart </a>
+                        <p><i>$<%=randomBooks.get(i).getPrice()%></i> <span class="item_price">$<%=randomBooks.get(i).getPrice()%></span><a onclick="addBookToCart(<%=randomBooks.get(i).getBookID()%>)" class="item_add">add to cart </a>
                         </p>
                     </div>
                 </div>
@@ -309,6 +314,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         </div>
     </div>
 </div>
+<%
+//    session.setAttribute("recentPath",request.getRequestURI()+request.getQueryString()!=null?request.getQueryString():"");
+%>
 <!-- //collections-bottom -->
 <!-- footer -->
 <jsp:include page="/footer"></jsp:include>

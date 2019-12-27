@@ -7,33 +7,45 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0d357641-bbbd-4759-b636-0ddeaa3b4d02" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/service/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/service/UserServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/servlet/BookDetailServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/servlet/FooterSevlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/include/footer.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/service/CommentService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/service/CommentServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/servlet/AccountInforServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/servlet/AdminIndexServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/servlet/CartServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/servlet/ProductManageServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/admin/include/menu.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BookStore.iws" beforeDir="false" afterPath="$PROJECT_DIR$/BookStore.iws" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/vn/edu/nlu/fit/model/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/model/Book.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/vn/edu/nlu/fit/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/vn/edu/nlu/fit/service/BookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/service/BookService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/vn/edu/nlu/fit/service/BookServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/service/BookServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/vn/edu/nlu/fit/model/Cart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/model/Cart.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/vn/edu/nlu/fit/model/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/model/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/vn/edu/nlu/fit/model/OrderDetail.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/model/OrderDetail.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/vn/edu/nlu/fit/servlet/AddCartServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/servlet/AddCartServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/vn/edu/nlu/fit/servlet/BookDetailServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/servlet/BookDetailServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/vn/edu/nlu/fit/servlet/HeaderServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/servlet/HeaderServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/vn/edu/nlu/fit/servlet/IndexServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/servlet/IndexServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/vn/edu/nlu/fit/servlet/ListProductServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/servlet/ListProductServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/vn/edu/nlu/fit/servlet/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/servlet/LoginServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/vn/edu/nlu/fit/servlet/SignupServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/servlet/SignupServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/account.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/account.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/checkout.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/checkout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/account.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/account.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/admin/404.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/admin/404.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/admin/addCategory.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/admin/addCategory.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/admin/addProduct.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/admin/addProduct.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/admin/categories.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/admin/categories.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/admin/comment.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/admin/comment.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/admin/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/admin/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/admin/mail.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/admin/mail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/admin/mail_compose.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/admin/mail_compose.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/admin/order.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/admin/order.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/admin/product.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/admin/product.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/admin/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/admin/profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/admin/users.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/admin/users.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/checkout.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/cart.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/css/bootstrap.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/css/bootstrap.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/css/form.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/css/form.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/include/footer.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/include/footer.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/include/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/include/header.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/login.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/mail.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/mail.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/order1.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/order1.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/order2.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/order2.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/order3.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/order3.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/products.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/products.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/register.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/single.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/single.jsp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -44,9 +56,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Jsp File" />
         <option value="Interface" />
         <option value="Class" />
-        <option value="Jsp File" />
       </list>
     </option>
   </component>
@@ -224,8 +236,27 @@
       <workItem from="1576411763355" duration="606000" />
       <workItem from="1576422003255" duration="2908000" />
       <workItem from="1576469807170" duration="16619000" />
-      <workItem from="1576547543325" duration="13092000" />
+      <workItem from="1576547543325" duration="20142000" />
+      <workItem from="1576659968903" duration="888000" />
+      <workItem from="1577164348123" duration="2952000" />
+      <workItem from="1577238406731" duration="22628000" />
+      <workItem from="1577411742166" duration="2368000" />
     </task>
+    <task id="LOCAL-00001" summary="Login and redirect back to previous page">
+      <created>1576561432382</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1576561432382</updated>
+    </task>
+    <task id="LOCAL-00002" summary="small changes">
+      <created>1576562084334</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1576562084334</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -243,5 +274,26 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Login and redirect back to previous page" />
+    <MESSAGE value="small changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="small changes" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/web/products.jsp</url>
+          <line>154</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/vn/edu/nlu/fit/service/BookServiceImpl.java</url>
+          <line>103</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

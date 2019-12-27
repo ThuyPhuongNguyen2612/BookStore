@@ -3,20 +3,31 @@ package vn.edu.nlu.fit.model;
 import java.util.HashMap;
 
 public class Cart {
-//    int amount;
-//    double sumPrice;
-//    HashMap map;
-//
-//    public Cart(){
-//        map = new HashMap();
-//        amount=0;
-//        sumPrice=0;
-//    }
-//
-//    public void put(Product b){
-//        map.put(b.getId(),b);
-//        amount++;
-//        sumPrice+=b.price;
-//    }
+    private HashMap<Book, Integer> books;
 
+    public Cart(){
+        books = new HashMap<>();
+    }
+
+    public void add(Book book){
+        books.put(book, books.getOrDefault(book, 0) + 1);
+    }
+
+    public int getNumberOfBookTitles() {
+        return books.size();
+    }
+
+    public double getPrice() {
+        return books.entrySet().stream()
+                .mapToInt(bookEntry -> bookEntry.getKey().getPrice() * bookEntry.getValue())
+                .sum();
+    }
+
+    public HashMap<Book, Integer> getBooks() {
+        return books;
+    }
+
+    public void remove(Book book) {
+        books.remove(book);
+    }
 }
