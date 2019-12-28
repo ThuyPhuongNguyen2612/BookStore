@@ -25,8 +25,22 @@ public class BookDetailServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        getBookDetailPage(request, response);
+        if (request.getPathInfo() == null) {
+            getBookDetailPage(request, response);
+        } else if (request.getPathInfo().equals("/comments")) {
+            getCommentsHtml(request, response);
+        }
 
+    }
+
+    private void getCommentsHtml(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        int bookID = getBookID(request);
+        CommentService commentService = new CommentServiceImpl();
+        try {
+            request.setAttribute("comments", commentService.getComments(bookID));
+        } catch (SQLException ignored) {
+        }
+        request.getRequestDispatcher("/comments.jsp").forward(request, response);
     }
 
     private void getBookDetailPage(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -57,7 +71,7 @@ public class BookDetailServlet extends HttpServlet {
     private int getUserID(HttpServletRequest request) {
         HttpSession session = request.getSession();
         User user = (User) session.getAttribute("user");
-        return 1;
+        return user.getUserID();
     }
 
     private int getBookID(HttpServletRequest request) {

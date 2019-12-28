@@ -23,19 +23,31 @@ function increaseQuantityBookToCart(hostUrl, bookID) {
     $.ajax(hostUrl + 'cart/add?bookID=' + bookID);
 }
 
+function updateCommentsHtml(bookID) {
+    $("#comments").load("/bookDetail/comments?bookID=" + bookID, null, function () {
+        var numberOfComments = $("#comments > div").length
+        $("#numberOfComments").html(
+            numberOfComments
+        )
+    });
+}
+
 function addComment() {
     var bookID = document.commentForm.bookID.value
     var content = document.commentForm.content.value
-    var userName = document.commentForm.userName.value
     $.post('/bookDetail/comment', {
         bookID: bookID,
         content: content
     }, function () {
-        var old = $("#comments").html();
-        $("#comments").load("comment.jsp", {userName: userName, content: content}, function () {
-            $("#comments").prepend(old);
-        });
+        updateCommentsHtml(bookID);
     });
     return false;
 
+}
+
+if (document && document.commentForm && document.commentForm.bookID) {
+    setInterval(function () {
+        var bookID = document.commentForm.bookID.value
+        updateCommentsHtml(bookID)
+    }, 10000);
 }

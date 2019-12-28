@@ -1,6 +1,5 @@
 <%@ page import="vn.edu.nlu.fit.model.Book" %>
 <%@ page import="vn.edu.nlu.fit.model.Comment" %>
-<%@ page import="vn.edu.nlu.fit.model.User" %>
 <%@ page import="java.util.List" %>
 <!DOCTYPE html>
 <html>
@@ -23,7 +22,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <link href="css/style.css" rel="stylesheet" type="text/css" media="all"/>
     <!-- js -->
     <script src="js/jquery.min.js"></script>
-    <script src="js/index.js"></script>
+
     <!-- //js -->
     <!-- cart -->
     <script src="js/simpleCart.min.js"></script>
@@ -141,7 +140,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             List<Comment> comments = (List<Comment>) request.getAttribute("comments");
                         %>
                         <li role="presentation"><a href="#profile" role="tab" id="profile-tab" data-toggle="tab"
-                                                   aria-controls="profile">Reviews(<%=comments.size()%>)</a></li>
+                                                   aria-controls="profile">Reviews(<span id="numberOfComments"><%=comments.size()%></span>)</a></li>
                     </ul>
                     <div id="myTabContent" class="tab-content">
                         <div role="tabpanel" class="tab-pane fade in active bootstrap-tab-text" id="home"
@@ -154,20 +153,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                              aria-labelledby="profile-tab">
                             <div class="bootstrap-tab-text-grids">
                                 <div id="comments">
-                                    <%
-                                        for (Comment comment : comments) {
-                                    %>
-                                    <jsp:include page="comment.jsp">
-                                        <jsp:param name="userName" value="<%=comment.getUserName()%>"/>
-                                        <jsp:param name="content" value="<%=comment.getContent()%>"/>
-                                    </jsp:include>
-                                    <%
-                                        }
-                                    %>
+                                    <jsp:include page="comments.jsp"/>
                                 </div>
                                 <%
-                                    if (session.getAttribute("user") != null || true) {
-                                        User user = (User) session.getAttribute("user");
+                                    if (session.getAttribute("user") != null) {
                                 %>
                                 <div class="add-review">
                                     <h4>add a review</h4>
@@ -177,7 +166,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                                   onblur="if (this.value === '') {this.value = 'Message...';}"
                                                   required="">Message...</textarea>
                                         <input name="bookID" type="hidden" value="<%=book.getBookID()%>">
-                                        <input name="userName" type="hidden" value="<%=user.getUserName() %>">
                                         <input type="submit" value="Send">
                                     </form>
                                 </div>
@@ -357,6 +345,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- //footer -->
 <!-- zooming-effect -->
 <script src="js/imagezoom.js"></script>
+<script src="js/index.js"></script>
 <!-- //zooming-effect -->
 </body>
 </html>

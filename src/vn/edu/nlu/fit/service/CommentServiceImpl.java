@@ -15,7 +15,7 @@ public class CommentServiceImpl implements CommentService {
     @Override
     public List getComments(int bookID) throws SQLException {
         Connection connection = DBConnect.getConnection();
-        PreparedStatement ps = connection.prepareStatement("SELECT * FROM comment  WHERE bookID=?");
+        PreparedStatement ps = connection.prepareStatement("SELECT * FROM comment c INNER JOIN `user` u ON c.userID = u.userID WHERE bookID=?");
         List<Comment> list = new ArrayList<>();
         ps.setInt(1, bookID);
         ResultSet rs = ps.executeQuery();
@@ -40,7 +40,7 @@ public class CommentServiceImpl implements CommentService {
         return new Comment(rs.getInt("commentID"),
             rs.getInt("bookID"),
             rs.getInt("userID"),
-            "fghj",
+            rs.getString("userName"),
             rs.getDate("date"),
             rs.getString("content"));
     }
