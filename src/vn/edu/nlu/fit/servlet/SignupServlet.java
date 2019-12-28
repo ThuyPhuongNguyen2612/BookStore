@@ -41,7 +41,7 @@ public class SignupServlet extends HttpServlet {
     }
 
     private boolean checkPassword(String password, String retypePassword) {
-        return password.matches("((?=.*[a-z])(?=.*\\\\d)(?=.*[A-Z])(?=.*[@#$%!]).{8,40})") && password.equals(retypePassword) || true;
+        return password.matches("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$") && password.equals(retypePassword) || true;
     }
 
     boolean checkEmail(String email) {

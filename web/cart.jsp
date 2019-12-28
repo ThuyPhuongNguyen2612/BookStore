@@ -91,7 +91,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <tr class="rem rem<%=book.getBookID()%>">
                     <td class="invert"><%=i++%>
                     </td>
-                    <td class="invert-image"><a href="single.jsp"><img src="<%=book.getImage()%>" alt=" "
+                    <td class="invert-image"><a href="/bookDetail?bookID=<%=book.getBookID()%>"><img src="<%=book.getImage()%>" alt=" "
                                                                        class="img-responsive"/></a></td>
                     <td class="invert">
                         <div class="quantity">
@@ -153,7 +153,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <li>Delivery Charges <i>-</i> <span>$250.00 </span></li>
                     <li>Total <i>-</i> <span>$854.00</span></li>
                 </ul>
-                <a href="order1.html"><input type="submit" value="ORDER" class="form-button"></a>
+                <a href="<%=request.getSession().getAttribute("user")!=null?"":""%>"><input type="submit" value="ORDER" class="form-button"></a>
             </div>
             <div class="checkout-right-basket animated wow slideInRight" data-wow-delay=".5s">
                 <a href="/"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>Continue

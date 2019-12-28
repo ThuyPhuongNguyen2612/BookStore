@@ -7,20 +7,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0d357641-bbbd-4759-b636-0ddeaa3b4d02" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/sql/address.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sql/book.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sql/category.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sql/comment.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sql/creditcard.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sql/discount.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sql/order.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sql/order_detail.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sql/user.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/servlet/AddAddressToOrderServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/servlet/OrderServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BookStore.iws" beforeDir="false" afterPath="$PROJECT_DIR$/BookStore.iws" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/vn/edu/nlu/fit/servlet/CartServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/servlet/CartServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/vn/edu/nlu/fit/servlet/SignupServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/servlet/SignupServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/cart.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/cart.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/js/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/order1.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/addAddressForm.jsp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -61,7 +53,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/web/img" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/sql" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -71,16 +63,17 @@
     <key name="CreateTestDialog.RecentsKey">
       <recent name="vn.edu.nlu.fit.servlet" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Phuong\IdeaProjects\BookStore\sql" />
       <recent name="C:\Users\Phuong\IdeaProjects\BookStore\web\img" />
+      <recent name="C:\Users\Phuong\IdeaProjects\BookStore\web" />
+      <recent name="C:\Users\Phuong\IdeaProjects\BookStore\web\user" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
+    <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Phuong\IdeaProjects\BookStore\web\img" />
-      <recent name="C:\Users\Phuong\IdeaProjects\BookStore\web" />
-      <recent name="C:\Users\Phuong\IdeaProjects\BookStore\web\user" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -295,7 +288,7 @@
       <workItem from="1577454984512" duration="2752000" />
       <workItem from="1577493107589" duration="12609000" />
       <workItem from="1577524106604" duration="470000" />
-      <workItem from="1577524643504" duration="827000" />
+      <workItem from="1577524643504" duration="3457000" />
     </task>
     <task id="LOCAL-00001" summary="Login and redirect back to previous page">
       <created>1576561432382</created>
@@ -325,7 +318,21 @@
       <option name="project" value="LOCAL" />
       <updated>1577521815282</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="add sql files">
+      <created>1577525501978</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1577525501978</updated>
+    </task>
+    <task id="LOCAL-00006" summary="add sql files">
+      <created>1577525751687</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1577525751687</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -349,6 +356,7 @@
     <MESSAGE value="small changes" />
     <MESSAGE value="add book to cart on progress" />
     <MESSAGE value="more features" />
-    <option name="LAST_COMMIT_MESSAGE" value="more features" />
+    <MESSAGE value="add sql files" />
+    <option name="LAST_COMMIT_MESSAGE" value="add sql files" />
   </component>
 </project>
