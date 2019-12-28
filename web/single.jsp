@@ -1,5 +1,6 @@
 <%@ page import="vn.edu.nlu.fit.model.Book" %>
 <%@ page import="vn.edu.nlu.fit.model.Comment" %>
+<%@ page import="vn.edu.nlu.fit.model.User" %>
 <%@ page import="java.util.List" %>
 <!DOCTYPE html>
 <html>
@@ -152,36 +153,31 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <div role="tabpanel" class="tab-pane fade bootstrap-tab-text" id="profile"
                              aria-labelledby="profile-tab">
                             <div class="bootstrap-tab-text-grids">
-                                <%
-                                    for (int i = 0; i < comments.size(); i++) {
-                                %>
-                                <div class="bootstrap-tab-text-grid">
-                                    <div class="bootstrap-tab-text-grid-left">
-                                        <img src="img/2.png" alt=" " class="img-responsive"/>
-                                    </div>
-                                    <div class="bootstrap-tab-text-grid-right">
-                                        <ul>
-                                            <li><a href="#"><%=comments.get(i).getUserName()%></a></li>
-                                            <li><a href="#"><span class="glyphicon glyphicon-share"
-                                                                  aria-hidden="true"></span>Reply</a></li>
-                                        </ul>
-                                        <p><%=comments.get(i).getContent()%></p>
-                                    </div>
-                                    <div class="clearfix"></div>
+                                <div id="comments">
+                                    <%
+                                        for (Comment comment : comments) {
+                                    %>
+                                    <jsp:include page="comment.jsp">
+                                        <jsp:param name="userName" value="<%=comment.getUserName()%>"/>
+                                        <jsp:param name="content" value="<%=comment.getContent()%>"/>
+                                    </jsp:include>
+                                    <%
+                                        }
+                                    %>
                                 </div>
                                 <%
-                                    }
-                                %>
-                                <%
-                                    if (session.getAttribute("user") != null) {
+                                    if (session.getAttribute("user") != null || true) {
+                                        User user = (User) session.getAttribute("user");
                                 %>
                                 <div class="add-review">
                                     <h4>add a review</h4>
-                                    <form method="post" action="/bookDetail/comment" onerror="alert('failed to post comment!')">
+                                    <form method="post" name="commentForm" onSubmit="return addComment()"
+                                          onerror="alert('failed to post comment!')">
                                         <textarea name="content" type="text" onfocus="this.value = '';"
-                                                  onblur="if (this.value == '') {this.value = 'Message...';}"
+                                                  onblur="if (this.value === '') {this.value = 'Message...';}"
                                                   required="">Message...</textarea>
                                         <input name="bookID" type="hidden" value="<%=book.getBookID()%>">
+                                        <input name="userName" type="hidden" value="<%=user.getUserName() %>">
                                         <input type="submit" value="Send">
                                     </form>
                                 </div>

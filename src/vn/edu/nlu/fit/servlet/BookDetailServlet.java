@@ -21,11 +21,15 @@ public class BookDetailServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         if (request.getPathInfo().equals("/comment")) {
             addComment(request, response);
-            request.getRequestDispatcher("/bookDetail").forward(request, response);
         }
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        getBookDetailPage(request, response);
+
+    }
+
+    private void getBookDetailPage(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int bookID = getBookID(request);
 
         BookService bookService = new BookServiceImpl();
@@ -53,7 +57,7 @@ public class BookDetailServlet extends HttpServlet {
     private int getUserID(HttpServletRequest request) {
         HttpSession session = request.getSession();
         User user = (User) session.getAttribute("user");
-        return user.getUserID();
+        return 1;
     }
 
     private int getBookID(HttpServletRequest request) {
