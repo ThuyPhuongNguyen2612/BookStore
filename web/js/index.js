@@ -11,16 +11,16 @@ function addBookToCart(hostUrl, bookId) {
     });
 }
 
-function removeAllItemsOfABookFromCart(bookID) {
-    $.ajax('/cart/removeAll?bookID=' + bookID);
+function removeAllItemsOfABookFromCart(hostUrl, bookID) {
+    $.ajax(hostUrl + 'cart/removeAll?bookID=' + bookID);
 }
 
-function removeBookItemFromCart(bookID) {
-    $.ajax('/cart/removeOne?bookID=' + bookID);
+function removeBookItemFromCart(hostUrl, bookID) {
+    $.ajax(hostUrl + 'cart/removeOne?bookID=' + bookID);
 }
 
-function addBookToCart(bookID) {
-    $.ajax('/cart/add?bookID=' + bookID);
+function increaseQuantityBookToCart(hostUrl, bookID) {
+    $.ajax(hostUrl + 'cart/add?bookID=' + bookID);
 }
 
 

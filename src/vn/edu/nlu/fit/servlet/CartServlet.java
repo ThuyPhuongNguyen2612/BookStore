@@ -24,18 +24,20 @@ public class CartServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String path = request.getPathInfo();
-        switch (path) {
-            case "/add":
-                addBookItemToCart(request, response);
-                break;
-            case "/removeAll":
-                removeAllItemsOfABookFromCart(request, response);
-                break;
-            case "/removeOne":
-                removeBookItemFromCart(request, response);
-                break;
-            default:
-                getCartPage(request, response);
+        if (path==null){
+            getCartPage(request, response);
+        } else {
+            switch (path) {
+                case "/add":
+                    addBookItemToCart(request, response);
+                    break;
+                case "/removeAll":
+                    removeAllItemsOfABookFromCart(request, response);
+                    break;
+                case "/removeOne":
+                    removeBookItemFromCart(request, response);
+                    break;
+            }
         }
     }
 
@@ -51,11 +53,6 @@ public class CartServlet extends HttpServlet {
         } catch (Exception e) {
             response.setStatus(500);
         }
-    }
-
-    private int getBookID(HttpServletRequest request) {
-        String bookIDString = request.getParameter("bookID");
-        return Integer.parseInt(bookIDString);
     }
 
     private void removeBookItemFromCart(HttpServletRequest request, HttpServletResponse response) {
@@ -75,10 +72,7 @@ public class CartServlet extends HttpServlet {
     private void addBookItemToCart(HttpServletRequest request, HttpServletResponse response) {
         int bookID = getBookID(request);
         HttpSession session = request.getSession();
-        Cart cart = new Cart();
-        if (session.getAttribute(CART) != null) {
-            cart = (Cart) session.getAttribute(CART);
-        }
+        Cart cart = getCartFromSession(session);
         try {
             Book book = ((BookService) new BookServiceImpl()).getBook(bookID);
             cart.add(book);
@@ -90,8 +84,21 @@ public class CartServlet extends HttpServlet {
     }
 
     private void getCartPage(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        Cart cart = (Cart) request.getSession().getAttribute(CART);
+        Cart cart = getCartFromSession(request.getSession());
         request.setAttribute(CART, cart);
         request.getRequestDispatcher("cart.jsp").forward(request, response);
+    }
+
+    private int getBookID(HttpServletRequest request) {
+        String bookIDString = request.getParameter("bookID");
+        return Integer.parseInt(bookIDString);
+    }
+
+    private Cart getCartFromSession(HttpSession session) {
+        Cart cart = new Cart();
+        if (session.getAttribute(CART) != null) {
+            cart = (Cart) session.getAttribute(CART);
+        }
+        return cart;
     }
 }

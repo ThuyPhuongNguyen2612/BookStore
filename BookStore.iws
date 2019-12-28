@@ -7,81 +7,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0d357641-bbbd-4759-b636-0ddeaa3b4d02" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/servlet/AdminProductsServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/servlet/SearchServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/vn/edu/nlu/fit/servlet/SignupServletTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/img/avatar.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/js/checkForm.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/js/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/js/jquery.validate.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookStore.iml" beforeDir="false" afterPath="$PROJECT_DIR$/BookStore.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sql/address.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sql/book.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sql/category.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sql/comment.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sql/creditcard.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sql/discount.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sql/order.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sql/order_detail.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sql/user.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BookStore.iws" beforeDir="false" afterPath="$PROJECT_DIR$/BookStore.iws" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/vn/edu/nlu/fit/model/Cart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/model/Cart.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/vn/edu/nlu/fit/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/vn/edu/nlu/fit/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/vn/edu/nlu/fit/service/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/service/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/vn/edu/nlu/fit/servlet/AccountInforServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/servlet/AccountInforServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/vn/edu/nlu/fit/servlet/AddCartServlet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/vn/edu/nlu/fit/servlet/AdminIndexServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/servlet/AdminIndexServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/vn/edu/nlu/fit/servlet/CartServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/servlet/CartServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/vn/edu/nlu/fit/servlet/ListProductServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/servlet/ListProductServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/vn/edu/nlu/fit/servlet/SignupServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/servlet/SignupServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/cart.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/cart.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/images/1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/images/1.png" beforeDir="false" afterPath="$PROJECT_DIR$/web/img/star2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/images/10.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/images/11.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/images/12.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/images/13.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/images/14.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/images/15.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/images/16.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/images/17.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/images/18.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/images/19.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/images/2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/images/2.png" beforeDir="false" afterPath="$PROJECT_DIR$/web/img/star.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/images/20.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/images/21.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/images/22.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/images/23.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/images/24.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/images/25.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/images/26.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/images/27.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/images/28.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/images/29.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/images/3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/images/3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/images/30.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/images/31.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/images/32.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/images/33.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/images/34.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/images/4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/images/4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/images/5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/images/5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/images/6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/images/7.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/images/8.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/images/9.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/images/bag-.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/images/bag.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/images/banner.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/images/banner1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/images/check.png" beforeDir="false" afterPath="$PROJECT_DIR$/web/img/check.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/images/close_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/web/img/close_1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/images/img-sp.png" beforeDir="false" afterPath="$PROJECT_DIR$/web/img/img-sp.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/images/si.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/images/si1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/images/si2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/include/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/include/header.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/products.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/products.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/register.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/single.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/single.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/js/index.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -354,7 +293,9 @@
       <workItem from="1577411742166" duration="2947000" />
       <workItem from="1577436299906" duration="14079000" />
       <workItem from="1577454984512" duration="2752000" />
-      <workItem from="1577493107589" duration="10324000" />
+      <workItem from="1577493107589" duration="12609000" />
+      <workItem from="1577524106604" duration="470000" />
+      <workItem from="1577524643504" duration="827000" />
     </task>
     <task id="LOCAL-00001" summary="Login and redirect back to previous page">
       <created>1576561432382</created>
@@ -377,7 +318,14 @@
       <option name="project" value="LOCAL" />
       <updated>1577414247659</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="more features">
+      <created>1577521815282</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1577521815282</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -400,6 +348,7 @@
     <MESSAGE value="Login and redirect back to previous page" />
     <MESSAGE value="small changes" />
     <MESSAGE value="add book to cart on progress" />
-    <option name="LAST_COMMIT_MESSAGE" value="add book to cart on progress" />
+    <MESSAGE value="more features" />
+    <option name="LAST_COMMIT_MESSAGE" value="more features" />
   </component>
 </project>

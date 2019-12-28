@@ -23,6 +23,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <link href="css/style.css" rel="stylesheet" type="text/css" media="all"/>
     <!-- js -->
     <script src="js/jquery.min.js"></script>
+    <script src="js/index.js"></script>
     <!-- //js -->
     <!-- cart -->
     <script src="js/simpleCart.min.js"></script>
@@ -83,12 +84,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <%
                     HashMap<Book, Integer> books = cart.getBooks();
                     int i = 0;
-                    if (books != null) {
-                        for (Map.Entry<Book, Integer> bookAndQuantity : books.entrySet()) {
-                            Book book = bookAndQuantity.getKey();
-                            Integer quantity = bookAndQuantity.getValue();
+                    for (Map.Entry<Book, Integer> bookAndQuantity : books.entrySet()) {
+                        Book book = bookAndQuantity.getKey();
+                        Integer quantity = bookAndQuantity.getValue();
                 %>
-                <tr class="rem1">
+                <tr class="rem rem<%=book.getBookID()%>">
                     <td class="invert"><%=i++%>
                     </td>
                     <td class="invert-image"><a href="single.jsp"><img src="<%=book.getImage()%>" alt=" "
@@ -96,9 +96,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <td class="invert">
                         <div class="quantity">
                             <div class="quantity-select">
-                                <div onclick="removeBookItemFromCart(<%=book.getBookID()%>)" class="entry value-minus">&nbsp;</div>
+                                <div onclick="removeBookItemFromCart('/',<%=book.getBookID()%>)"
+                                     class="entry value-minus">&nbsp;
+                                </div>
                                 <div class="entry value"><span><%=quantity%></span></div>
-                                <div onclick="addBookToCart(<%=book.getBookID()%>)" class="entry value-plus active">&nbsp;</div>
+                                <div onclick="increaseQuantityBookToCart('/', <%=book.getBookID()%>)"
+                                     class="entry value-plus active">&nbsp;
+                                </div>
                             </div>
                         </div>
                     </td>
@@ -108,21 +112,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     </td>
                     <td class="invert">
                         <div class="rem">
-                            <div class="close1"></div>
+                            <div onclick="removeAllItemsOfABookFromCart('/',<%=book.getBookID()%>);" class="close close<%=book.getBookID()%>"></div>
                         </div>
                         <script>$(document).ready(function (c) {
-                            $('.close1').on('click', function (c) {
-                                $('.rem1').fadeOut('slow', function (c) {
-                                    $('.rem1').remove();
+                            $('.close<%=book.getBookID()%>').on('click', function (c) {
+                                $('.rem<%=book.getBookID()%>').fadeOut('slow', function (c) {
+                                    $('.rem<%=book.getBookID()%>').remove();
                                 });
                             });
-
                         });
                         </script>
                     </td>
                 </tr>
                 <%
-                        }
                     }
                 %>
                 <!--quantity-->
