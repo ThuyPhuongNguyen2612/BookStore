@@ -20,8 +20,7 @@ public class BookDetailServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String bookIDString = request.getParameter("bookID");
-        int bookID =  Integer.parseInt(bookIDString);
+        int bookID = getBookID(request);
 
         BookService bookService = new BookServiceImpl();
         CommentService commentService = new CommentServiceImpl();
@@ -32,5 +31,10 @@ public class BookDetailServlet extends HttpServlet {
         } catch (SQLException ignored) {
         }
         request.getRequestDispatcher("single.jsp").forward(request, response);
+    }
+
+    private int getBookID(HttpServletRequest request) {
+        String bookIDString = request.getParameter("bookID");
+        return Integer.parseInt(bookIDString);
     }
 }
