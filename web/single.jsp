@@ -1,4 +1,5 @@
 <%@ page import="vn.edu.nlu.fit.model.Book" %>
+<%@ page import="vn.edu.nlu.fit.model.Comment" %>
 <%@ page import="java.util.List" %>
 <!DOCTYPE html>
 <html>
@@ -69,7 +70,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <div class="flexslider">
                     <ul class="slides">
                         <li data-thumb="images/si.jpg">
-							<div class="thumb-image"> <img src="<%=book.getImage()%>" data-imagezoom="true" class="img-responsive"> </div>
+                            <div class="thumb-image"><img src="<%=book.getImage()%>" data-imagezoom="true"
+                                                          class="img-responsive"></div>
                         </li>
                     </ul>
                 </div>
@@ -106,7 +108,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 </div>
                 <div class="description">
                     <h5><i>Description</i></h5>
-                    <p><%=book.getDescription()%></p>
+                    <p><%=book.getDescription()%>
+                    </p>
                 </div>
                 <div class="occasion-cart">
                     <a onclick="addBookToCart('/',<%=book.getBookID()%>)" class="item_add">add to cart </a>
@@ -133,8 +136,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <li role="presentation" class="active"><a href="#home" id="home-tab" role="tab"
                                                                   data-toggle="tab" aria-controls="home"
                                                                   aria-expanded="true">Description</a></li>
+                        <%
+                            List<Comment> comments = (List<Comment>) request.getAttribute("comments");
+                        %>
                         <li role="presentation"><a href="#profile" role="tab" id="profile-tab" data-toggle="tab"
-                                                   aria-controls="profile">Reviews(2)</a></li>
+                                                   aria-controls="profile">Reviews(<%=comments.size()%>)</a></li>
                     </ul>
                     <div id="myTabContent" class="tab-content">
                         <div role="tabpanel" class="tab-pane fade in active bootstrap-tab-text" id="home"
@@ -146,53 +152,42 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <div role="tabpanel" class="tab-pane fade bootstrap-tab-text" id="profile"
                              aria-labelledby="profile-tab">
                             <div class="bootstrap-tab-text-grids">
+                                <%
+                                    for (int i = 0; i < comments.size(); i++) {
+                                %>
                                 <div class="bootstrap-tab-text-grid">
                                     <div class="bootstrap-tab-text-grid-left">
-                                        <img src="images/4.png" alt=" " class="img-responsive"/>
+                                        <img src="img/2.png" alt=" " class="img-responsive"/>
                                     </div>
                                     <div class="bootstrap-tab-text-grid-right">
                                         <ul>
-                                            <li><a href="#">Admin</a></li>
+                                            <li><a href="#"><%=comments.get(i).getUserName()%></a></li>
                                             <li><a href="#"><span class="glyphicon glyphicon-share"
                                                                   aria-hidden="true"></span>Reply</a></li>
                                         </ul>
-                                        <p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis
-                                            suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem
-                                            vel eum iure reprehenderit.</p>
+                                        <p><%=comments.get(i).getContent()%></p>
                                     </div>
                                     <div class="clearfix"></div>
                                 </div>
-                                <div class="bootstrap-tab-text-grid">
-                                    <div class="bootstrap-tab-text-grid-left">
-                                        <img src="images/5.png" alt=" " class="img-responsive"/>
-                                    </div>
-                                    <div class="bootstrap-tab-text-grid-right">
-                                        <ul>
-                                            <li><a href="#">Admin</a></li>
-                                            <li><a href="#"><span class="glyphicon glyphicon-share"
-                                                                  aria-hidden="true"></span>Reply</a></li>
-                                        </ul>
-                                        <p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis
-                                            suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem
-                                            vel eum iure reprehenderit.</p>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </div>
+                                <%
+                                    }
+                                %>
+                                <%
+                                    if (session.getAttribute("user") != null) {
+                                %>
                                 <div class="add-review">
                                     <h4>add a review</h4>
-                                    <form>
-                                        <input type="text" value="Name" onfocus="this.value = '';"
-                                               onblur="if (this.value == '') {this.value = 'Name';}" required="">
-                                        <input type="email" value="Email" onfocus="this.value = '';"
-                                               onblur="if (this.value == '') {this.value = 'Email';}" required="">
-                                        <input type="text" value="Subject" onfocus="this.value = '';"
-                                               onblur="if (this.value == '') {this.value = 'Subject';}" required="">
-                                        <textarea type="text" onfocus="this.value = '';"
+                                    <form method="post" onsubmit="alert('submit!');return false" onerror="alert('failed to post comment!')">
+                                        <textarea name="content" type="text" onfocus="this.value = '';"
                                                   onblur="if (this.value == '') {this.value = 'Message...';}"
                                                   required="">Message...</textarea>
+                                        <input name="bookID" type="hidden" value="<%=book.getBookID()%>">
                                         <input type="submit" value="Send">
                                     </form>
                                 </div>
+                                <%
+                                    }
+                                %>
                             </div>
                         </div>
                     </div>
@@ -220,13 +215,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <div class="new-collections-grids">
             <%
                 List<Book> randomBooks = (List<Book>) request.getAttribute("randomBooks");
-                for (int i=0;i<4;i++) {
+                for (int i = 0; i < 4; i++) {
             %>
             <div class="col-md-3 new-collections-grid">
                 <div class="new-collections-grid1 animated wow slideInUp" data-wow-delay=".5s">
                     <div class="new-collections-grid1-image">
-                        <a href="bookDetail?bookID=<%= randomBooks.get(i).getBookID()%>" class="product-image"><img src="<%=randomBooks.get(i).getImage()%>" alt=" "
-                                                                                                                    class="img-responsive"/></a>
+                        <a href="bookDetail?bookID=<%= randomBooks.get(i).getBookID()%>" class="product-image"><img
+                                src="<%=randomBooks.get(i).getImage()%>" alt=" "
+                                class="img-responsive"/></a>
                         <div class="new-collections-grid1-image-pos">
                             <a href="bookDetail?bookID=<%= randomBooks.get(i).getBookID()%>">Quick View</a>
                         </div>
@@ -251,10 +247,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             </div>
                         </div>
                     </div>
-                    <h4><a href="bookDetail?bookID=<%= randomBooks.get(i).getBookID()%>"><%=randomBooks.get(i).getTitle()%></a></h4>
-                    <p>By <%=randomBooks.get(i).getAuthor()%></p>
+                    <h4>
+                        <a href="bookDetail?bookID=<%= randomBooks.get(i).getBookID()%>"><%=randomBooks.get(i).getTitle()%>
+                        </a></h4>
+                    <p>By <%=randomBooks.get(i).getAuthor()%>
+                    </p>
                     <div class="new-collections-grid1-left simpleCart_shelfItem">
-                        <p><i>$<%=randomBooks.get(i).getPrice()%></i> <span class="item_price">$<%=randomBooks.get(i).getPrice()%></span><a onclick="addBookToCart('/',<%=randomBooks.get(i).getBookID()%>)" class="item_add">add to cart </a>
+                        <p><i>$<%=randomBooks.get(i).getPrice()%>
+                        </i> <span class="item_price">$<%=randomBooks.get(i).getPrice()%></span><a
+                                onclick="addBookToCart('/',<%=randomBooks.get(i).getBookID()%>)" class="item_add">add to
+                            cart </a>
                         </p>
                     </div>
                 </div>
@@ -269,92 +271,92 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- //single-related-products -->
 <!-- footer -->
 <div class="footer">
-	<div class="container">
-		<div class="footer-grids">
-			<div class="col-md-3 footer-grid animated wow slideInLeft" data-wow-delay=".5s">
-				<h3>About Us</h3>
-				<p>Duis aute irure dolor in reprehenderit in voluptate velit esse.<span>Excepteur sint occaecat cupidatat
+    <div class="container">
+        <div class="footer-grids">
+            <div class="col-md-3 footer-grid animated wow slideInLeft" data-wow-delay=".5s">
+                <h3>About Us</h3>
+                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse.<span>Excepteur sint occaecat cupidatat
 						non proident, sunt in culpa qui officia deserunt mollit.</span></p>
-			</div>
-			<div class="col-md-3 footer-grid animated wow slideInLeft" data-wow-delay=".6s">
-				<h3>Contact Info</h3>
-				<ul>
-					<li><i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i>1234k Avenue, 4th block, <span>New York City.</span>
-					</li>
-					<li><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i><a
-							href="mailto:info@example.com">info@example.com</a></li>
-					<li><i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>+1234 567 567</li>
-				</ul>
-			</div>
-			<div class="col-md-3 footer-grid animated wow slideInLeft" data-wow-delay=".7s">
-				<h3>Flickr Posts</h3>
-				<div class="footer-grid-left">
-					<a href="single.jsp"><img src="img/footer(1).png" alt=" " class="img-responsive"/></a>
-				</div>
-				<div class="footer-grid-left">
-					<a href="single.jsp"><img src="img/footer(2).png" alt=" " class="img-responsive"/></a>
-				</div>
-				<div class="footer-grid-left">
-					<a href="single.jsp"><img src="img/footer(3).png" alt=" " class="img-responsive"/></a>
-				</div>
-				<div class="footer-grid-left">
-					<a href="single.jsp"><img src="img/footer(4).png" alt=" " class="img-responsive"/></a>
-				</div>
-				<div class="footer-grid-left">
-					<a href="single.jsp"><img src="img/footer(5).png" alt=" " class="img-responsive"/></a>
-				</div>
-				<div class="footer-grid-left">
-					<a href="single.jsp"><img src="img/footer(6).png" alt=" " class="img-responsive"/></a>
-				</div>
-				<div class="footer-grid-left">
-					<a href="single.jsp"><img src="img/footer(7).png" alt=" " class="img-responsive"/></a>
-				</div>
-				<div class="footer-grid-left">
-					<a href="single.jsp"><img src="img/footer(8).png" alt=" " class="img-responsive"/></a>
-				</div>
-				<div class="footer-grid-left">
-					<a href="single.jsp"><img src="img/footer(2).png" alt=" " class="img-responsive"/></a>
-				</div>
-				<div class="footer-grid-left">
-					<a href="single.jsp"><img src="img/footer(5).png" alt=" " class="img-responsive"/></a>
-				</div>
-				<div class="footer-grid-left">
-					<a href="single.jsp"><img src="img/footer(1).png" alt=" " class="img-responsive"/></a>
-				</div>
-				<div class="footer-grid-left">
-					<a href="single.jsp"><img src="img/footer(4).png" alt=" " class="img-responsive"/></a>
-				</div>
-				<div class="clearfix"></div>
-			</div>
-			<div class="col-md-3 footer-grid animated wow slideInLeft" data-wow-delay=".8s">
-				<h3>Blog Posts</h3>
-				<div class="footer-grid-sub-grids">
-					<div class="footer-grid-sub-grid-left">
-						<a href="single.jsp"><img src="img/imgfooter%20(1).jpg" alt=" " class="img-responsive"/></a>
-					</div>
-					<div class="footer-grid-sub-grid-right">
-						<h4><a href="single.jsp">culpa qui officia deserunt</a></h4>
-						<p>Posted On 25/3/2016</p>
-					</div>
-					<div class="clearfix"></div>
-				</div>
-				<div class="footer-grid-sub-grids">
-					<div class="footer-grid-sub-grid-left">
-						<a href="single.jsp"><img src="img/imgfooter(2).jpg" alt=" " class="img-responsive"/></a>
-					</div>
-					<div class="footer-grid-sub-grid-right">
-						<h4><a href="single.jsp">Quis autem vel eum iure</a></h4>
-						<p>Posted On 25/3/2016</p>
-					</div>
-					<div class="clearfix"></div>
-				</div>
-			</div>
-			<div class="clearfix"></div>
-		</div>
-		<div class="footer-logo animated wow slideInUp" data-wow-delay=".5s">
-			<h2><a href="index.jsp">Best Store <span>shop anywhere</span></a></h2>
-		</div>
-	</div>
+            </div>
+            <div class="col-md-3 footer-grid animated wow slideInLeft" data-wow-delay=".6s">
+                <h3>Contact Info</h3>
+                <ul>
+                    <li><i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i>1234k Avenue, 4th block, <span>New York City.</span>
+                    </li>
+                    <li><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i><a
+                            href="mailto:info@example.com">info@example.com</a></li>
+                    <li><i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>+1234 567 567</li>
+                </ul>
+            </div>
+            <div class="col-md-3 footer-grid animated wow slideInLeft" data-wow-delay=".7s">
+                <h3>Flickr Posts</h3>
+                <div class="footer-grid-left">
+                    <a href="single.jsp"><img src="img/footer(1).png" alt=" " class="img-responsive"/></a>
+                </div>
+                <div class="footer-grid-left">
+                    <a href="single.jsp"><img src="img/footer(2).png" alt=" " class="img-responsive"/></a>
+                </div>
+                <div class="footer-grid-left">
+                    <a href="single.jsp"><img src="img/footer(3).png" alt=" " class="img-responsive"/></a>
+                </div>
+                <div class="footer-grid-left">
+                    <a href="single.jsp"><img src="img/footer(4).png" alt=" " class="img-responsive"/></a>
+                </div>
+                <div class="footer-grid-left">
+                    <a href="single.jsp"><img src="img/footer(5).png" alt=" " class="img-responsive"/></a>
+                </div>
+                <div class="footer-grid-left">
+                    <a href="single.jsp"><img src="img/footer(6).png" alt=" " class="img-responsive"/></a>
+                </div>
+                <div class="footer-grid-left">
+                    <a href="single.jsp"><img src="img/footer(7).png" alt=" " class="img-responsive"/></a>
+                </div>
+                <div class="footer-grid-left">
+                    <a href="single.jsp"><img src="img/footer(8).png" alt=" " class="img-responsive"/></a>
+                </div>
+                <div class="footer-grid-left">
+                    <a href="single.jsp"><img src="img/footer(2).png" alt=" " class="img-responsive"/></a>
+                </div>
+                <div class="footer-grid-left">
+                    <a href="single.jsp"><img src="img/footer(5).png" alt=" " class="img-responsive"/></a>
+                </div>
+                <div class="footer-grid-left">
+                    <a href="single.jsp"><img src="img/footer(1).png" alt=" " class="img-responsive"/></a>
+                </div>
+                <div class="footer-grid-left">
+                    <a href="single.jsp"><img src="img/footer(4).png" alt=" " class="img-responsive"/></a>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="col-md-3 footer-grid animated wow slideInLeft" data-wow-delay=".8s">
+                <h3>Blog Posts</h3>
+                <div class="footer-grid-sub-grids">
+                    <div class="footer-grid-sub-grid-left">
+                        <a href="single.jsp"><img src="img/imgfooter%20(1).jpg" alt=" " class="img-responsive"/></a>
+                    </div>
+                    <div class="footer-grid-sub-grid-right">
+                        <h4><a href="single.jsp">culpa qui officia deserunt</a></h4>
+                        <p>Posted On 25/3/2016</p>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="footer-grid-sub-grids">
+                    <div class="footer-grid-sub-grid-left">
+                        <a href="single.jsp"><img src="img/imgfooter(2).jpg" alt=" " class="img-responsive"/></a>
+                    </div>
+                    <div class="footer-grid-sub-grid-right">
+                        <h4><a href="single.jsp">Quis autem vel eum iure</a></h4>
+                        <p>Posted On 25/3/2016</p>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <div class="footer-logo animated wow slideInUp" data-wow-delay=".5s">
+            <h2><a href="index.jsp">Best Store <span>shop anywhere</span></a></h2>
+        </div>
+    </div>
 </div>
 <!-- //footer -->
 <!-- zooming-effect -->
