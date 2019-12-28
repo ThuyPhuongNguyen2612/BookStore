@@ -1,7 +1,5 @@
 package vn.edu.nlu.fit.servlet;
 
-import vn.edu.nlu.fit.model.User;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -18,11 +16,11 @@ public class AccountInforServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
-        try{
-            request.setAttribute("user",session.getAttribute("user"));
-        }catch (Exception ignored){
+        try {
+            request.setAttribute("user", session.getAttribute("user"));
+        } catch (Exception ignored) {
 
         }
-        request.getRequestDispatcher("account.jsp").forward(request,response);
+        request.getRequestDispatcher("account.jsp").forward(request, response);
     }
 }

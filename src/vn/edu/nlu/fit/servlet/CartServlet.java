@@ -44,7 +44,7 @@ public class CartServlet extends HttpServlet {
     private void removeAllItemsOfABookFromCart(HttpServletRequest request, HttpServletResponse response) {
         int bookID = getBookID(request);
         HttpSession session = request.getSession();
-        Cart cart =  (Cart) session.getAttribute(CART);
+        Cart cart = (Cart) session.getAttribute(CART);
         try {
             Book book = ((BookService) new BookServiceImpl()).getBook(bookID);
             cart.removeAll(book);
@@ -58,7 +58,7 @@ public class CartServlet extends HttpServlet {
     private void removeBookItemFromCart(HttpServletRequest request, HttpServletResponse response) {
         int bookID = getBookID(request);
         HttpSession session = request.getSession();
-        Cart cart =  (Cart) session.getAttribute(CART);
+        Cart cart = (Cart) session.getAttribute(CART);
         try {
             Book book = ((BookService) new BookServiceImpl()).getBook(bookID);
             cart.removeOne(book);

@@ -13,16 +13,16 @@ public class UserServiceImpl implements UserService {
 
     private int nowUserID;
 
-    public User createUser(ResultSet rs) throws SQLException{
+    public User createUser(ResultSet rs) throws SQLException {
         User user = new User(rs.getInt("userID"),
-                rs.getString("userName"),
-                rs.getString("password"),
-                rs.getString("name"),
-                rs.getString("phone"),
-                rs.getString("image"),
-                rs.getDate("dob"),
-                rs.getInt("gentle"),
-                rs.getInt("group"));
+            rs.getString("userName"),
+            rs.getString("password"),
+            rs.getString("name"),
+            rs.getString("phone"),
+            rs.getString("image"),
+            rs.getDate("dob"),
+            rs.getInt("gentle"),
+            rs.getInt("group"));
         return user;
 
     }
@@ -33,10 +33,10 @@ public class UserServiceImpl implements UserService {
         PreparedStatement ps = connection.prepareStatement("SELECT * FROM user WHERE active = 1");
         ResultSet resultSet = ps.executeQuery();
         ArrayList<User> userArrayList = new ArrayList<>();
-        while (resultSet.next()){
+        while (resultSet.next()) {
             userArrayList.add(createUser(resultSet));
         }
-        nowUserID = userArrayList.get(userArrayList.size()-1).getUserID();
+        nowUserID = userArrayList.get(userArrayList.size() - 1).getUserID();
         return userArrayList;
     }
 
@@ -44,12 +44,12 @@ public class UserServiceImpl implements UserService {
     public User getUser(String uname, String password) throws SQLException {
         Connection connection = DBConnect.getConnection();
         PreparedStatement ps = connection.prepareStatement("SELECT * FROM user WHERE active = 1 and userName=? and password=?");
-        ps.setString(1,uname);
-        ps.setString(2,password);
+        ps.setString(1, uname);
+        ps.setString(2, password);
         ResultSet rs = ps.executeQuery();
         rs.last();
         User user = null;
-        if (rs.getRow()==1) {
+        if (rs.getRow() == 1) {
             rs.first();
             user = createUser(rs);
         }

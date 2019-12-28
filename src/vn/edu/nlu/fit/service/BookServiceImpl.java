@@ -14,12 +14,12 @@ public class BookServiceImpl implements BookService {
 
     public Book createBook(ResultSet rs) throws SQLException {
         Book book = new Book(rs.getInt("bookID"),
-                rs.getString("name"),
-                rs.getString("author"),
-                rs.getString("image"),
-                rs.getInt("price"),
-                rs.getString("description"),
-                rs.getString("details"));
+            rs.getString("name"),
+            rs.getString("author"),
+            rs.getString("image"),
+            rs.getInt("price"),
+            rs.getString("description"),
+            rs.getString("details"));
         return book;
     }
 
@@ -63,8 +63,8 @@ public class BookServiceImpl implements BookService {
     public List<Book> getBooksWithPageType(int type, int page) throws SQLException {
         Connection connection = DBConnect.getConnection();
         List<Book> list = new ArrayList<>();
-        int startLimit = (page-1)*9;
-        PreparedStatement ps = connection.prepareStatement("SELECT * FROM book WHERE categoryID=" + type + " and active = 1 LIMIT "+startLimit+",9");
+        int startLimit = (page - 1) * 9;
+        PreparedStatement ps = connection.prepareStatement("SELECT * FROM book WHERE categoryID=" + type + " and active = 1 LIMIT " + startLimit + ",9");
         ResultSet rs = ps.executeQuery();
         while (rs.next()) {
             list.add(createBook(rs));
@@ -82,7 +82,7 @@ public class BookServiceImpl implements BookService {
             list.add(createBook(rs));
         }
         return list;
-}
+    }
 
     @Override
     public List<Book> getHighlightedBook() throws SQLException {
@@ -112,11 +112,11 @@ public class BookServiceImpl implements BookService {
     public Book getBook(int bookID) throws SQLException {
         Connection connection = DBConnect.getConnection();
         PreparedStatement ps = connection.prepareStatement("SELECT * FROM book WHERE active=1 and bookID=?");
-        ps.setInt(1,bookID);
+        ps.setInt(1, bookID);
         ResultSet rs = ps.executeQuery();
         Book book = null;
         rs.last();
-        if (rs.getRow()==1){
+        if (rs.getRow() == 1) {
             rs.first();
             book = createBook(rs);
         }

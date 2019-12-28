@@ -6,7 +6,7 @@ public class Category {
     private int quantity;
     private int active;
 
-    public Category(){
+    public Category() {
     }
 
     public Category(int categoryID, String name, int quantity, int active) {

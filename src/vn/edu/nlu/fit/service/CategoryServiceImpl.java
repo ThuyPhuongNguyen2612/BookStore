@@ -21,11 +21,11 @@ public class CategoryServiceImpl implements CategoryService {
         List<Category> categories = new ArrayList<>();
         while (rs.next()) {
             categories.add(
-                    new Category(
-                            rs.getInt("categoryID"),
-                            rs.getString("name"),
-                            rs.getInt("quantity"),
-                            rs.getInt("active"))
+                new Category(
+                    rs.getInt("categoryID"),
+                    rs.getString("name"),
+                    rs.getInt("quantity"),
+                    rs.getInt("active"))
             );
         }
         return categories;

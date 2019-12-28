@@ -7,7 +7,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 @WebServlet("/signup")
@@ -26,13 +25,13 @@ public class SignupServlet extends HttpServlet {
         String checkbox = request.getParameter("checkbox");
 
         if (checkPhone(phone) && checkEmail(email) && checkPassword(password, retypePassword) && checkCheckBox(checkbox)) {
-            User user = new User(email,password,phone);
+            User user = new User(email, password, phone);
 
             request.setAttribute("uname", email);
             request.getRequestDispatcher("login").forward(request, response);
         } else {
-            request.setAttribute("error","error");
-            request.getRequestDispatcher("register.jsp").forward(request,response);
+            request.setAttribute("error", "error");
+            request.getRequestDispatcher("register.jsp").forward(request, response);
         }
     }
 
@@ -45,7 +44,7 @@ public class SignupServlet extends HttpServlet {
     }
 
     boolean checkEmail(String email) {
-        return email.matches( "^[A-Za-z0-9.-_]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}$");
+        return email.matches("^[A-Za-z0-9.-_]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}$");
     }
 
     private boolean checkPhone(String phone) {

@@ -21,12 +21,8 @@ public class BookDetailServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String bookIDString = request.getParameter("bookID");
-        int bookID = 1;
-        try {
-            bookID = Integer.parseInt(bookIDString);
-        } catch (NumberFormatException e) {
-            bookID = 1;
-        }
+        int bookID =  Integer.parseInt(bookIDString);
+
         BookService bookService = new BookServiceImpl();
         CommentService commentService = new CommentServiceImpl();
         try {

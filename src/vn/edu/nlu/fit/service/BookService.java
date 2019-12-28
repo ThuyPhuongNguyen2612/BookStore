@@ -6,12 +6,19 @@ import java.sql.SQLException;
 import java.util.List;
 
 public interface BookService {
-    public List<Book> getBooks() throws SQLException;
-    public List<Book> getBooksWithType(int type) throws SQLException;
-    public List<Book> getBooksWithPage(int page) throws SQLException;
-    public List<Book> getBooksWithPageType(int type, int page) throws SQLException;
-    public List<Book> getNewBook() throws SQLException;
-    public List<Book> getHighlightedBook() throws SQLException;
-    public List<Book> getRandomBook() throws SQLException;
-    public Book getBook(int bookID) throws SQLException;
+    List<Book> getBooks() throws SQLException;
+
+    List<Book> getBooksWithType(int type) throws SQLException;
+
+    List<Book> getBooksWithPage(int page) throws SQLException;
+
+    List<Book> getBooksWithPageType(int type, int page) throws SQLException;
+
+    List<Book> getNewBook() throws SQLException;
+
+    List<Book> getHighlightedBook() throws SQLException;
+
+    List<Book> getRandomBook() throws SQLException;
+
+    Book getBook(int bookID) throws SQLException;
 }

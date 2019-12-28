@@ -20,7 +20,7 @@ public class HeaderServlet extends HttpServlet {
         try {
             Cart cart = (Cart) request.getSession().getAttribute("cart");
             int amount = 0;
-            if (cart!=null){
+            if (cart != null) {
                 amount = cart.getNumberOfBookTitles();
             }
             request.setAttribute("amount", amount);

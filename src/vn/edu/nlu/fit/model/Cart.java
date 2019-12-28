@@ -19,8 +19,8 @@ public class Cart {
 
     public double getPrice() {
         return books.entrySet().stream()
-                .mapToInt(bookEntry -> bookEntry.getKey().getPrice() * bookEntry.getValue())
-                .sum();
+            .mapToInt(bookEntry -> bookEntry.getKey().getPrice() * bookEntry.getValue())
+            .sum();
     }
 
     public HashMap<Book, Integer> getBooks() {
