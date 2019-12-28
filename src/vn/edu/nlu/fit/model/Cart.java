@@ -5,11 +5,11 @@ import java.util.HashMap;
 public class Cart {
     private HashMap<Book, Integer> books;
 
-    public Cart(){
+    public Cart() {
         books = new HashMap<>();
     }
 
-    public void add(Book book){
+    public void add(Book book) {
         books.put(book, books.getOrDefault(book, 0) + 1);
     }
 
@@ -27,7 +27,13 @@ public class Cart {
         return books;
     }
 
-    public void remove(Book book) {
+    public void removeAll(Book book) {
         books.remove(book);
+    }
+
+    public void removeOne(Book book) {
+        if (books.getOrDefault(book, 0) >= 2) {
+            books.put(book, books.getOrDefault(book, 0) - 1);
+        }
     }
 }

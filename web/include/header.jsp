@@ -1,6 +1,7 @@
 <%@ page import="vn.edu.nlu.fit.model.Category" %>
 <%@ page import="java.util.List" %>
 <%@ page import="java.net.URLEncoder" %>
+<%@ page import="vn.edu.nlu.fit.model.User" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <div class="header">
     <div class="container">
@@ -20,16 +21,24 @@
                 <ul class="login-register">
                     <%
                         if (session.getAttribute("user")!=null){
+                            User user = (User) session.getAttribute("user");
                     %>
                     <li class="dropdown">
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                            <img alt="" src="images/2.png">
-                            <span class="username">John Doe</span>
+                            <img alt="" src="img/avatar.png">
+                            <span class="username"><%=user.getName()%></span>
                             <b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu extended logout">
-                            <li><a href="profile.html"><i class=" fa fa-suitcase"></i> Profile</a></li>
+                            <li><a href="/account"><i class=" fa fa-suitcase"></i> Profile</a></li>
                             <li><a href="#"><i class="fa fa-cog"></i> Settings</a></li>
+                            <%
+                                if (user.getGroup()>1){
+                            %>
+                            <li><a href="/admin"><i class="fa fa-cog"></i> Admin page</a></li>
+                            <%
+                                }
+                            %>
                             <li><a href="login.html"><i class="fa fa-key"></i> Log Out</a></li>
                         </ul>
                     </li>

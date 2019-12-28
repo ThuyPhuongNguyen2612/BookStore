@@ -22,6 +22,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <link href="css/style.css" rel="stylesheet" type="text/css" media="all"/>
     <!-- js -->
     <script src="js/jquery.min.js"></script>
+    <script src="js/index.js"></script>
     <!-- //js -->
     <!-- cart -->
     <script src="js/simpleCart.min.js"></script>
@@ -109,7 +110,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 <div class="clearfix"></div>
                             </div>
                             <div class="simpleCart_shelfItem new-products-grid-right-add-cart">
-                                <p><span class="item_price">$180</span><a class="item_add" href="#">add to cart </a></p>
+                                <p><span class="item_price">$180</span><a onclick="addBookToCart('/',<%=newBooks.get(i).getBookID()%>)" class="item_add">add to cart </a></p>
                             </div>
                         </div>
                         <div class="clearfix"></div>
@@ -193,7 +194,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         </p>
                         <div class="simpleCart_shelfItem products-right-grid1-add-cart">
                             <p><i>$<%=books.get((i * 3) + j).getPrice()%>
-                            </i> <span class="item_price">$250</span><a class="item_add" href="#">add to cart </a></p>
+                            </i> <span class="item_price">$250</span><a onclick="addBookToCart('/',<%=books.get(i).getBookID()%>)" class="item_add">add to cart </a></p>
                         </div>
                     </div>
 					<%

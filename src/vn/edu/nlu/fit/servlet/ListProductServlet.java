@@ -38,10 +38,10 @@ public class ListProductServlet extends HttpServlet {
             request.setAttribute("newBooks", bookService.getNewBook());
             request.setAttribute("books", bookService.getBooksWithPageType(type, page));
             List<Book> books = bookService.getBooksWithType(type);
-            double sumPages = books.size()/9;
-            request.setAttribute("sumPages",sumPages);
-            request.setAttribute("page",page);
-            request.setAttribute("type",type);
+            double sumPages = books.size() / 9.0;
+            request.setAttribute("sumPages", sumPages);
+            request.setAttribute("page", page);
+            request.setAttribute("type", type);
         } catch (SQLException ignored) {
         }
         request.getRequestDispatcher("products.jsp").forward(request, response);

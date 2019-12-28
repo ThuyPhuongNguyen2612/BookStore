@@ -21,6 +21,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <link href="css/style.css" rel="stylesheet" type="text/css" media="all"/>
     <!-- js -->
     <script src="js/jquery.min.js"></script>
+    <script src="js/index.js"></script>
     <!-- //js -->
     <!-- cart -->
     <script src="js/simpleCart.min.js"></script>
@@ -108,7 +109,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <p><%=book.getDescription()%></p>
                 </div>
                 <div class="occasion-cart">
-                    <a class="item_add" href="#">add to cart </a>
+                    <a onclick="addBookToCart('/',<%=book.getBookID()%>)" class="item_add">add to cart </a>
                 </div>
                 <div class="social">
                     <div class="social-left">
@@ -253,7 +254,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <h4><a href="bookDetail?bookID=<%= randomBooks.get(i).getBookID()%>"><%=randomBooks.get(i).getTitle()%></a></h4>
                     <p>By <%=randomBooks.get(i).getAuthor()%></p>
                     <div class="new-collections-grid1-left simpleCart_shelfItem">
-                        <p><i>$<%=randomBooks.get(i).getPrice()%></i> <span class="item_price">$<%=randomBooks.get(i).getPrice()%></span><a class="item_add">add to cart </a>
+                        <p><i>$<%=randomBooks.get(i).getPrice()%></i> <span class="item_price">$<%=randomBooks.get(i).getPrice()%></span><a onclick="addBookToCart('/',<%=randomBooks.get(i).getBookID()%>)" class="item_add">add to cart </a>
                         </p>
                     </div>
                 </div>

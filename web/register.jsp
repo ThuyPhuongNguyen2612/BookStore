@@ -19,6 +19,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <link href="css/style.css" rel="stylesheet" type="text/css" media="all"/>
     <!-- js -->
     <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
     <!-- //js -->
     <!-- cart -->
     <script src="js/simpleCart.min.js"></script>
@@ -39,8 +40,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     </script>
 	<link rel="stylesheet" href="../FontAwesome/css/all.css">
 	<!-- //animation-effect -->
+    <script src="js/checkForm.js"></script>
 </head>
-
 <body>
 <!-- header -->
 <jsp:include page="/header"></jsp:include>
@@ -58,16 +59,24 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- register -->
 <div class="register">
     <div class="container">
+        <%
+            if (request.getAttribute("error")!=null){
+        %>
+
+        <%=request.getAttribute("error")%>
+        <%
+            }
+        %>
         <h3 class="animated wow zoomIn" data-wow-delay=".5s">Register Here</h3>
         <div class="login-form-grids">
             <h5 class="animated wow slideInUp" data-wow-delay=".5s">profile information</h5>
-            <form class="animated wow slideInUp" data-wow-delay=".5s">
-                <input name="phone" type="tel" placeholder="Phone number *" required="">
+            <form id="register-form" class="animated wow slideInUp" data-wow-delay=".5s" method="post">
+                <input id="phone" name="phone" type="tel" placeholder="Phone number *" required>
 				<input id="sendCode-bt" type="button" value="Send code">
-				<input name="code" type="text" placeholder="Verification code *" required=" ">
-                <input name="uname" type="email" placeholder="Email Address *" required=" ">
-                <input name="pass" type="password" placeholder="Password *" required=" ">
-                <input name="retypePass" type="password" placeholder="Password Confirmation *" required=" ">
+				<input name="code" type="text" placeholder="Verification code *" required>
+                <input id="email" name="uname" type="email" placeholder="Email Address *" required=>
+                <input id="pass" name="pass" type="password" placeholder="Password *" required>
+                <input id="retypePass" name="retypePass" type="password" placeholder="Password Confirmation *" required>
                 <div class="register-check-box">
                     <div class="check">
                         <label class="checkbox"><input type="checkbox" name="checkbox"><i> </i>I accept the terms and
@@ -76,6 +85,52 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 </div>
                 <input type="submit" value="Register">
             </form>
+            <script>
+                $(document).ready(function () {
+
+                    $("#register-form").validate({
+                        rules: {
+                            phone: {
+                                required: true,
+                                minlength: 10,
+                            },
+                            email: {
+                                required: true,
+                            },
+                            pass: {
+                                required: true,
+                                minlength: 1,
+                            },
+                            retypePass: {
+                                required: true,
+                                equalTo: "#pass"
+                            }
+                        },
+                        messages: {
+                            phone: {
+                                required: "Please enter your phone number",
+                                minlength: "Phone number is at least 10 characters",
+                                equalTo: "Your phone number fotmat is wrong"
+                            },
+                            email: {
+                                required: "Please enter your phone number",
+                                // equalTo: "Your phone number fotmat is wrong"
+                            },
+                            pass: {
+                                required: "Please enter your phone number",
+                                minlength: "Phone number is at least 10 characters",
+                                // equalTo: "Your phone number fotmat is wrong"
+                            },
+                            retypePass: {
+                                required: "Please enter your phone number",
+                                // minlength: "Phone number is at least 10 characters",
+                                // equalTo: "Your phone number fotmat is wrong"
+                            }
+                        }
+                    })
+
+                })
+            </script>
             <h6 class="animated wow slideInUp" data-wow-delay=".5s">Or</h6>
             <div class="animated wow slideInUp" data-wow-delay=".5s" style="padding-left: 5%">
                 <img src="img/google_signin_dark.png" width="40%"/>

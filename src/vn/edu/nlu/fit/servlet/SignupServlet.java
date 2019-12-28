@@ -1,6 +1,5 @@
 package vn.edu.nlu.fit.servlet;
 
-import vn.edu.nlu.fit.database.DBConnect;
 import vn.edu.nlu.fit.model.User;
 
 import javax.servlet.ServletException;
@@ -8,10 +7,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
-import java.util.regex.Pattern;
 
 @WebServlet("/signup")
 public class SignupServlet extends HttpServlet {
@@ -21,46 +18,41 @@ public class SignupServlet extends HttpServlet {
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String uname = request.getParameter("uname")==null?"":request.getParameter("uname").trim();
-        String phone = request.getParameter("phone")==null?"":request.getParameter("phone").trim();
-        String code = request.getParameter("code")==null?"":request.getParameter("code").trim();
-        String pass = request.getParameter("pass")==null?"":request.getParameter("pass").trim();
-        String retypePass = request.getParameter("retypePass")==null?"":request.getParameter("retypePass").trim();
+        String email = getParameter(request, "uname");
+        String phone = getParameter(request, "phone");
+        String code = getParameter(request, "code");
+        String password = getParameter(request, "pass");
+        String retypePassword = getParameter(request, "retypePass");
         String checkbox = request.getParameter("checkbox");
 
-        boolean checkInf = true;
-        String error = "";
-        Pattern pat;
-        if (uname==null){
-            checkInf=false;
-        }
-        pat = Pattern.compile("^[\\w-_\\.+]*[\\w-_\\.]\\@([\\w]+\\.)+[\\w]+[\\w]$");
-        if (!pat.matcher(uname).matches()){
-            checkInf=false;
-            error = "Email invalid";
-        }
-        pat = Pattern.compile("(09|01[2|6|8|9])+([0-9]{8})\\b");
-        if (!pat.matcher(phone).matches()){
-            checkInf=false;
-            error = "Phone invalid";
-        }
-        if (!retypePass.equals(pass)){
-            checkInf=false;
-            error = "User name or Password is not true";
-        }
-        if (!checkbox.equals("checked")){
-            checkInf=false;
+        if (checkPhone(phone) && checkEmail(email) && checkPassword(password, retypePassword) && checkCheckBox(checkbox)) {
+            User user = new User(email,password,phone);
 
+            request.setAttribute("uname", email);
+            request.getRequestDispatcher("login").forward(request, response);
+        } else {
+            request.setAttribute("error","error");
+            request.getRequestDispatcher("register.jsp").forward(request,response);
         }
+    }
 
-//        try {
-//            if (checkInf){
-//                User user = new User(uname,pass,phone);
-//            }
-//
-//
-//        } catch (SQLException e){
-//            e.printStackTrace();
-//        }
+    private boolean checkCheckBox(String checkbox) {
+        return checkbox.equals("on");
+    }
+
+    private boolean checkPassword(String password, String retypePassword) {
+        return password.matches("((?=.*[a-z])(?=.*\\\\d)(?=.*[A-Z])(?=.*[@#$%!]).{8,40})") && password.equals(retypePassword) || true;
+    }
+
+    boolean checkEmail(String email) {
+        return email.matches( "^[A-Za-z0-9.-_]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}$");
+    }
+
+    private boolean checkPhone(String phone) {
+        return phone.matches("(09|01[2|6|8|9])+([0-9]{8})\\b");
+    }
+
+    private String getParameter(HttpServletRequest request, String parameterName) {
+        return request.getParameter(parameterName) == null ? "" : request.getParameter(parameterName).trim();
     }
 }

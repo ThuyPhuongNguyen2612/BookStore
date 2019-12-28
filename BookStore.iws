@@ -7,45 +7,81 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0d357641-bbbd-4759-b636-0ddeaa3b4d02" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/service/CommentService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/service/CommentServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/servlet/AccountInforServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/servlet/AdminIndexServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/servlet/CartServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/servlet/ProductManageServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/admin/include/menu.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/servlet/AdminProductsServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/servlet/SearchServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/vn/edu/nlu/fit/servlet/SignupServletTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/avatar.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/js/checkForm.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/js/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/js/jquery.validate.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookStore.iml" beforeDir="false" afterPath="$PROJECT_DIR$/BookStore.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BookStore.iws" beforeDir="false" afterPath="$PROJECT_DIR$/BookStore.iws" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/vn/edu/nlu/fit/model/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/model/Book.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/vn/edu/nlu/fit/model/Cart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/model/Cart.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/vn/edu/nlu/fit/model/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/model/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/vn/edu/nlu/fit/model/OrderDetail.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/model/OrderDetail.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/vn/edu/nlu/fit/servlet/AddCartServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/servlet/AddCartServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/vn/edu/nlu/fit/servlet/BookDetailServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/servlet/BookDetailServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/vn/edu/nlu/fit/servlet/HeaderServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/servlet/HeaderServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/account.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/account.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/admin/404.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/admin/404.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/admin/addCategory.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/admin/addCategory.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/admin/addProduct.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/admin/addProduct.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/admin/categories.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/admin/categories.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/admin/comment.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/admin/comment.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/admin/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/admin/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/admin/mail.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/admin/mail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/admin/mail_compose.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/admin/mail_compose.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/admin/order.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/admin/order.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/admin/product.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/admin/product.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/admin/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/admin/profile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/admin/users.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/admin/users.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/checkout.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/cart.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/css/bootstrap.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/css/bootstrap.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/css/form.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/css/form.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/vn/edu/nlu/fit/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/vn/edu/nlu/fit/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/vn/edu/nlu/fit/service/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/service/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/vn/edu/nlu/fit/servlet/AccountInforServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/servlet/AccountInforServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/vn/edu/nlu/fit/servlet/AddCartServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/vn/edu/nlu/fit/servlet/AdminIndexServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/servlet/AdminIndexServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/vn/edu/nlu/fit/servlet/CartServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/servlet/CartServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/vn/edu/nlu/fit/servlet/ListProductServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/servlet/ListProductServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/vn/edu/nlu/fit/servlet/SignupServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/servlet/SignupServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/cart.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/cart.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/include/footer.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/include/footer.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/images/1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/images/1.png" beforeDir="false" afterPath="$PROJECT_DIR$/web/img/star2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/images/10.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/images/11.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/images/12.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/images/13.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/images/14.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/images/15.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/images/16.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/images/17.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/images/18.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/images/19.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/images/2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/images/2.png" beforeDir="false" afterPath="$PROJECT_DIR$/web/img/star.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/images/20.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/images/21.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/images/22.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/images/23.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/images/24.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/images/25.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/images/26.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/images/27.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/images/28.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/images/29.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/images/3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/images/3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/images/30.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/images/31.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/images/32.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/images/33.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/images/34.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/images/4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/images/4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/images/5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/images/5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/images/6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/images/7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/images/8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/images/9.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/images/bag-.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/images/bag.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/images/banner.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/images/banner1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/images/check.png" beforeDir="false" afterPath="$PROJECT_DIR$/web/img/check.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/images/close_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/web/img/close_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/images/img-sp.png" beforeDir="false" afterPath="$PROJECT_DIR$/web/img/img-sp.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/images/si.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/images/si1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/images/si2.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/web/include/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/include/header.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/mail.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/mail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/order1.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/order1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/order2.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/order2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/order3.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/order3.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/products.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/products.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/register.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/single.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/single.jsp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -59,6 +95,8 @@
         <option value="Jsp File" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="JavaScript File" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -76,16 +114,32 @@
   <component name="ProjectId" id="1TpIiq0Za8LBzA2OVnqAU0lPlSG" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../LTWeb" />
-    <property name="project.structure.last.edited" value="Problems" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/web/img" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.JSP" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="vn.edu.nlu.fit.servlet" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Phuong\IdeaProjects\BookStore\web\img" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Phuong\IdeaProjects\BookStore\web\img" />
       <recent name="C:\Users\Phuong\IdeaProjects\BookStore\web" />
       <recent name="C:\Users\Phuong\IdeaProjects\BookStore\web\user" />
     </key>
@@ -112,6 +166,56 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="All in BookStore" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="BookStore" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SignupServletTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="BookStore" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="vn.edu.nlu.fit.servlet.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="vn.edu.nlu.fit.servlet" />
+      <option name="MAIN_CLASS_NAME" value="vn.edu.nlu.fit.servlet.SignupServletTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SignupServletTest.testSomething" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="BookStore" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="vn.edu.nlu.fit.servlet.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="vn.edu.nlu.fit.servlet" />
+      <option name="MAIN_CLASS_NAME" value="vn.edu.nlu.fit.servlet.SignupServletTest" />
+      <option name="METHOD_NAME" value="testSomething" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="test" type="JUnit" factoryName="JUnit">
+      <module name="BookStore" />
+      <option name="MAIN_CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="directory" />
+      <option name="PARAMETERS" value="" />
+      <dir value="$PROJECT_DIR$/../LTWeb/test" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -192,10 +296,17 @@
     </configuration>
     <list>
       <item itemvalue="Application.test" />
+      <item itemvalue="JUnit.test" />
+      <item itemvalue="JUnit.All in BookStore" />
+      <item itemvalue="JUnit.SignupServletTest" />
+      <item itemvalue="JUnit.SignupServletTest.testSomething" />
       <item itemvalue="Tomcat Server.TOMCAT" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.SignupServletTest" />
+        <item itemvalue="JUnit.SignupServletTest.testSomething" />
+        <item itemvalue="JUnit.All in BookStore" />
         <item itemvalue="Application.test" />
       </list>
     </recent_temporary>
@@ -240,7 +351,10 @@
       <workItem from="1576659968903" duration="888000" />
       <workItem from="1577164348123" duration="2952000" />
       <workItem from="1577238406731" duration="22628000" />
-      <workItem from="1577411742166" duration="2368000" />
+      <workItem from="1577411742166" duration="2947000" />
+      <workItem from="1577436299906" duration="14079000" />
+      <workItem from="1577454984512" duration="2752000" />
+      <workItem from="1577493107589" duration="10324000" />
     </task>
     <task id="LOCAL-00001" summary="Login and redirect back to previous page">
       <created>1576561432382</created>
@@ -256,7 +370,14 @@
       <option name="project" value="LOCAL" />
       <updated>1576562084334</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="add book to cart on progress">
+      <created>1577414247659</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1577414247659</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -278,22 +399,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Login and redirect back to previous page" />
     <MESSAGE value="small changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="small changes" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/web/products.jsp</url>
-          <line>154</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/vn/edu/nlu/fit/service/BookServiceImpl.java</url>
-          <line>103</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="add book to cart on progress" />
+    <option name="LAST_COMMIT_MESSAGE" value="add book to cart on progress" />
   </component>
 </project>

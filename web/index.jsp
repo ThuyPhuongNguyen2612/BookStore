@@ -11,10 +11,6 @@
     <meta name="keywords" content="Best Store Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design"/>
     <script type="application/x-javascript">
-         function addBookToCart(bookId) {
-            var response =  fetch('http://localhost:8080/cart/add?bookID=' + bookId);
-
-        }
     addEventListener("load", function () {
         setTimeout(hideURLbar, 0);
     }, false);
@@ -27,6 +23,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <link href="css/style.css" rel="stylesheet" type="text/css" media="all"/>
     <!-- js -->
     <script src="js/jquery.min.js"></script>
+    <script src="js/index.js"></script>
     <!-- //js -->
     <!-- cart -->
     <script src="js/simpleCart.min.js"></script>
@@ -206,7 +203,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <h4><a href="bookDetail?bookID=<%= newBooks.get(i).getBookID()%>"><%=newBooks.get(i).getTitle()%></a></h4>
                     <p>By <%=newBooks.get(i).getAuthor()%></p>
                     <div class="new-collections-grid1-left simpleCart_shelfItem">
-                        <p><i>$<%=newBooks.get(i).getPrice()%></i> <span class="item_price">$<%=newBooks.get(i).getPrice()%></span><a class="item_add">add to cart </a>
+                        <p><i>$<%=newBooks.get(i).getPrice()%></i> <span class="item_price">$<%=newBooks.get(i).getPrice()%></span><a onclick="addBookToCart('${requestScope['javax.servlet.forward.request_uri']}',<%=newBooks.get(i).getBookID()%>)"class="item_add">add to cart </a>
                         </p>
                     </div>
                 </div>
@@ -254,7 +251,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <h4><a href="bookDetail?bookID=<%= highlighedBooks.get(i).getBookID()%>"><%=highlighedBooks.get(i).getTitle()%></a></h4>
                     <p>By <%=highlighedBooks.get(i).getAuthor()%></p>
                     <div class="new-collections-grid1-left simpleCart_shelfItem">
-                        <p><i>$<%=highlighedBooks.get(i).getPrice()%></i> <span class="item_price">$<%=highlighedBooks.get(i).getPrice()%></span><a class="item_add">add to cart </a>
+                        <p><i>$<%=highlighedBooks.get(i).getPrice()%></i> <span class="item_price">$<%=highlighedBooks.get(i).getPrice()%></span><a onclick="addBookToCart('${requestScope['javax.servlet.forward.request_uri']}',<%=highlighedBooks.get(i).getBookID()%>)"class="item_add">add to cart </a>
                         </p>
                     </div>
                 </div>
@@ -302,7 +299,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <h4><a href="bookDetail?bookID=<%= randomBooks.get(i).getBookID()%>"><%=randomBooks.get(i).getTitle()%></a></h4>
                     <p>By <%=randomBooks.get(i).getAuthor()%></p>
                     <div class="new-collections-grid1-left simpleCart_shelfItem">
-                        <p><i>$<%=randomBooks.get(i).getPrice()%></i> <span class="item_price">$<%=randomBooks.get(i).getPrice()%></span><a onclick="addBookToCart(<%=randomBooks.get(i).getBookID()%>)" class="item_add">add to cart </a>
+                        <p><i>$<%=randomBooks.get(i).getPrice()%></i> <span class="item_price">$<%=randomBooks.get(i).getPrice()%></span><a onclick="addBookToCart('${requestScope['javax.servlet.forward.request_uri']}',<%=randomBooks.get(i).getBookID()%>)" class="item_add">add to cart </a>
                         </p>
                     </div>
                 </div>
