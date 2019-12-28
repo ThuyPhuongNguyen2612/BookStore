@@ -1,5 +1,6 @@
 package vn.edu.nlu.fit.servlet;
 
+import vn.edu.nlu.fit.model.User;
 import vn.edu.nlu.fit.service.BookService;
 import vn.edu.nlu.fit.service.BookServiceImpl;
 import vn.edu.nlu.fit.service.CommentService;
@@ -10,13 +11,18 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.sql.SQLException;
 
-@WebServlet("/bookDetail")
+@WebServlet("/bookDetail/*")
 public class BookDetailServlet extends HttpServlet {
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        doGet(request, response);
+        if (request.getPathInfo().equals("/comment")) {
+            addComment(request, response);
+            request.getRequestDispatcher("/bookDetail").forward(request, response);
+        }
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -26,11 +32,28 @@ public class BookDetailServlet extends HttpServlet {
         CommentService commentService = new CommentServiceImpl();
         try {
             request.setAttribute("book", bookService.getBook(bookID));
-            request.setAttribute("comment", commentService.getComments(bookID));
+            request.setAttribute("comments", commentService.getComments(bookID));
             request.setAttribute("randomBooks", bookService.getRandomBook());
         } catch (SQLException ignored) {
         }
         request.getRequestDispatcher("single.jsp").forward(request, response);
+    }
+
+    private void addComment(HttpServletRequest request, HttpServletResponse response) {
+        Integer bookID = Integer.parseInt(request.getParameter("bookID"));
+        String content = request.getParameter("content");
+        try {
+            new CommentServiceImpl().createComment(bookID, getUserID(request), content);
+            response.setStatus(200);
+        } catch (Exception e) {
+            response.setStatus(500);
+        }
+    }
+
+    private int getUserID(HttpServletRequest request) {
+        HttpSession session = request.getSession();
+        User user = (User) session.getAttribute("user");
+        return user.getUserID();
     }
 
     private int getBookID(HttpServletRequest request) {

@@ -5,4 +5,6 @@ import java.util.List;
 
 public interface CommentService {
     List getComments(int bookID) throws SQLException;
+
+    void createComment(Integer bookID, int userID, String content) throws SQLException;
 }

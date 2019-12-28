@@ -1980,18 +1980,7 @@ label.radio {
 	font-size:14px;
 	color:#212121;
 }
-.add-review input[type="email"]{
-    margin-left: 2.5%;
-}
-.add-review textarea{
-	width:100% !important;
-	min-height:150px;
-	margin-bottom:.8em;
-}
-.add-review input[type="text"]:nth-child(3){
-	width:100%;
-	margin:1em 0;
-}
+
 .add-review input[type="submit"]{
 	outline:none;
 	padding:10px 0;
@@ -2000,6 +1989,7 @@ label.radio {
 	width:30%;
 	font-size:1em;
 	color:#fff;
+    display: block;
 }
 .add-review input[type="submit"]:hover{
 	background: #D8703F;
