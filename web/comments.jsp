@@ -12,8 +12,6 @@
         <ul>
             <li><a href="#"><%=comment.getUserName()%>
             </a></li>
-            <li><a href="#"><span class="glyphicon glyphicon-share"
-                                  aria-hidden="true"></span>Reply</a></li>
         </ul>
         <p><%=comment.getContent()%>
         </p>

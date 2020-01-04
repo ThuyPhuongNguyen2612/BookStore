@@ -90,7 +90,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <!-- flixslider -->
             </div>
             <div class="col-md-7 single-right-left simpleCart_shelfItem animated wow slideInRight" data-wow-delay=".5s">
-                <h3>Men's Solid Casual Shirt</h3>
+                <h3><%=book.getTitle()%></h3>
                 <h4><span class="item_price">$<%=book.getPrice()%></span></h4>
                 <div class="rating1">
 						<span class="starRating">
@@ -169,6 +169,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                         <input type="submit" value="Send">
                                     </form>
                                 </div>
+                                <%
+                                    } else {
+                                %>
+                                Please log in to review!
                                 <%
                                     }
                                 %>

@@ -1,6 +1,7 @@
+<%@ page import="vn.edu.nlu.fit.model.Book" %>
 <%@ page import="vn.edu.nlu.fit.model.Category" %>
 <%@ page import="java.util.List" %>
-<%@ page import="vn.edu.nlu.fit.model.Book" %>
+<%@ page import="static java.lang.Math.min" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -80,7 +81,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <div class="new-products-grids">
                     <%
                         List<Book> newBooks = (List<Book>) request.getAttribute("newBooks");
-                        for (int i = newBooks.size() - 3; i < newBooks.size(); i++) {
+                        for (int i = min(newBooks.size() - 3, 0); i < newBooks.size(); i++) {
                     %>
                     <div class="new-products-grid">
                         <div class="new-products-grid-left">
@@ -93,24 +94,26 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 </a></h4>
                             <div class="rating">
                                 <div class="rating-left">
-                                    <img src="img/2.png" alt=" " class="img-responsive">
+                                    <img src="img/star.png" alt=" " class="img-responsive"/>
                                 </div>
                                 <div class="rating-left">
-                                    <img src="img/2.png" alt=" " class="img-responsive">
+                                    <img src="img/star.png" alt=" " class="img-responsive"/>
                                 </div>
                                 <div class="rating-left">
-                                    <img src="img/2.png" alt=" " class="img-responsive">
+                                    <img src="img/star.png" alt=" " class="img-responsive"/>
                                 </div>
                                 <div class="rating-left">
-                                    <img src="images/1.png" alt=" " class="img-responsive">
+                                    <img src="img/star1.png" alt=" " class="img-responsive"/>
                                 </div>
                                 <div class="rating-left">
-                                    <img src="images/1.png" alt=" " class="img-responsive">
+                                    <img src="img/star1.png" alt=" " class="img-responsive"/>
                                 </div>
                                 <div class="clearfix"></div>
                             </div>
                             <div class="simpleCart_shelfItem new-products-grid-right-add-cart">
-                                <p><span class="item_price">$180</span><a onclick="addBookToCart('/',<%=newBooks.get(i).getBookID()%>)" class="item_add">add to cart </a></p>
+                                <p><span class="item_price">$180</span><a
+                                        onclick="addBookToCart('/',<%=newBooks.get(i).getBookID()%>)" class="item_add">add
+                                    to cart </a></p>
                             </div>
                         </div>
                         <div class="clearfix"></div>
@@ -150,115 +153,110 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 </div>
             </div>
             <div class="products-right-grids-bottom">
+
                 <%
                     List<Book> books = (List<Book>) request.getAttribute("books");
-                    boolean end = false;
-					for (int i=0;i<3;i++){
+                    for (int i = 0; i < 3; i++) {
                 %>
+
+                    <%
+                        for (int j = 0; j < 3; j++) {
+                            if ((i * 3) + j < books.size()) {
+                                Book book = books.get((i * 3) + j);
+
+                    %>
                 <div class="col-md-4 products-right-grids-bottom-grid">
-					<%
-						for (int j=0;j<3;j++){
-					%>
                     <div class="new-collections-grid1 products-right-grid1 animated wow slideInUp" data-wow-delay=".5s">
                         <div class="new-collections-grid1-image">
-                            <a href="bookDetail?bookID=<%=books.get((i*3)+j).getBookID()%>" class="product-image"><img
-                                    src="<%=books.get((i*3)+j).getImage()%>" alt=" " class="img-responsive"></a>
+                            <a href="bookDetail?bookID=<%=book.getBookID()%>" class="product-image"><img
+                                    src="<%=book.getImage()%>" alt=" " class="img-responsive"></a>
                             <div class="new-collections-grid1-image-pos products-right-grids-pos">
-                                <a href="bookDetail?bookID=<%=books.get((i*3)+j).getBookID()%>">Quick View</a>
+                                <a href="bookDetail?bookID=<%=book.getBookID()%>">Quick View</a>
                             </div>
                             <div class="new-collections-grid1-right products-right-grids-pos-right">
                                 <div class="rating">
                                     <div class="rating-left">
-                                        <img src="img/2.png" alt=" " class="img-responsive">
+                                        <img src="img/star.png" alt=" " class="img-responsive"/>
                                     </div>
                                     <div class="rating-left">
-                                        <img src="img/2.png" alt=" " class="img-responsive">
+                                        <img src="img/star.png" alt=" " class="img-responsive"/>
                                     </div>
                                     <div class="rating-left">
-                                        <img src="img/2.png" alt=" " class="img-responsive">
+                                        <img src="img/star.png" alt=" " class="img-responsive"/>
                                     </div>
                                     <div class="rating-left">
-                                        <img src="images/1.png" alt=" " class="img-responsive">
+                                        <img src="img/star1.png" alt=" " class="img-responsive"/>
                                     </div>
                                     <div class="rating-left">
-                                        <img src="images/1.png" alt=" " class="img-responsive">
+                                        <img src="img/star1.png" alt=" " class="img-responsive"/>
                                     </div>
                                     <div class="clearfix"></div>
                                 </div>
                             </div>
                         </div>
                         <h4>
-                            <a href="bookDetail?bookID=<%=books.get((i*3)+j).getBookID()%>"><%=books.get((i * 3) + j).getTitle()%>
+                            <a href="bookDetail?bookID=<%=book.getBookID()%>"><%=book.getTitle()%>
                             </a></h4>
-                        <p>By <%=books.get((i * 3) + j).getAuthor()%>
+                        <p>By <%=book.getAuthor()%>
                         </p>
                         <div class="simpleCart_shelfItem products-right-grid1-add-cart">
-                            <p><i>$<%=books.get((i * 3) + j).getPrice()%>
-                            </i> <span class="item_price">$250</span><a onclick="addBookToCart('/',<%=books.get(i).getBookID()%>)" class="item_add">add to cart </a></p>
+                            <p><i>$<%=book.getPrice()%>
+                            </i> <span class="item_price">$250</span><a
+                                    onclick="addBookToCart('/',<%=books.get(i).getBookID()%>)" class="item_add">add to
+                                cart </a></p>
                         </div>
                     </div>
-					<%
-                            if (books.get((i*3)+j)==null){
-                                end=true;
-                                break;
-                            }
-						}
-					%>
                 </div>
-                <%
-                        if (end){
-                            break;
+                    <%
+                            }
                         }
+                    %>
+                <div class="clearfix"></div>
+                <%
                     }
                 %>
+                <%
 
+                    if (books.size() == 0) {
+                %>
+                There is no book in this category!
+                <%
+                    }
+                %>
 
                 <div class="clearfix"></div>
             </div>
             <nav class="numbering animated wow slideInRight" data-wow-delay=".5s">
                 <ul class="pagination paging">
-					<%
-						double sumPages = (double) request.getAttribute("sumPages");
-						int p = (int) request.getAttribute("page");
-						int t = (int) request.getAttribute("type");
-						int lastPage = (int)sumPages+1;
-					%>
+                    <%
+                        int numberOfPages = (int) request.getAttribute("numberOfPages");
+                        int p = (int) request.getAttribute("page");
+                        int t = (int) request.getAttribute("type");
+                    %>
                     <li>
                         <a href="products?type=<%=t%>&page=<%=1%>" aria-label="Previous">
                             <span aria-hidden="true">&laquo;</span>
                         </a>
                     </li>
-					<%
-						if (p==lastPage && lastPage>2){
-					%>
-					<li><a href="products?type=<%=t%>&page=<%=lastPage-2%>"><%=lastPage-2%></a></li>
-					<%
-						}
-					%>
-					<%
-						if (p>1){
-					%>
-                    <li><a href="products?type=<%=t%>&page=<%=p-1%>"><%=p-1%></a></li>
-					<%
-						}
-					%>
+                    <%
+                        if (p > 1) {
+                    %>
+                    <li><a href="products?type=<%=t%>&page=<%=p-1%>"><%=p - 1%>
+                    </a></li>
+                    <%
+                        }
+                    %>
                     <li class="active"><a href="#"><%=p%><span class="sr-only">(current)</span></a></li>
                     <%
-						if (p<sumPages+1){
+                        if (p < numberOfPages) {
                     %>
-					<li><a href="products?type=<%=t%>&page=<%=p+1%>"><%=p+1%></a></li>
-					<%
-						}
-					%>
-					<%
-						if (p==1 && lastPage>2){
-					%>
-					<li><a href="products?type=<%=t%>&page=3">3</a></li>
-					<%
-						}
-					%>
+                    <li><a href="products?type=<%=t%>&page=<%=p + 1%>"><%=p + 1%>
+                    </a></li>
+                    <%
+                        }
+                    %>
                     <li>
-                        <a href="products?type=<%=t%>&page=<%=lastPage%>" aria-label="Next">
+                        <a href="products?type=<%=t%>&page=<%=numberOfPages%>" aria-label="Next">
                             <span aria-hidden="true">&raquo;</span>
                         </a>
                     </li>

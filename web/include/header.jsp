@@ -1,7 +1,8 @@
+<%@ page import="vn.edu.nlu.fit.model.Book" %>
 <%@ page import="vn.edu.nlu.fit.model.Category" %>
-<%@ page import="java.util.List" %>
-<%@ page import="java.net.URLEncoder" %>
 <%@ page import="vn.edu.nlu.fit.model.User" %>
+<%@ page import="java.net.URLEncoder" %>
+<%@ page import="java.util.List" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <div class="header">
     <div class="container">
@@ -20,7 +21,7 @@
             <div class="header-grid-right animated wow slideInRight" data-wow-delay=".5s">
                 <ul class="login-register">
                     <%
-                        if (session.getAttribute("user")!=null){
+                        if (session.getAttribute("user") != null) {
                             User user = (User) session.getAttribute("user");
                     %>
                     <li class="dropdown">
@@ -33,7 +34,7 @@
                             <li><a href="/account"><i class=" fa fa-suitcase"></i> Profile</a></li>
                             <li><a href="#"><i class="fa fa-cog"></i> Settings</a></li>
                             <%
-                                if (user.getGroup()>1){
+                                if (user.getGroup() > 1) {
                             %>
                             <li><a href="/admin"><i class="fa fa-cog"></i> Admin page</a></li>
                             <%
@@ -43,7 +44,7 @@
                         </ul>
                     </li>
                     <%
-                        } else {
+                    } else {
                     %>
                     <li><i class="glyphicon glyphicon-log-in" aria-hidden="true"></i>
                         <a
@@ -117,12 +118,24 @@
             <div class="logo-nav-right">
                 <div class="search-box">
                     <div id="sb-search" class="sb-search">
-                        <form>
+                        <form action="/bookDetail">
                             <input class="sb-search-input" placeholder="Enter your search term..." type="search"
-                                   id="search">
+                                   id="searchBook" list="bookTitles">
+                            <input id="bookID" name="bookID" type="hidden">
                             <input class="sb-search-submit" type="submit" value="">
                             <span class="sb-icon-search"> </span>
                         </form>
+                        <datalist id="bookTitles">
+                            <%
+                                List<Book> books = (List<Book>) request.getAttribute("books");
+                                for (Book book : books) {
+                            %>
+                            <option bookId="<%=book.getBookID()%>" value="<%=book.getTitle()%>" />
+                            <%
+                                }
+                            %>
+
+                        </datalist>
                     </div>
                 </div>
                 <div class="header-right">
@@ -133,7 +146,7 @@
                         <%
                             int amount = (int) request.getAttribute("amount");
                             String amountAsString = "";
-                            if (amount!=0) {
+                            if (amount != 0) {
                                 amountAsString = amount + "";
                             }
                         %>
@@ -146,6 +159,17 @@
                 <script src="js/uisearch.js"></script>
                 <script>
                     new UISearch(document.getElementById('sb-search'));
+                    $(document).on('change', 'input#searchBook', function(){
+                        var options = $('datalist#bookTitles')[0].options;
+                        var val = $(this).val();
+                        for (var i=0;i<options.length;i++){
+                            if (options[i].value === val) {
+                               var bookId = options[i].getAttribute("bookId");
+                               $("input#bookID").val(bookId);
+                                break;
+                            }
+                        }
+                    });
                 </script>
                 <!-- //search-scripts -->
             </div>
