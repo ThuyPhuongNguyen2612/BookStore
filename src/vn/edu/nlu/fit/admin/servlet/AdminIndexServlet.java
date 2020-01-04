@@ -1,4 +1,4 @@
-package vn.edu.nlu.fit.servlet;
+package vn.edu.nlu.fit.admin.servlet;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
