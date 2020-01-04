@@ -213,19 +213,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <div class="new-collections-grid1-right">
                             <div class="rating">
                                 <div class="rating-left">
-                                    <img src="images/2.png" alt=" " class="img-responsive"/>
+                                    <img src="img/star.png" alt=" " class="img-responsive"/>
                                 </div>
                                 <div class="rating-left">
-                                    <img src="images/2.png" alt=" " class="img-responsive"/>
+                                    <img src="img/star.png" alt=" " class="img-responsive"/>
                                 </div>
                                 <div class="rating-left">
-                                    <img src="images/2.png" alt=" " class="img-responsive"/>
+                                    <img src="img/star.png" alt=" " class="img-responsive"/>
                                 </div>
                                 <div class="rating-left">
-                                    <img src="images/1.png" alt=" " class="img-responsive"/>
+                                    <img src="img/star1.png" alt=" " class="img-responsive"/>
                                 </div>
                                 <div class="rating-left">
-                                    <img src="images/1.png" alt=" " class="img-responsive"/>
+                                    <img src="img/star1.png" alt=" " class="img-responsive"/>
                                 </div>
                                 <div class="clearfix"></div>
                             </div>

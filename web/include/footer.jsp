@@ -4,8 +4,7 @@
         <div class="footer-grids">
             <div class="col-md-3 footer-grid animated wow slideInLeft" data-wow-delay=".5s">
                 <h3>About Us</h3>
-                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse.<span>Excepteur sint occaecat cupidatat
-						non proident, sunt in culpa qui officia deserunt mollit.</span></p>
+                <p>Just a book store!</p>
             </div>
             <div class="col-md-3 footer-grid animated wow slideInLeft" data-wow-delay=".6s">
                 <h3>Contact Info</h3>

@@ -132,12 +132,12 @@
                         </a>
                         <%
                             int amount = (int) request.getAttribute("amount");
-                            if (amount!=0){
-                        %>
-                        <span class="badge bg-warning"><%=amount%></span>
-                        <%
+                            String amountAsString = "";
+                            if (amount!=0) {
+                                amountAsString = amount + "";
                             }
                         %>
+                        <span id="cartSize" class="badge bg-warning"><%=amountAsString%></span>
                         <div class="clearfix"></div>
                     </div>
                 </div>

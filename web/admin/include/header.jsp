@@ -130,7 +130,7 @@
                     </li>
                     <li>
                         <a href="#">
-                            <span class="photo"><img alt="avatar" src="images/2.png"></span>
+                            <span class="photo"><img alt="avatar" src="img/2.png"></span>
                             <span class="subject">
                                 <span class="from">Mr. Perfect</span>
                                 <span class="time">2 hour ago</span>

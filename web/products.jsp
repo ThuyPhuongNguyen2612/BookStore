@@ -93,13 +93,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 </a></h4>
                             <div class="rating">
                                 <div class="rating-left">
-                                    <img src="images/2.png" alt=" " class="img-responsive">
+                                    <img src="img/2.png" alt=" " class="img-responsive">
                                 </div>
                                 <div class="rating-left">
-                                    <img src="images/2.png" alt=" " class="img-responsive">
+                                    <img src="img/2.png" alt=" " class="img-responsive">
                                 </div>
                                 <div class="rating-left">
-                                    <img src="images/2.png" alt=" " class="img-responsive">
+                                    <img src="img/2.png" alt=" " class="img-responsive">
                                 </div>
                                 <div class="rating-left">
                                     <img src="images/1.png" alt=" " class="img-responsive">
@@ -169,13 +169,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <div class="new-collections-grid1-right products-right-grids-pos-right">
                                 <div class="rating">
                                     <div class="rating-left">
-                                        <img src="images/2.png" alt=" " class="img-responsive">
+                                        <img src="img/2.png" alt=" " class="img-responsive">
                                     </div>
                                     <div class="rating-left">
-                                        <img src="images/2.png" alt=" " class="img-responsive">
+                                        <img src="img/2.png" alt=" " class="img-responsive">
                                     </div>
                                     <div class="rating-left">
-                                        <img src="images/2.png" alt=" " class="img-responsive">
+                                        <img src="img/2.png" alt=" " class="img-responsive">
                                     </div>
                                     <div class="rating-left">
                                         <img src="images/1.png" alt=" " class="img-responsive">

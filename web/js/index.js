@@ -2,10 +2,14 @@ function addBookToCart(hostUrl, bookId) {
     $.ajax(hostUrl + 'cart/add?bookID=' + bookId, {
         statusCode: {
             500: function () {
-                alert('failed')
+                swal("", "Failed", "error");
             },
             200: function () {
-                alert('Add to cart successfully!!!')
+                swal("", "Add to cart successfully!!!", "success");
+                var badge = $(".cart.box_1 #cartSize");
+
+                var cartSize = $(badge).text() !== "" ? parseInt($(badge).text()) : 0;
+                $(badge).html(cartSize + 1);
             }
         }
     });
