@@ -4,6 +4,10 @@
 <%@ page import="java.util.List" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<%
+    String url = request.getRequestURL().toString();
+    String baseURL = url.substring(0, url.length() - request.getRequestURI().length()) + request.getContextPath() + "/";
+%>
 <div class="header">
     <div class="container">
         <div class="header-grid">
@@ -26,7 +30,7 @@
                     %>
                     <li class="dropdown">
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                            <img alt="" src="img/avatar.png">
+                            <img alt="" src="<%=baseURL%>img/avatar.png">
                             <span class="username"><%=user.getName()%></span>
                             <b class="caret"></b>
                         </a>
@@ -40,7 +44,7 @@
                             <%
                                 }
                             %>
-                            <li><a href="login.html"><i class="fa fa-key"></i> Log Out</a></li>
+                            <li><a href="/logout"><i class="fa fa-key"></i> Log Out</a></li>
                         </ul>
                     </li>
                     <%
@@ -102,15 +106,15 @@
                                         <div class="col-sm-6">
                                             <ul class="multi-column-dropdown">
                                                 <h6>Author</h6>
-                                                <li><a href="products.html"></a></li>
-                                                <li><a href="products.html"></a></li>
+                                                <li><a href="/products"></a></li>
+                                                <li><a href="/products"></a></li>
                                             </ul>
                                         </div>
                                         <div class="clearfix"></div>
                                     </div>
                                 </ul>
                             </li>
-                            <li><a href="mail.html">Mail Us</a></li>
+                            <li><a href="/mail">Mail Us</a></li>
                         </ul>
                     </div>
                 </nav>
@@ -155,8 +159,8 @@
                     </div>
                 </div>
                 <!-- search-scripts -->
-                <script src="js/classie.js"></script>
-                <script src="js/uisearch.js"></script>
+                <script src="<%=baseURL%>js/classie.js"></script>
+                <script src="<%=baseURL%>js/uisearch.js"></script>
                 <script>
                     new UISearch(document.getElementById('sb-search'));
                     $(document).on('change', 'input#searchBook', function(){

@@ -88,8 +88,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <p>Country: US</p>
                 <p>Phone number: 09563257576</p>
                 <br>
-                <button class="form-button"><a href="order2.html">Delivery to this address</a></button>
-                <button class="form-button-default">Edit</button>
+                <button class="form-button"><a href="/order/payment">Delivery to this address</a></button>
             </div>
             <p>You want to ship to another address? <a>Add new shipping address</a></p>
             <h3>New address</h3>
@@ -148,8 +147,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <div class="form-group">
                     <label class="col-md-3 control-label"></label>
                     <div class="row col-md-9">
-                        <button class="form-button-default">Cancel</button>
-                        <button class="form-button"><a href="order2.html">Delivery to this address</a></button>
+                        <button class="form-button"><a href="/order/payment">Delivery to this address</a></button>
                     </div>
                 </div>
             </form>

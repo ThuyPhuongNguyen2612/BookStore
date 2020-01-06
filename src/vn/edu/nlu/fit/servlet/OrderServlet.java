@@ -29,7 +29,6 @@ public class OrderServlet extends HttpServlet {
 
     private void orderLoginStep(HttpServletRequest request, HttpServletResponse response) throws IOException {
         HttpSession session = request.getSession();
-        session.setAttribute("currentPath", request.getRequestURI().concat(request.getQueryString() != null ? "?" + request.getQueryString() : ""));
 
         if (session.getAttribute("user") == null) {
             response.sendRedirect("/login");
@@ -40,16 +39,20 @@ public class OrderServlet extends HttpServlet {
 
     private void orderAddressStep(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
-        session.setAttribute("currentPath", request.getRequestURI().concat(request.getQueryString() != null ? "?" + request.getQueryString() : ""));
-
-        request.getRequestDispatcher("/addAddressForm.jsp").forward(request, response);
-
+        if (session.getAttribute("user") == null) {
+            response.sendRedirect("/login");
+        } else {
+            request.getRequestDispatcher("/addAddressForm.jsp").forward(request, response);
+        }
     }
 
-    private void orderPaymentStep(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    private void orderPaymentStep(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         HttpSession session = request.getSession();
-        session.setAttribute("currentPath", request.getRequestURI().concat(request.getQueryString() != null ? "?" + request.getQueryString() : ""));
-        response.sendRedirect("/addPaymentForm.jsp");
+        if (session.getAttribute("user") == null) {
+            response.sendRedirect("/login");
+        } else {
+            request.getRequestDispatcher("/addPaymentForm.jsp").forward(request, response);
+        }
 
     }
 }
