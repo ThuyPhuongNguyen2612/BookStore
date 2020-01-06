@@ -25,6 +25,8 @@ public class BookDetailServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        HttpSession session = request.getSession();
+        session.setAttribute("currentPath", request.getRequestURI().concat(request.getQueryString()!=null?"?"+request.getQueryString():""));
         if (request.getPathInfo() == null) {
             getBookDetailPage(request, response);
         } else if (request.getPathInfo().equals("/comments")) {

@@ -28,10 +28,9 @@ public class User {
         this.group = group;
     }
 
-    public User(String userName, String password, String phone) {
+    public User(String userName, String password) {
         this.userName = userName;
         this.password = password;
-        this.phone = phone;
     }
 
     public int getUserID() {

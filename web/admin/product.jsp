@@ -1,5 +1,6 @@
 <%@ page import="java.util.List" %>
 <%@ page import="vn.edu.nlu.fit.model.Book" %>
+<%@ page import="java.util.ArrayList" %>
 <!DOCTYPE html>
 <head>
     <title>Admin</title>
@@ -267,25 +268,25 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         </a>
                     </li>
                     <li>
-                        <a href="order.html">
+                        <a href="order.jsp">
                             <i class="fa fa-shopping-cart"></i>
                             <span>Order</span>
                         </a>
                     </li>
                     <li>
-                        <a class="active" href="product.jsp">
+                        <a class="active" href="/admin/product">
                             <i class="fa fa-product-hunt"></i>
                             <span>Product</span>
                         </a>
                     </li>
                     <li>
-                        <a href="categories.html">
+                        <a href="/admin/categories">
                             <i class="fa fa-tags"></i>
                             <span>Categories</span>
                         </a>
                     </li>
                     <li>
-                        <a href="users.html">
+                        <a href="users.jsp">
                             <i class="fa fa-users"></i>
                             <span>Users</span>
                         </a>
@@ -298,7 +299,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <ul class="sub">
                             <li><a href="mail.html">Mail</a></li>
                             <li><a href="mail_compose.html">Compose Mail</a></li>
-                            <li><a href="comment.html">Comment</a></li>
+                            <li><a href="comment.jsp">Comment</a></li>
                         </ul>
                     </li>
                     <li>

@@ -28,10 +28,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <!-- for bootstrap working -->
     <script type="text/javascript" src="js/bootstrap-3.1.1.min.js"></script>
     <!-- //for bootstrap working -->
-    <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic'
-          rel='stylesheet' type='text/css'>
-    <link href='//fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,400italic,700,700italic,900,900italic'
-          rel='stylesheet' type='text/css'>
     <!-- animation-effect -->
     <link href="css/animate.min.css" rel="stylesheet">
     <script src="js/wow.min.js"></script>
@@ -71,10 +67,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <div class="login-form-grids">
             <h5 class="animated wow slideInUp" data-wow-delay=".5s">profile information</h5>
             <form id="register-form" class="animated wow slideInUp" data-wow-delay=".5s" method="post">
-                <input id="phone" name="phone" type="tel" placeholder="Phone number *" required>
-				<input id="sendCode-bt" type="button" value="Send code">
-				<input name="code" type="text" placeholder="Verification code *" required>
-                <input id="email" name="uname" type="email" placeholder="Email Address *" required=>
+                <input id="email" name="email" type="email" placeholder="Email Address *" required=>
                 <input id="pass" name="pass" type="password" placeholder="Password *" required>
                 <input id="retypePass" name="retypePass" type="password" placeholder="Password Confirmation *" required>
                 <div class="register-check-box">
@@ -90,10 +83,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
                     $("#register-form").validate({
                         rules: {
-                            phone: {
-                                required: true,
-                                minlength: 10,
-                            },
                             email: {
                                 required: true,
                             },
@@ -107,11 +96,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             }
                         },
                         messages: {
-                            phone: {
-                                required: "Please enter your phone number",
-                                minlength: "Phone number is at least 10 characters",
-                                equalTo: "Your phone number fotmat is wrong"
-                            },
                             email: {
                                 required: "Please enter your phone number",
                                 // equalTo: "Your phone number fotmat is wrong"
@@ -144,96 +128,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </div>
 <!-- //register -->
 <!-- footer -->
-<div class="footer">
-    <div class="container">
-        <div class="footer-grids">
-            <div class="col-md-3 footer-grid animated wow slideInLeft" data-wow-delay=".5s">
-                <h3>About Us</h3>
-                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse.<span>Excepteur sint occaecat cupidatat
-						non proident, sunt in culpa qui officia deserunt mollit.</span></p>
-            </div>
-            <div class="col-md-3 footer-grid animated wow slideInLeft" data-wow-delay=".6s">
-                <h3>Contact Info</h3>
-                <ul>
-                    <li><i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i>1234k Avenue, 4th block,
-                        <span>New York City.</span>
-                    </li>
-                    <li><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i><a
-                            href="mailto:info@example.com">info@example.com</a></li>
-                    <li><i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>+1234 567 567</li>
-                </ul>
-            </div>
-            <div class="col-md-3 footer-grid animated wow slideInLeft" data-wow-delay=".7s">
-                <h3>Flickr Posts</h3>
-                <div class="footer-grid-left">
-                    <a href="single.jsp"><img src="img/footer(1).png" alt=" " class="img-responsive"/></a>
-                </div>
-                <div class="footer-grid-left">
-                    <a href="single.jsp"><img src="img/footer(2).png" alt=" " class="img-responsive"/></a>
-                </div>
-                <div class="footer-grid-left">
-                    <a href="single.jsp"><img src="img/footer(3).png" alt=" " class="img-responsive"/></a>
-                </div>
-                <div class="footer-grid-left">
-                    <a href="single.jsp"><img src="img/footer(4).png" alt=" " class="img-responsive"/></a>
-                </div>
-                <div class="footer-grid-left">
-                    <a href="single.jsp"><img src="img/footer(5).png" alt=" " class="img-responsive"/></a>
-                </div>
-                <div class="footer-grid-left">
-                    <a href="single.jsp"><img src="img/footer(6).png" alt=" " class="img-responsive"/></a>
-                </div>
-                <div class="footer-grid-left">
-                    <a href="single.jsp"><img src="img/footer(7).png" alt=" " class="img-responsive"/></a>
-                </div>
-                <div class="footer-grid-left">
-                    <a href="single.jsp"><img src="img/footer(8).png" alt=" " class="img-responsive"/></a>
-                </div>
-                <div class="footer-grid-left">
-                    <a href="single.jsp"><img src="img/footer(2).png" alt=" " class="img-responsive"/></a>
-                </div>
-                <div class="footer-grid-left">
-                    <a href="single.jsp"><img src="img/footer(5).png" alt=" " class="img-responsive"/></a>
-                </div>
-                <div class="footer-grid-left">
-                    <a href="single.jsp"><img src="img/footer(1).png" alt=" " class="img-responsive"/></a>
-                </div>
-                <div class="footer-grid-left">
-                    <a href="single.jsp"><img src="img/footer(4).png" alt=" " class="img-responsive"/></a>
-                </div>
-                <div class="clearfix"></div>
-            </div>
-            <div class="col-md-3 footer-grid animated wow slideInLeft" data-wow-delay=".8s">
-                <h3>Blog Posts</h3>
-                <div class="footer-grid-sub-grids">
-                    <div class="footer-grid-sub-grid-left">
-                        <a href="single.jsp"><img src="img/imgfooter%20(1).jpg" alt=" "
-                                                  class="img-responsive"/></a>
-                    </div>
-                    <div class="footer-grid-sub-grid-right">
-                        <h4><a href="single.jsp">culpa qui officia deserunt</a></h4>
-                        <p>Posted On 25/3/2016</p>
-                    </div>
-                    <div class="clearfix"></div>
-                </div>
-                <div class="footer-grid-sub-grids">
-                    <div class="footer-grid-sub-grid-left">
-                        <a href="single.jsp"><img src="img/imgfooter(2).jpg" alt=" " class="img-responsive"/></a>
-                    </div>
-                    <div class="footer-grid-sub-grid-right">
-                        <h4><a href="single.jsp">Quis autem vel eum iure</a></h4>
-                        <p>Posted On 25/3/2016</p>
-                    </div>
-                    <div class="clearfix"></div>
-                </div>
-            </div>
-            <div class="clearfix"></div>
-        </div>
-        <div class="footer-logo animated wow slideInUp" data-wow-delay=".5s">
-            <h2><a href="index.jsp">Best Store <span>shop anywhere</span></a></h2>
-        </div>
-    </div>
-</div>
+<jsp:include page="/footer"></jsp:include>
 <!-- //footer -->
 </body>
 </html>

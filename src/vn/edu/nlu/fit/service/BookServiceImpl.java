@@ -11,8 +11,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BookServiceImpl implements BookService {
+    static Connection connection;
 
-    private Book createBook(ResultSet rs) throws SQLException {
+    public BookServiceImpl() {
+        connection = DBConnect.getConnection();
+    }
+
+    private Book createBookObject(ResultSet rs) throws SQLException {
         return new Book(rs.getInt("bookID"),
             rs.getString("name"),
             rs.getString("author"),
@@ -64,7 +69,7 @@ public class BookServiceImpl implements BookService {
         ResultSet rs = getResultSet("SELECT * FROM book WHERE active=1 ORDER BY RAND() LIMIT 4");
         List<Book> list = new ArrayList<>(4);
         while (rs.next()) {
-            list.add(createBook(rs));
+            list.add(createBookObject(rs));
         }
         return list;
     }
@@ -76,7 +81,7 @@ public class BookServiceImpl implements BookService {
         rs.last();
         if (rs.getRow() == 1) {
             rs.first();
-            book = createBook(rs);
+            book = createBookObject(rs);
         }
         return book;
     }
@@ -84,14 +89,12 @@ public class BookServiceImpl implements BookService {
     private List<Book> getBooks(ResultSet rs) throws SQLException {
         List<Book> list = new ArrayList<>();
         while (rs.next()) {
-            list.add(createBook(rs));
+            list.add(createBookObject(rs));
         }
         return list;
     }
 
-
     private static ResultSet getResultSet(String sqlStatement) throws SQLException {
-        Connection connection = DBConnect.getConnection();
         PreparedStatement ps = connection.prepareStatement(sqlStatement);
         return ps.executeQuery();
     }

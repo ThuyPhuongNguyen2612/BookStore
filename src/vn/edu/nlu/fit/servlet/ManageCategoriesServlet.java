@@ -11,11 +11,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.SQLException;
 
-@WebServlet("/categoriesManage")
-public class CategoryManageServlet extends HttpServlet {
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-    }
+@WebServlet("/admin/categories")
+public class ManageCategoriesServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         CategoryService categoryService = new CategoryServiceImpl();
@@ -24,6 +21,6 @@ public class CategoryManageServlet extends HttpServlet {
         } catch (SQLException e){
             e.getStackTrace();
         }
-        request.getRequestDispatcher("admin/categories.jsp").forward(request,response);
+        request.getRequestDispatcher("categories.jsp").forward(request,response);
     }
 }

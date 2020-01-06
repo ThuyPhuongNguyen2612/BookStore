@@ -10,10 +10,11 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class UserServiceImpl implements UserService {
+    Connection connection;
 
-    private int nowUserID;
+    public UserServiceImpl() { connection = DBConnect.getConnection();}
 
-    public User createUser(ResultSet rs) throws SQLException {
+    public User createUserObject(ResultSet rs) throws SQLException {
         User user = new User(rs.getInt("userID"),
             rs.getString("userName"),
             rs.getString("password"),
@@ -29,20 +30,17 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public ArrayList<User> getUsers() throws SQLException {
-        Connection connection = DBConnect.getConnection();
         PreparedStatement ps = connection.prepareStatement("SELECT * FROM user WHERE active = 1");
         ResultSet resultSet = ps.executeQuery();
         ArrayList<User> userArrayList = new ArrayList<>();
         while (resultSet.next()) {
-            userArrayList.add(createUser(resultSet));
+            userArrayList.add(createUserObject(resultSet));
         }
-        nowUserID = userArrayList.get(userArrayList.size() - 1).getUserID();
         return userArrayList;
     }
 
     @Override
     public User getUser(String uname, String password) throws SQLException {
-        Connection connection = DBConnect.getConnection();
         PreparedStatement ps = connection.prepareStatement("SELECT * FROM user WHERE active = 1 and userName=? and password=?");
         ps.setString(1, uname);
         ps.setString(2, password);
@@ -51,19 +49,16 @@ public class UserServiceImpl implements UserService {
         User user = null;
         if (rs.getRow() == 1) {
             rs.first();
-            user = createUser(rs);
+            user = createUserObject(rs);
         }
         return user;
     }
 
     @Override
     public void addUser(User user) throws SQLException {
-        Connection connection = DBConnect.getConnection();
-        PreparedStatement ps = connection.prepareStatement("INSERT `user` (userID, userName, `password`, name, phone, `group`, active) VALUES (?, ?,?,?,1,1)");
-        ps.setInt(1, nowUserID);
-        ps.setString(2, user.getUserName());
-        ps.setString(3, user.getPassword());
-        ps.setString(4, user.getPhone());
-
+        PreparedStatement ps = connection.prepareStatement("INSERT `user` (userName, `password`, name, `group`, active) VALUES (?, ?,?,1,1)");
+        ps.setString(1, user.getUserName());
+        ps.setString(2, user.getPassword());
+        ps.setString(3, user.getUserName());
     }
 }

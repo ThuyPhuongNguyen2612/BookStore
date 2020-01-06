@@ -8,7 +8,7 @@ public class SignupServletTest {
 
     @Test
     public void checkEmail() {
-        assertTrue(new SignupServlet().checkEmail("user@domain.com"));
+        assertTrue(new RegisterServlet().checkEmail("user@domain.com"));
     }
 
 

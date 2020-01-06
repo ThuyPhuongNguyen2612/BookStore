@@ -47,10 +47,10 @@
                     } else {
                     %>
                     <li><i class="glyphicon glyphicon-log-in" aria-hidden="true"></i>
-                        <a
-                                href="/login?from=${URLEncoder.encode(requestScope['javax.servlet.forward.request_uri'].concat("?".concat(requestScope['javax.servlet.forward.query_string'])) ,"UTF-8")}">Login</a>
+                        <a href="/login">Login</a>
                     </li>
-                    <li><i class="glyphicon glyphicon-book" aria-hidden="true"></i><a href="/signup">Register</a>
+                    <li><i class="glyphicon glyphicon-book" aria-hidden="true"></i>
+                        <a href="/register">Register</a>
                     </li>
                     <%
                         }

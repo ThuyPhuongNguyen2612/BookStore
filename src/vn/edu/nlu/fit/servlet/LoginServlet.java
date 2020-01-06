@@ -30,9 +30,9 @@ public class LoginServlet extends HttpServlet {
             if (user != null) {
                 HttpSession session = request.getSession();
                 session.setAttribute("user", user);
-                response.sendRedirect(URLDecoder.decode(request.getParameter("from"), "UTF-8"));
+                response.sendRedirect((String) session.getAttribute("currentPath"));
             } else {
-                response.sendRedirect("/login?error=\"Username or Password is wrong\"&from=" + request.getParameter("from"));
+                response.sendRedirect("/login?error=\"Username or Password is wrong\"");
             }
         } catch (SQLException ignored) {
 

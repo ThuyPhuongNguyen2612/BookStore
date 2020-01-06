@@ -1,19 +1,27 @@
+<%@ page import="vn.edu.nlu.fit.model.Category" %>
 <!DOCTYPE html>
 <head>
     <title>Admin</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="keywords" content="Visitors Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
-Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
-    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design"/>
+    <script type="application/x-javascript"> addEventListener("load", function () {
+        setTimeout(hideURLbar, 0);
+    }, false);
+
+    function hideURLbar() {
+        window.scrollTo(0, 1);
+    } </script>
     <!-- bootstrap-css -->
-    <link rel="stylesheet" href="css/bootstrap.min.css" >
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <!-- //bootstrap-css -->
     <!-- Custom CSS -->
-    <link href="css/style.css" rel='stylesheet' type='text/css' />
+    <link href="css/style.css" rel='stylesheet' type='text/css'/>
     <link href="css/style-responsive.css" rel="stylesheet"/>
     <!-- font CSS -->
-    <link href='//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic'
+          rel='stylesheet' type='text/css'>
     <!-- font-awesome icons -->
     <link rel="stylesheet" href="css/font.css" type="text/css"/>
     <link href="css/font-awesome.css" rel="stylesheet">
@@ -59,7 +67,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 <div class="task-info clearfix">
                                     <div class="desc pull-left">
                                         <h5>Target Sell</h5>
-                                        <p>25% , Deadline  12 June’13</p>
+                                        <p>25% , Deadline 12 June’13</p>
                                     </div>
                                     <span class="notification-pie-chart pull-right" data-percent="45">
                             <span class="percent"></span>
@@ -72,7 +80,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 <div class="task-info clearfix">
                                     <div class="desc pull-left">
                                         <h5>Product Delivery</h5>
-                                        <p>45% , Deadline  12 June’13</p>
+                                        <p>45% , Deadline 12 June’13</p>
                                     </div>
                                     <span class="notification-pie-chart pull-right" data-percent="78">
                             <span class="percent"></span>
@@ -85,7 +93,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 <div class="task-info clearfix">
                                     <div class="desc pull-left">
                                         <h5>Payment collection</h5>
-                                        <p>87% , Deadline  12 June’13</p>
+                                        <p>87% , Deadline 12 June’13</p>
                                     </div>
                                     <span class="notification-pie-chart pull-right" data-percent="60">
                             <span class="percent"></span>
@@ -98,7 +106,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 <div class="task-info clearfix">
                                     <div class="desc pull-left">
                                         <h5>Target Sell</h5>
-                                        <p>33% , Deadline  12 June’13</p>
+                                        <p>33% , Deadline 12 June’13</p>
                                     </div>
                                     <span class="notification-pie-chart pull-right" data-percent="90">
                             <span class="percent"></span>
@@ -252,31 +260,31 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <div class="leftside-navigation">
                 <ul class="sidebar-menu" id="nav-accordion">
                     <li>
-                        <a href="index.jsp">
+                        <a href="/admin">
                             <i class="fa fa-home"></i>
                             <span>Home</span>
                         </a>
                     </li>
                     <li>
-                        <a href="order.html">
+                        <a href="/admin/orders">
                             <i class="fa fa-shopping-cart"></i>
                             <span>Order</span>
                         </a>
                     </li>
                     <li>
-                        <a href="product.jsp">
+                        <a href="/admin/products">
                             <i class="fa fa-product-hunt"></i>
                             <span>Product</span>
                         </a>
                     </li>
                     <li>
-                        <a class="active" href="categories.jsp">
+                        <a class="active" href="/admin/categories">
                             <i class="fa fa-tags"></i>
                             <span>Categories</span>
                         </a>
                     </li>
                     <li>
-                        <a href="users.html">
+                        <a href="/admin/users">
                             <i class="fa fa-users"></i>
                             <span>Users</span>
                         </a>
@@ -289,11 +297,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <ul class="sub">
                             <li><a href="mail.html">Mail</a></li>
                             <li><a href="mail_compose.html">Compose Mail</a></li>
-                            <li><a href="comment.html">Comment</a></li>
+                            <li><a href="comment.jsp">Comment</a></li>
                         </ul>
                     </li>
                     <li>
-                        <a href="..\user\index.html">
+                        <a href="/">
                             <i class="fa fa-user"></i>
                             <span>User page</span>
                         </a>
@@ -316,19 +324,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <div class="form-group">
                                 <label for="categoryName" class="col-lg-2 col-sm-2 control-label">Name</label>
                                 <div class="col-sm-10">
-                                    <input id="categoryName" type="text" class="form-control">
+                                    <input id="categoryName" name="name" type="text" class="form-control" value="<%=request.getAttribute("name")!=null?request.getAttribute("name"):""%>">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="path" class="col-lg-2 col-sm-2 control-label">Path</label>
+                                <label for="quantity" class="col-lg-2 col-sm-2 control-label">Quantity</label>
                                 <div class="col-sm-10">
-                                    <input id="path" type="text" class="form-control">
+                                    <input id="quantity" name="quantity" type="number" class="form-control" value="<%=request.getAttribute("quantity")!=null?request.getAttribute("quantity"):""%>">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-lg-2 col-sm-2 control-label">Action</label>
                                 <div class="row col-sm-10">
-                                    <input type="checkbox"> Show <br>
+                                    <input name="active" type="checkbox" <%=(request.getAttribute("active")!=null?request.getAttribute("active"):"").equals("")?"":"checked"%>> Show <br>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -350,12 +358,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script src="js/scripts.js"></script>
 <script src="js/jquery.slimscroll.js"></script>
 <script src="js/jquery.nicescroll.js"></script>
-<!--[if lte IE 8]><script language="javascript" type="text/javascript" src="js/flot-chart/excanvas.min.js"></script><![endif]-->
+<!--[if lte IE 8]>
+<script language="javascript" type="text/javascript" src="js/flot-chart/excanvas.min.js"></script><![endif]-->
 <script src="js/jquery.scrollTo.js"></script>
 <!-- calendar -->
 <script type="text/javascript" src="js/monthly.js"></script>
 <script type="text/javascript">
-    $(window).load( function() {
+    $(window).load(function () {
 
         $('#mycalendar').monthly({
             mode: 'event',
@@ -372,7 +381,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             disablePast: true
         });
 
-        switch(window.location.protocol) {
+        switch (window.location.protocol) {
             case 'http:':
             case 'https:':
                 // running on a server, should be good.

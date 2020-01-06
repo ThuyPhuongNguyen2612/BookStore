@@ -1,3 +1,5 @@
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="vn.edu.nlu.fit.model.User" %>
 <!DOCTYPE html>
 <head>
     <title>Admin</title>
@@ -259,31 +261,31 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <div class="leftside-navigation">
                 <ul class="sidebar-menu" id="nav-accordion">
                     <li>
-                        <a href="index.jsp">
+                        <a href="/admin">
                             <i class="fa fa-home"></i>
                             <span>Home</span>
                         </a>
                     </li>
                     <li>
-                        <a href="order.html">
+                        <a href="/admin/orders">
                             <i class="fa fa-shopping-cart"></i>
                             <span>Order</span>
                         </a>
                     </li>
                     <li>
-                        <a href="product.jsp">
+                        <a href="/admin/products">
                             <i class="fa fa-product-hunt"></i>
                             <span>Product</span>
                         </a>
                     </li>
                     <li>
-                        <a class="active" href="categories.html">
+                        <a href="/admin/categories">
                             <i class="fa fa-tags"></i>
                             <span>Categories</span>
                         </a>
                     </li>
                     <li>
-                        <a href="users.html">
+                        <a class="active" href="/admin/users">
                             <i class="fa fa-users"></i>
                             <span>Users</span>
                         </a>
@@ -296,11 +298,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <ul class="sub">
                             <li><a href="mail.html">Mail</a></li>
                             <li><a href="mail_compose.html">Compose Mail</a></li>
-                            <li><a href="comment.html">Comment</a></li>
+                            <li><a href="/admin/comments">Comment</a></li>
                         </ul>
                     </li>
                     <li>
-                        <a href="..\user\index.html">
+                        <a href="/">
                             <i class="fa fa-user"></i>
                             <span>User page</span>
                         </a>
@@ -311,71 +313,94 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         </div>
     </aside>
     <!--sidebar end-->
+    <!--main content start-->
     <section id="main-content">
         <section class="wrapper">
             <div class="table-agile-info col-xs-12 col-md-12">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        Categories
+                        Users
                     </div>
                     <div>
                         <div class="row w3-res-tb">
-                            <div class="col-sm-8">
+                            <div class="col-sm-3 m-b-xs">
+                                <select class="input-sm form-control w-sm inline v-middle">
+                                    <option value="0">Action</option>
+                                    <option value="1">Lock account</option>
+                                </select>
+                            </div>
+                            <div class="col-sm-5">
                                 <div class="input-group">
                                     <input type="text" class="input-sm form-control" placeholder="Search">
                                     <span class="input-group-btn"><button class="btn btn-sm btn-default" type="button"><i class="fa fa-search"></i></button></span>
                                 </div>
                             </div>
-                            <div class="col-sm-4">
-                                <a href="addCategory.html"><button class="btn btn-sm btn-default" style="float: right">Add<i class="fa fa-plus"></i></button></a>
+                            <div class="col-sm-4 m-b-xs">
+                                <select class="input-sm form-control w-sm inline v-middle">
+                                    <option value="0">Find by name</option>
+                                    <option value="1">Find by email</option>
+                                    <option value="2">Find by group</option>
+                                </select>
+                                <a href="#"><button class="btn btn-sm btn-default" style="float: right">Add<i class="fa fa-plus"></i></button></a>
                             </div>
                         </div>
-                        <table class="col-xs-12 col-lg-12">
+                        <table class="col-xs-12 col-md-12">
                             <tr>
-                                <td><input type="checkbox"></td>
-                                <td>ID</td>
+                                <td>#</td>
+                                <td>Email</td>
                                 <td>Name</td>
-                                <td>Show</td>
+                                <td>Image</td>
+                                <td>Tel</td>
+                                <td>Gentle</td>
+                                <td>Group</td>
+                                <td>Date of birth</td>
+                                <td>Status</td>
                                 <td>Action</td>
                             </tr>
+                            <%
+                                ArrayList<User> users = (ArrayList<User>)request.getAttribute("users");
+                                for (User user: users) {
+                            %>
                             <tr>
-                                <td><input type="checkbox"></td>
-                                <td>C001</td>
-                                <td>Romance</td>
-                                <td><input type="checkbox"></td>
+                                <td><%=user.getUserID()%></td>
+                                <td><%=user.getUserName()%></td>
+                                <td><%=user.getName()%></td>
+                                <td><img src="<%=user.getImage()%>"></td>
+                                <td><%=user.getPhone()!=null?user.getPhone():"..."%></td>
+                                <td><%=user.getGentle()==1?"Male":"Female"%></td>
+                                <td><%=user.getGroup()%></td>
+                                <td><%=user.getDob()%></td>
+                                <td></td>
                                 <td><span><a href="#"><i class="fa fa-edit"></i></a>  <a href="#"><i
                                         class="fa fa-times-circle"></i></a></span></td>
                             </tr>
-                            <tr>
-                                <td><input type="checkbox"></td>
-                                <td>C002</td>
-                                <td>Comic</td>
-                                <td><input type="checkbox"></td>
-                                <td><span><a href="#"><i class="fa fa-edit"></i></a>  <a href="#"><i
-                                        class="fa fa-times-circle"></i></a></span></td>
-                            </tr>
-                            <tr>
-                                <td><input type="checkbox"></td>
-                                <td>C003</td>
-                                <td>History</td>
-                                <td><input type="checkbox"></td>
-                                <td><span><a href="#"><i class="fa fa-edit"></i></a>  <a href="#"><i
-                                        class="fa fa-times-circle"></i></a></span></td>
-                            </tr>
-                            <tr>
-                                <td><input type="checkbox"></td>
-                                <td>C004</td>
-                                <td>Horror</td>
-                                <td><input type="checkbox"></td>
-                                <td><span><a href="#"><i class="fa fa-edit"></i></a>  <a href="#"><i
-                                        class="fa fa-times-circle"></i></a></span></td>
-                            </tr>
+                            <%
+                                }
+                            %>
+
                         </table>
+                        <footer class="panel-footer col-xs-12 col-md-12">
+                            <div class="row">
+                                <div class="col-sm-5">
+                                </div>
+                                <div class="col-sm-7 text-right text-center-xs">
+                                    <ul class="pagination pagination-sm m-t-none m-b-none">
+                                        <li><a href=""><i class="fa fa-chevron-left"></i></a></li>
+                                        <li><a href="">1</a></li>
+                                        <li><a href="">2</a></li>
+                                        <li><a href="">3</a></li>
+                                        <li><a href="">4</a></li>
+                                        <li><a href=""><i class="fa fa-chevron-right"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </footer>
                     </div>
                 </div>
             </div>
         </section>
     </section>
+    <!--main content end-->
 </section>
 <script src="js/bootstrap.js"></script>
 <script src="js/jquery.dcjqaccordion.2.7.js"></script>

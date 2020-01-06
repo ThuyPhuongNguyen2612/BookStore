@@ -11,15 +11,15 @@ import java.io.IOException;
 @WebServlet("/account")
 public class AccountInforServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        doGet(request, response);
+
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
+        session.setAttribute("currentPath", request.getRequestURI().concat(request.getQueryString()!=null?"?"+request.getQueryString():""));
         try {
             request.setAttribute("user", session.getAttribute("user"));
         } catch (Exception ignored) {
-
         }
         request.getRequestDispatcher("account.jsp").forward(request, response);
     }

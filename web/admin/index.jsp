@@ -264,7 +264,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         </a>
                     </li>
                     <li>
-                        <a href="order.html">
+                        <a href="order.jsp">
                             <i class="fa fa-shopping-cart"></i>
                             <span>Order</span>
                         </a>
@@ -282,7 +282,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         </a>
                     </li>
                     <li>
-                        <a href="users.html">
+                        <a href="users.jsp">
                             <i class="fa fa-users"></i>
                             <span>Users</span>
                         </a>
@@ -295,7 +295,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <ul class="sub">
                             <li><a href="mail.html">Mail</a></li>
                             <li><a href="mail_compose.html">Compose Mail</a></li>
-                            <li><a href="comment.html">Comment</a></li>
+                            <li><a href="comment.jsp">Comment</a></li>
                         </ul>
                     </li>
                     <li>

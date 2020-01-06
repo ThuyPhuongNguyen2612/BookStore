@@ -1,3 +1,5 @@
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="vn.edu.nlu.fit.model.Comment" %>
 <!DOCTYPE html>
 <head>
     <title>Admin</title>
@@ -265,7 +267,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         </a>
                     </li>
                     <li>
-                        <a href="order.html">
+                        <a href="order.jsp">
                             <i class="fa fa-shopping-cart"></i>
                             <span>Order</span>
                         </a>
@@ -283,7 +285,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         </a>
                     </li>
                     <li>
-                        <a href="users.html">
+                        <a href="users.jsp">
                             <i class="fa fa-users"></i>
                             <span>Users</span>
                         </a>
@@ -296,7 +298,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <ul class="sub">
                             <li><a href="mail.html">Mail</a></li>
                             <li><a href="mail_compose.html">Compose Mail</a></li>
-                            <li><a class="active" href="comment.html">Comment</a></li>
+                            <li><a class="active" href="comment.jsp">Comment</a></li>
                         </ul>
                     </li>
                     <li>
@@ -340,32 +342,28 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         </div>
                         <table class="col-xs-12 col-lg-12">
                             <tr>
-                                <td><input type="checkbox"></td>
-                                <td>ID</td>
+                                <td>#</td>
                                 <td>Book ID</td>
                                 <td>User ID</td>
                                 <td>Date</td>
                                 <td>Content</td>
                                 <td>Action</td>
                             </tr>
+                            <%
+                                ArrayList<Comment> comments = (ArrayList<Comment>) request.getAttribute("comments");
+                                for (Comment comment: comments) {
+                            %>
                             <tr>
-                                <td><input type="checkbox"></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                <td><%=comment.getCommentID()%>></td>
+                                <td><%=comment.getProductID()%></td>
+                                <td><%=comment.getUserID()%></td>
+                                <td><%=comment.getDate()%></td>
+                                <td><%=comment.getContent()%></td>
                                 <td><i class="fa fa-times-circle"></i></td>
                             </tr>
-                            <tr>
-                                <td><input type="checkbox"></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td><i class="fa fa-times-circle"></i></td>
-                            </tr>
+                            <%
+                                }
+                            %>
                         </table>
                         <footer class="panel-footer col-xs-12 col-md-12">
                             <div class="row">

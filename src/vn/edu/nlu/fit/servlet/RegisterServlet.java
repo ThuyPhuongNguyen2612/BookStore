@@ -1,6 +1,8 @@
 package vn.edu.nlu.fit.servlet;
 
 import vn.edu.nlu.fit.model.User;
+import vn.edu.nlu.fit.service.UserService;
+import vn.edu.nlu.fit.service.UserServiceImpl;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -8,26 +10,30 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.sql.SQLException;
 
-@WebServlet("/signup")
-public class SignupServlet extends HttpServlet {
+@WebServlet("/register")
+public class RegisterServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.getRequestDispatcher("register.jsp").forward(request, response);
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String email = getParameter(request, "uname");
-        String phone = getParameter(request, "phone");
-        String code = getParameter(request, "code");
+        String email = getParameter(request, "email");
         String password = getParameter(request, "pass");
         String retypePassword = getParameter(request, "retypePass");
         String checkbox = request.getParameter("checkbox");
 
-        if (checkPhone(phone) && checkEmail(email) && checkPassword(password, retypePassword) && checkCheckBox(checkbox)) {
-            User user = new User(email, password, phone);
+        UserService userService = new UserServiceImpl();
+        if (checkEmail(email) && checkPassword(password, retypePassword) && checkCheckBox(checkbox)) {
+            User user = new User(email, password);
+            try {
+                userService.addUser(user);
+            } catch (SQLException e){
 
-            request.setAttribute("uname", email);
+            }
+            request.setAttribute("userName", email);
             request.getRequestDispatcher("login").forward(request, response);
         } else {
             request.setAttribute("error", "error");
@@ -40,7 +46,7 @@ public class SignupServlet extends HttpServlet {
     }
 
     private boolean checkPassword(String password, String retypePassword) {
-        return password.matches("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$") && password.equals(retypePassword) || true;
+        return password.matches("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$") && password.equals(retypePassword);
     }
 
     boolean checkEmail(String email) {

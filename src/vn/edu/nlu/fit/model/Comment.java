@@ -30,4 +30,16 @@ public class Comment {
     public String getUserName() {
         return userName;
     }
+
+    public int getCommentID() {
+        return commentID;
+    }
+
+    public int getProductID() {
+        return productID;
+    }
+
+    public Date getDate() {
+        return date;
+    }
 }

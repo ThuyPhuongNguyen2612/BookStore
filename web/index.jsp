@@ -32,10 +32,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <!-- for bootstrap working -->
     <script type="text/javascript" src="js/bootstrap-3.1.1.min.js"></script>
     <!-- //for bootstrap working -->
-    <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic'
-          rel='stylesheet' type='text/css'>
-    <link href='//fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,400italic,700,700italic,900,900italic'
-          rel='stylesheet' type='text/css'>
     <!-- timer -->
     <link rel="stylesheet" href="css/jquery.countdown.css"/>
     <!-- //timer -->
@@ -223,17 +219,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <h3 class="animated wow zoomIn" data-wow-delay=".5s">BEST SELLER</h3>
         <div class="new-collections-grids">
             <%
-                List<Book> highlighedBooks = (List<Book>) request.getAttribute("highlighedBooks");
-                for (int i = 0; i < min(highlighedBooks.size(), 4); i++) {
+                List<Book> highlightedBooks = (List<Book>) request.getAttribute("highlightedBooks");
+                for (int i = 0; i < min(highlightedBooks.size(), 4); i++) {
             %>
             <div class="col-md-3 new-collections-grid">
                 <div class="new-collections-grid1 animated wow slideInUp" data-wow-delay=".5s">
                     <div class="new-collections-grid1-image">
-                        <a href="bookDetail?bookID=<%= highlighedBooks.get(i).getBookID()%>" class="product-image"><img
-                                src="<%=highlighedBooks.get(i).getImage()%>" alt=" "
+                        <a href="bookDetail?bookID=<%= highlightedBooks.get(i).getBookID()%>" class="product-image"><img
+                                src="<%=highlightedBooks.get(i).getImage()%>" alt=" "
                                 class="img-responsive"/></a>
                         <div class="new-collections-grid1-image-pos">
-                            <a href="bookDetail?bookID=<%= highlighedBooks.get(i).getBookID()%>">Quick View</a>
+                            <a href="bookDetail?bookID=<%= highlightedBooks.get(i).getBookID()%>">Quick View</a>
                         </div>
                         <div class="new-collections-grid1-right">
                             <div class="rating">
@@ -257,14 +253,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         </div>
                     </div>
                     <h4>
-                        <a href="bookDetail?bookID=<%= highlighedBooks.get(i).getBookID()%>"><%=highlighedBooks.get(i).getTitle()%>
+                        <a href="bookDetail?bookID=<%= highlightedBooks.get(i).getBookID()%>"><%=highlightedBooks.get(i).getTitle()%>
                         </a></h4>
-                    <p>By <%=highlighedBooks.get(i).getAuthor()%>
+                    <p>By <%=highlightedBooks.get(i).getAuthor()%>
                     </p>
                     <div class="new-collections-grid1-left simpleCart_shelfItem">
-                        <p><i>$<%=highlighedBooks.get(i).getPrice()%>
-                        </i> <span class="item_price">$<%=highlighedBooks.get(i).getPrice()%></span><a
-                                onclick="addBookToCart('${requestScope['javax.servlet.forward.request_uri']}',<%=highlighedBooks.get(i).getBookID()%>)"
+                        <p><i>$<%=highlightedBooks.get(i).getPrice()%>
+                        </i> <span class="item_price">$<%=highlightedBooks.get(i).getPrice()%></span><a
+                                onclick="addBookToCart('${requestScope['javax.servlet.forward.request_uri']}',<%=highlightedBooks.get(i).getBookID()%>)"
                                 class="item_add">add to cart </a>
                         </p>
                     </div>

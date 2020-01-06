@@ -13,7 +13,7 @@ public class OrderStep1Servlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
-        session.setAttribute("currentPage", request.getRequestURI().concat(request.getQueryString()!=null?"?"+request.getQueryString():""));
+        session.setAttribute("currentPath", request.getRequestURI().concat(request.getQueryString()!=null?"?"+request.getQueryString():""));
         if (session.getAttribute("user")==null){
             response.sendRedirect("/login");
         } else {
