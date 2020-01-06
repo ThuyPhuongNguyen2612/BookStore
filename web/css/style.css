@@ -2022,7 +2022,7 @@ label.radio {
 
 .starRating:not(old) > label {
     float: right;
-    background: url(../img/star2.png);
+    background: url(../img/star.png);
     background-size: contain;
     margin-right: 2px;
 }
@@ -2032,7 +2032,7 @@ label.radio {
   display         : block;
   width           : 18px;
   height          : 18px;
-  background      : url(../img/star2.png);
+  background      : url(../img/star.png);
   background-size : contain;
   opacity         : 0;
   transition      : opacity 0.2s linear;
