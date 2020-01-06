@@ -17,20 +17,20 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <link href="../css/bootstrap.css" rel="stylesheet" type="text/css" media="all"/>
     <link href="../css/style.css" rel="stylesheet" type="text/css" media="all"/>
     <!-- js -->
-    <script src="js/jquery.min.js"></script>
+    <script src="../js/jquery.min.js"></script>
     <!-- //js -->
     <!-- cart -->
-    <script src="js/simpleCart.min.js"></script>
+    <script src="../js/simpleCart.min.js"></script>
     <!-- cart -->
     <!-- for bootstrap working -->
-    <script type="text/javascript" src="js/bootstrap-3.1.1.min.js"></script>
+    <script type="text/javascript" src="../js/bootstrap-3.1.1.min.js"></script>
     <!-- //for bootstrap working -->
     <!-- timer -->
-    <link rel="stylesheet" href="css/jquery.countdown.css"/>
+    <link rel="stylesheet" href="../css/jquery.countdown.css"/>
     <!-- //timer -->
     <!-- animation-effect -->
-    <link href="css/animate.min.css" rel="stylesheet">
-    <script src="js/wow.min.js"></script>
+    <link href="../css/animate.min.css" rel="stylesheet">
+    <script src="../js/wow.min.js"></script>
     <script>
         new WOW().init();
     </script>
