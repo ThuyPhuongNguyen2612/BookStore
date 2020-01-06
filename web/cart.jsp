@@ -140,7 +140,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         </div>
         <div class="checkout-left">
             <div class="checkout-left-basket animated wow slideInLeft" data-wow-delay=".5s">
-                <h4>Continue to basket</h4>
                 <ul>
                     <%
                     %>

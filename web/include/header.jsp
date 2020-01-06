@@ -127,8 +127,8 @@
                         </form>
                         <datalist id="bookTitles">
                             <%
-                                List<Book> books = (List<Book>) request.getAttribute("books");
-                                for (Book book : books) {
+                                List<Book> allBooks = (List<Book>) request.getAttribute("allBooks");
+                                for (Book book : allBooks) {
                             %>
                             <option bookId="<%=book.getBookID()%>" value="<%=book.getTitle()%>" />
                             <%

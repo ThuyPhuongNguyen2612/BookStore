@@ -28,7 +28,7 @@ public class HeaderServlet extends HttpServlet {
             }
             List<Book> books = new BookServiceImpl().getBooks();
             request.setAttribute("amount", amount);
-            request.setAttribute("books", books);
+            request.setAttribute("allBooks", books);
             request.setAttribute("listCategories", categoryService.getCategories());
             request.getRequestDispatcher("include/header.jsp").include(request, response);
         } catch (SQLException ignored) {
