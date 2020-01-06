@@ -3,6 +3,7 @@
 <%@ page import="vn.edu.nlu.fit.model.User" %>
 <%@ page import="java.util.List" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <div class="header">
     <div class="container">
         <div class="header-grid">

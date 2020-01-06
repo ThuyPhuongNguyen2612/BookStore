@@ -15,30 +15,30 @@ public class OrderServlet extends HttpServlet {
         HttpSession session = request.getSession();
         session.setAttribute("currentPath", request.getRequestURI().concat(request.getQueryString() != null ? "?" + request.getQueryString() : ""));
 
-        if (request.getPathInfo() != null) {
-            if (request.getPathInfo().equals("/step1")) {
-                orderStep1(request, response);
-            } else if (request.getPathInfo().equals("/step2")) {
-                orderStep2(request, response);
-            } else if (request.getPathInfo().equals("/step3")) {
-                orderStep3(request, response);
+        if (request.getPathInfo() == null) {
+            orderLoginStep(request, response);
+        } else {
+            if (request.getPathInfo().equals("/address")) {
+                orderAddressStep(request, response);
+            } else if (request.getPathInfo().equals("/payment")) {
+                orderPaymentStep(request, response);
             }
         }
     }
 
 
-    private void orderStep1(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    private void orderLoginStep(HttpServletRequest request, HttpServletResponse response) throws IOException {
         HttpSession session = request.getSession();
         session.setAttribute("currentPath", request.getRequestURI().concat(request.getQueryString() != null ? "?" + request.getQueryString() : ""));
 
         if (session.getAttribute("user") == null) {
             response.sendRedirect("/login");
         } else {
-            response.sendRedirect("/order/step2");
+            response.sendRedirect("/order/address");
         }
     }
 
-    private void orderStep2(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    private void orderAddressStep(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
         session.setAttribute("currentPath", request.getRequestURI().concat(request.getQueryString() != null ? "?" + request.getQueryString() : ""));
 
@@ -46,7 +46,7 @@ public class OrderServlet extends HttpServlet {
 
     }
 
-    private void orderStep3(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    private void orderPaymentStep(HttpServletRequest request, HttpServletResponse response) throws IOException {
         HttpSession session = request.getSession();
         session.setAttribute("currentPath", request.getRequestURI().concat(request.getQueryString() != null ? "?" + request.getQueryString() : ""));
         response.sendRedirect("addPaymentForm.jsp");

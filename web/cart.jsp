@@ -155,7 +155,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <li>Delivery Charges <i>-</i> <span>$<%=cart.getDeliveryPrice()%> </span></li>
                     <li>Total <i>-</i> <span>$<%=cart.getTotal()%></span></li>
                 </ul>
-                <a href="<%=request.getSession().getAttribute("user")!=null?"":""%>"><input type="submit" value="ORDER" class="form-button"></a>
+                <a href="/order"><input type="submit" value="ORDER" class="form-button"></a>
             </div>
             <%
                 }
