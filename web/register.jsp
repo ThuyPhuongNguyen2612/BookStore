@@ -121,9 +121,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <img src="img/facebook_signin_dark.png" width="55%"/>
             </div>
         </div>
-        <div class="register-home animated wow slideInUp" data-wow-delay=".5s">
-            <a href="index.jsp">Home</a>
-        </div>
     </div>
 </div>
 <!-- //register -->
