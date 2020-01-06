@@ -15,27 +15,27 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         window.scrollTo(0, 1);
     } </script>
     <!-- //for-mobile-apps -->
-    <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all"/>
-    <link href="css/style.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/bootstrap.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/style.css" rel="stylesheet" type="text/css" media="all"/>
     <!-- js -->
     <script src="js/jquery.min.js"></script>
     <!-- //js -->
     <!-- cart -->
     <script src="js/simpleCart.min.js"></script>
     <!-- cart -->
-    <link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" href="../css/jquery-ui.css">
     <!-- for bootstrap working -->
     <script type="text/javascript" src="js/bootstrap-3.1.1.min.js"></script>
     <!-- //for bootstrap working -->
     <!-- animation-effect -->
-    <link href="css/animate.min.css" rel="stylesheet">
+    <link href="../css/animate.min.css" rel="stylesheet">
     <script src="js/wow.min.js"></script>
     <script>
         new WOW().init();
     </script>
     <link rel="stylesheet" href="../FontAwesome/css/all.css">
-    <link rel="stylesheet" href="css/order.css">
-    <link rel="stylesheet" href="css/form.css">
+    <link rel="stylesheet" href="../css/order.css">
+    <link rel="stylesheet" href="../css/form.css">
     <!-- //animation-effect -->
 </head>
 
