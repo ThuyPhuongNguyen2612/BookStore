@@ -3888,3 +3888,6 @@ td.invert-image a img {
 		text-align: left;
 	}
 }
+.item_add {
+    cursor: pointer;
+}
