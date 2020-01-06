@@ -1,7 +1,6 @@
 <%@ page import="vn.edu.nlu.fit.model.Book" %>
 <%@ page import="vn.edu.nlu.fit.model.Category" %>
 <%@ page import="vn.edu.nlu.fit.model.User" %>
-<%@ page import="java.net.URLEncoder" %>
 <%@ page import="java.util.List" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <div class="header">

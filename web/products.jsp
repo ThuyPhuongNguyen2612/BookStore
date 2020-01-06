@@ -1,7 +1,7 @@
 <%@ page import="vn.edu.nlu.fit.model.Book" %>
 <%@ page import="vn.edu.nlu.fit.model.Category" %>
 <%@ page import="java.util.List" %>
-<%@ page import="static java.lang.Math.min" %>
+<%@ page import="static java.lang.Math.max" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -77,7 +77,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <div class="new-products-grids">
                     <%
                         List<Book> newBooks = (List<Book>) request.getAttribute("newBooks");
-                        for (int i = min(newBooks.size() - 3, 0); i < newBooks.size(); i++) {
+                        for (int i = max(newBooks.size() - 3, 0); i < newBooks.size(); i++) {
                     %>
                     <div class="new-products-grid">
                         <div class="new-products-grid-left">
