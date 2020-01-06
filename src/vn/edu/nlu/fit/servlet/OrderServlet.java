@@ -42,14 +42,14 @@ public class OrderServlet extends HttpServlet {
         HttpSession session = request.getSession();
         session.setAttribute("currentPath", request.getRequestURI().concat(request.getQueryString() != null ? "?" + request.getQueryString() : ""));
 
-        request.getRequestDispatcher("addAddressForm.jsp").forward(request, response);
+        request.getRequestDispatcher("/addAddressForm.jsp").forward(request, response);
 
     }
 
     private void orderPaymentStep(HttpServletRequest request, HttpServletResponse response) throws IOException {
         HttpSession session = request.getSession();
         session.setAttribute("currentPath", request.getRequestURI().concat(request.getQueryString() != null ? "?" + request.getQueryString() : ""));
-        response.sendRedirect("addPaymentForm.jsp");
+        response.sendRedirect("/addPaymentForm.jsp");
 
     }
 }
