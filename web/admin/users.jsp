@@ -41,63 +41,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <jsp:include page="include/header.jsp"></jsp:include>
     <!--header end-->
     <!--sidebar start-->
-    <aside>
-        <div id="sidebar" class="nav-collapse">
-            <!-- sidebar menu start-->
-            <div class="leftside-navigation">
-                <ul class="sidebar-menu" id="nav-accordion">
-                    <li>
-                        <a href="/admin">
-                            <i class="fa fa-home"></i>
-                            <span>Home</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/admin/orders">
-                            <i class="fa fa-shopping-cart"></i>
-                            <span>Order</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/admin/products">
-                            <i class="fa fa-product-hunt"></i>
-                            <span>Product</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/admin/categories">
-                            <i class="fa fa-tags"></i>
-                            <span>Categories</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="active" href="/admin/users">
-                            <i class="fa fa-users"></i>
-                            <span>Users</span>
-                        </a>
-                    </li>
-                    <li class="sub-menu">
-                        <a href="javascript:;">
-                            <i class="fa fa-backward"></i>
-                            <span>Feedback</span>
-                        </a>
-                        <ul class="sub">
-                            <li><a href="/admin/message">Mail</a></li>
-                            <li><a href="/admin/message/replyMail">Compose Mail</a></li>
-                            <li><a href="/admin/comments">Comment</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="/">
-                            <i class="fa fa-user"></i>
-                            <span>User page</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <!-- sidebar menu end-->
-        </div>
-    </aside>
+    <jsp:include page="include/sideBar.jsp"></jsp:include>
     <!--sidebar end-->
     <!--main content start-->
     <section id="main-content">

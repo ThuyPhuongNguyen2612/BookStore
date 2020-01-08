@@ -236,7 +236,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <b class="caret"></b>
                     </a>
                     <ul class="dropdown-menu extended logout">
-                        <li><a href="profile.html"><i class=" fa fa-suitcase"></i>Profile</a></li>
+                        <li><a href="profile.jsp"><i class=" fa fa-suitcase"></i>Profile</a></li>
                         <li><a href="#"><i class="fa fa-cog"></i> Settings</a></li>
                         <li><a href="login.html"><i class="fa fa-key"></i> Log Out</a></li>
                     </ul>
@@ -261,7 +261,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         </a>
                     </li>
                     <li>
-                        <a href="order.jsp">
+                        <a href="orders.jsp">
                             <i class="fa fa-shopping-cart"></i>
                             <span>Order</span>
                         </a>

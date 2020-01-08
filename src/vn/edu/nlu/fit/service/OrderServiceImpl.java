@@ -35,10 +35,10 @@ public class OrderServiceImpl implements OrderService {
     public List getAllOrders() throws SQLException {
         Connection connection = GPDataSource.getConnection();
         List list = new ArrayList();
-        PreparedStatement ps = connection.prepareStatement("SELECT * FROM order");
+        PreparedStatement ps = connection.prepareStatement("SELECT * FROM `order`");
         ResultSet resultSet = ps.executeQuery();
         while (resultSet.next()) {
-
+            list.add(createOrderObject(resultSet));
         }
         return list;
     }
