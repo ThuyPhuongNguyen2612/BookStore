@@ -81,52 +81,23 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <h3 class="animated wow zoomIn animated" data-wow-delay=".5s"
             style="visibility: visible; animation-delay: 0.5s; animation-name: zoomIn;">2. ADDRESS</h3>
         <div>
-            <p>Select an available shipping address below:</p>
-            <div class="available-address">
-                <p>Name: </p>
-                <p>Address: 1234k Avenue, 4th block, New York City</p>
-                <p>Country: US</p>
-                <p>Phone number: 09563257576</p>
-                <br>
-                <button class="form-button"><a href="/order/payment">Delivery to this address</a></button>
-            </div>
-            <p>You want to ship to another address? <a>Add new shipping address</a></p>
-            <h3>New address</h3>
             <form class="form">
                 <div class="form-group">
                     <label for="name" class="col-md-3 control-label">Name</label>
                     <div class="row col-md-9">
-                        <input id="name" name="name" class="col-xs-12 col-md-8 form-control" type="text" value="">
+                        <input id="name" name="name" class="col-xs-12 col-md-8 form-control" type="text" value="Phuong">
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="phone" class="col-md-3 control-label">Phone number</label>
                     <div class="row col-md-9">
-                        <input id="phone" name="phone" class="col-xs-12 col-md-8 form-control" type="tel" value="">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="city" class="col-md-3 control-label">City</label>
-                    <div class="row col-md-9">
-                        <input id="city" name="city" class="col-xs-12 col-md-8 form-control" type="tel" value="">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="district" class="col-md-3 control-label">District</label>
-                    <div class="row col-md-9">
-                        <input id="district" name="district" class="col-xs-12 col-md-8 form-control" type="tel" value="">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="ward" class="col-md-3 control-label">Ward</label>
-                    <div class="row col-md-9">
-                        <input id="ward" name="ward" class="col-xs-12 col-md-8 form-control" type="tel" value="">
+                        <input id="phone" name="phone" class="col-xs-12 col-md-8 form-control" type="tel" value="09563257576">
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="address" class="col-md-3 control-label">Address</label>
                     <div class="row col-md-9">
-                        <textarea id="address" name="address" class="form-control m-bot15"></textarea>
+                        <textarea id="address" name="address" class="form-control m-bot15">1234k Avenue, 4th block, New York City</textarea>
                     </div>
                 </div>
                 <div class="form-group">

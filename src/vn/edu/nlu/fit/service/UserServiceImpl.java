@@ -59,7 +59,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public void addUser(User user) throws SQLException {
         Connection connection = GPDataSource.getConnection();
-        PreparedStatement ps = connection.prepareStatement("INSERT `user` (userName, `password`, name,image, `group`, active) VALUES (?, ?,?,'img/avatar.png',1,1)");
+        PreparedStatement ps = connection.prepareStatement("INSERT `user` (userName, `password`, name,image, `group`, active) VALUES (?, ?,?,'img/avatar.png',1,0)");
         ps.setString(1, user.getUserName());
         ps.setString(2, user.getPassword());
         ps.setString(3, user.getUserName());
@@ -97,6 +97,15 @@ public class UserServiceImpl implements UserService {
         PreparedStatement ps = connection.prepareStatement("UPDATE user SET password=? WHERE userName=?");
         ps.setString(1, password);
         ps.setString(2, userName);
+        GPDataSource.releaseConnection(connection);
+    }
+
+    @Override
+    public void activeAccount(String userName) throws SQLException {
+        Connection connection = GPDataSource.getConnection();
+        PreparedStatement ps = connection.prepareStatement("UPDATE user SET active=1 WHERE userName=?");
+        ps.setString(1, userName);
+        ps.executeUpdate();
         GPDataSource.releaseConnection(connection);
     }
 }

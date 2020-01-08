@@ -54,7 +54,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <div class="container">
     <div class="row" style="margin-top: 30px">
         <%
-            if (request.getAttribute("error")!=null){
+            if (request.getParameter("error")!=null){
         %>
         <div class="alert alert-danger" role="alert">
             <strong>Oh snap!</strong> Your email email is wrong!

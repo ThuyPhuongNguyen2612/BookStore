@@ -25,9 +25,24 @@ public class OrderServiceImpl implements OrderService {
         ps.setString(4, order.getPhone());
         ps.setString(5, order.getName());
         ps.executeUpdate();
+        PreparedStatement ps1 = connection.prepareStatement("SELECT orderID FROM order WHERE userID=? and address=? and payment=? and phone=? and name=?");
+        ps1.setInt(1, order.getUserID());
+        ps1.setString(2, order.getAddress());
+        ps1.setString(3, order.getPayment());
+        ps1.setString(4, order.getPhone());
+        ps1.setString(5, order.getName());
+        ResultSet rs = ps1.executeQuery();
+        int orderID = 1;
+        if (rs.next()){
+            orderID = rs.getInt("orderID");
+        }
         HashMap<Book, Integer> books = order.getCart().getBooks();
         for (Map.Entry<Book, Integer> bookAndQuantity : books.entrySet()) {
-            PreparedStatement ps1 = connection.prepareStatement("INSERT INTO order_detail VALUES ()");
+            PreparedStatement ps2 = connection.prepareStatement("INSERT INTO order_detail VALUES (?,?,?)");
+            ps2.setInt(1, orderID);
+            ps2.setInt(2, bookAndQuantity.getKey().getBookID());
+            ps2.setInt(3, bookAndQuantity.getValue());
+            ps2.executeUpdate();
         }
     }
 
