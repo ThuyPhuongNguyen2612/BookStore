@@ -1,9 +1,11 @@
 package vn.edu.nlu.fit.servlet;
 
 import vn.edu.nlu.fit.model.User;
+import vn.edu.nlu.fit.service.SendMail;
 import vn.edu.nlu.fit.service.UserService;
 import vn.edu.nlu.fit.service.UserServiceImpl;
 
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -27,18 +29,30 @@ public class RegisterServlet extends HttpServlet {
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        ServletContext context = getServletContext();
+        String host = context.getInitParameter("host");
+        String port = context.getInitParameter("port");
+        String userName = context.getInitParameter("user");
+        String pass = context.getInitParameter("pass");
+        response.setCharacterEncoding("UTF-8");
+
         String email = getParameter(request, "email");
         String password = getParameter(request, "pass");
         String retypePassword = getParameter(request, "retypePass");
         String checkbox = getParameter(request,"checkbox");
 
+        String message = "http://localhost:8080/activeAccount?userName="+email;
+        String subject = "[Best store] Active account";
+
         UserService userService = new UserServiceImpl();
         if (checkEmail(email) && checkPassword(password, retypePassword) && checkCheckBox(checkbox)) {
+
             User user = new User(email, password);
             try {
+                SendMail.sendEmail(host, port, userName, pass, email, message, subject);
                 userService.addUser(user);
                 response.sendRedirect("/login?userName="+email);
-            } catch (SQLException e) {
+            } catch (Exception  e) {
 
             }
         } else {

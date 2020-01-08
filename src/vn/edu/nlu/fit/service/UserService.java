@@ -13,4 +13,5 @@ public interface UserService {
     public User getUser(int userID) throws SQLException;
     public void updateUser(int userID, String userName, String name, String phone, Date dob, String address, int gentle) throws SQLException;
     public void changePassword(String userName, String password) throws SQLException;
+    public void activeAccount(String userName) throws SQLException;
 }
