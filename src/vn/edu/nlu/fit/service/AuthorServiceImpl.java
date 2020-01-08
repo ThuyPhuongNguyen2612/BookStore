@@ -14,18 +14,15 @@ public class AuthorServiceImpl implements AuthorService {
 
     @Override
     public List getAuthors() throws SQLException {
-        try (
-            Connection connection = GPDataSource.getConnection();
-            PreparedStatement ps = connection.prepareStatement("SELECT * FROM author");
-        ) {
-            List<Author> list = new ArrayList<Author>();
-            ResultSet rs = ps.executeQuery();
-            while (rs.next()) {
-                list.add(createAuthorObject(rs));
-            }
-            GPDataSource.releaseConnection(connection);
-            return list;
+        Connection connection = GPDataSource.getConnection();
+        PreparedStatement ps = connection.prepareStatement("SELECT * FROM author");
+        List<Author> list = new ArrayList<Author>();
+        ResultSet rs = ps.executeQuery();
+        while (rs.next()) {
+            list.add(createAuthorObject(rs));
         }
+        GPDataSource.releaseConnection(connection);
+        return list;
     }
 
     private Author createAuthorObject(ResultSet rs) throws SQLException {

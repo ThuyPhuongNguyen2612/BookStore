@@ -15,49 +15,42 @@ public class CommentServiceImpl implements CommentService {
 
     @Override
     public List getAllComments() throws SQLException {
-        try (
-            Connection connection = GPDataSource.getConnection()
-        ) {
-            List<Comment> list = new ArrayList<>();
-            PreparedStatement ps = connection.prepareStatement("SELECT * FROM comment");
-            ResultSet resultSet = ps.executeQuery();
-            while (resultSet.next()) {
-                list.add(createCommentObject(resultSet));
-            }
-            GPDataSource.releaseConnection(connection);
-            return list;
+        Connection connection = GPDataSource.getConnection();
+        List<Comment> list = new ArrayList<>();
+        PreparedStatement ps = connection.prepareStatement("SELECT * FROM comment");
+        ResultSet resultSet = ps.executeQuery();
+        while (resultSet.next()) {
+            list.add(createCommentObject(resultSet));
         }
+        GPDataSource.releaseConnection(connection);
+        return list;
     }
 
     @Override
     public List getComments(int bookID) throws SQLException {
-        try (
-            Connection connection = GPDataSource.getConnection()
-        ) {
-            PreparedStatement ps = connection.prepareStatement("SELECT * FROM comment c INNER JOIN `user` u ON c.userID = u.userID WHERE bookID=?");
-            List<Comment> list = new ArrayList<>();
-            ps.setInt(1, bookID);
-            ResultSet rs = ps.executeQuery();
-            while (rs.next()) {
-                list.add(createCommentObject(rs));
-            }
-            GPDataSource.releaseConnection(connection);
-            return list;
+        Connection connection = GPDataSource.getConnection();
+        PreparedStatement ps = connection.prepareStatement("SELECT * FROM comment c INNER JOIN `user` u ON c.userID = u.userID WHERE bookID=?");
+        List<Comment> list = new ArrayList<>();
+        ps.setInt(1, bookID);
+        ResultSet rs = ps.executeQuery();
+        while (rs.next()) {
+            list.add(createCommentObject(rs));
         }
+        GPDataSource.releaseConnection(connection);
+        return list;
+
     }
 
     @Override
     public void createComment(Integer bookID, int userID, String content) throws SQLException {
-        try (
-            Connection connection = GPDataSource.getConnection()
-        ) {
-            PreparedStatement ps = connection.prepareStatement("INSERT INTO `comment`(bookID, userID, date, content) VALUES (?, ?, CURRENT_TIMESTAMP , ?)");
-            ps.setInt(1, bookID);
-            ps.setInt(2, userID);
-            ps.setString(3, content);
-            ps.executeUpdate();
-            GPDataSource.releaseConnection(connection);
-        }
+        Connection connection = GPDataSource.getConnection();
+
+        PreparedStatement ps = connection.prepareStatement("INSERT INTO `comment`(bookID, userID, date, content) VALUES (?, ?, CURRENT_TIMESTAMP , ?)");
+        ps.setInt(1, bookID);
+        ps.setInt(2, userID);
+        ps.setString(3, content);
+        ps.executeUpdate();
+        GPDataSource.releaseConnection(connection);
     }
 
     private Comment createCommentObject(ResultSet rs) throws SQLException {

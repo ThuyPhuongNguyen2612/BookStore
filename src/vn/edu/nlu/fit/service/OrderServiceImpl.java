@@ -17,36 +17,30 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public void addOrder(Order order) throws SQLException {
-        try (
-            Connection connection = GPDataSource.getConnection();
-            PreparedStatement ps = connection.prepareStatement("INSERT INTO order VALUES (?,?,?,CURRENT_TIMESTAMP,?,?,'new')");
-        ) {
-            ps.setInt(1, order.getUserID());
-            ps.setString(2, order.getAddress());
-            ps.setString(3, order.getPayment());
-            ps.setString(4, order.getPhone());
-            ps.setString(5, order.getName());
-            ps.executeUpdate();
-            HashMap<Book, Integer> books = order.getCart().getBooks();
-            for (Map.Entry<Book, Integer> bookAndQuantity : books.entrySet()) {
-                PreparedStatement ps1 = connection.prepareStatement("INSERT INTO order_detail VALUES ()");
-            }
+        Connection connection = GPDataSource.getConnection();
+        PreparedStatement ps = connection.prepareStatement("INSERT INTO order VALUES (?,?,?,CURRENT_TIMESTAMP,?,?,'new')");
+        ps.setInt(1, order.getUserID());
+        ps.setString(2, order.getAddress());
+        ps.setString(3, order.getPayment());
+        ps.setString(4, order.getPhone());
+        ps.setString(5, order.getName());
+        ps.executeUpdate();
+        HashMap<Book, Integer> books = order.getCart().getBooks();
+        for (Map.Entry<Book, Integer> bookAndQuantity : books.entrySet()) {
+            PreparedStatement ps1 = connection.prepareStatement("INSERT INTO order_detail VALUES ()");
         }
     }
 
     @Override
     public List getAllOrders() throws SQLException {
-        try (
-            Connection connection = GPDataSource.getConnection()
-        ) {
-            List list = new ArrayList();
-            PreparedStatement ps = connection.prepareStatement("SELECT * FROM order");
-            ResultSet resultSet = ps.executeQuery();
-            while (resultSet.next()) {
+        Connection connection = GPDataSource.getConnection();
+        List list = new ArrayList();
+        PreparedStatement ps = connection.prepareStatement("SELECT * FROM order");
+        ResultSet resultSet = ps.executeQuery();
+        while (resultSet.next()) {
 
-            }
-            return list;
         }
+        return list;
     }
 
     public Order createOrderObject(ResultSet rs) throws SQLException {
