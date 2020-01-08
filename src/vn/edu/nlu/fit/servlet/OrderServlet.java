@@ -4,9 +4,6 @@ import vn.edu.nlu.fit.model.Cart;
 import vn.edu.nlu.fit.model.Order;
 import vn.edu.nlu.fit.model.User;
 
-import vn.edu.nlu.fit.model.Cart;
-import vn.edu.nlu.fit.model.Order;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -20,10 +17,10 @@ public class OrderServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         if (request.getPathInfo() != null) {
-            if (request.getPathInfo().equals("/step2")) {
-                postOrderStep2(request, response);
-            } else if (request.getPathInfo().equals("/step3")) {
-                postOrderStep3(request, response);
+            if (request.getPathInfo().equals("/address")) {
+                postOrderAddress(request, response);
+            } else if (request.getPathInfo().equals("/payment")) {
+                postOrderPayment(request, response);
             }
         }
 
@@ -78,21 +75,29 @@ public class OrderServlet extends HttpServlet {
 
     }
 
-    private void postOrderStep2(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    private void postOrderAddress(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        HttpSession session = request.getSession();
         String name = getParameter(request, "name");
         String phone = getParameter(request, "phone");
         String city = getParameter(request, "city");
         String district = getParameter(request, "district");
         String ward = getParameter(request, "ward");
         String address = getParameter(request, "address");
+        User user = (User) session.getAttribute("user");
+        Cart cart = (Cart) session.getAttribute("cart");
+        Order order = new Order(user.getUserID(), cart);
         order.setName(name);
         order.setPhone(phone);
         order.setAddress(city + "," + district + "," + ward + "," + address);
+        session.setAttribute("order", order);
         response.sendRedirect("/order/step3");
     }
 
-    private void postOrderStep3(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    private void postOrderPayment(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        HttpSession session = request.getSession();
+        Order order = (Order) session.getAttribute("order");
         order.setPayment("cash");
+        session.setAttribute("order", order);
         request.getRequestDispatcher("endOrder.jsp").forward(request, response);
     }
 
