@@ -42,6 +42,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <!--sidebar start-->
     <jsp:include page="include/sideBar.jsp"></jsp:include>
     <!--sidebar end-->
+    <section id="main-content">
+        <section class="wrapper">
+            User name: <%=session.getAttribute("adminUser")%>
+        </section>
+    </section>
     <script src="js/jquery.scrollTo.js"></script>
     <!-- calendar -->
     <script type="text/javascript" src="js/monthly.js"></script>

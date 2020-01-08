@@ -1,3 +1,5 @@
+<%@ page import="vn.edu.nlu.fit.model.Order" %>
+<%@ page import="java.util.List" %>
 <!DOCTYPE html>
 <head>
     <title>Admin</title>
@@ -70,197 +72,33 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         </div>
                         <table class="col-xs-12 col-lg-12">
                             <tr>
-                                <td><input type="checkbox"></td>
                                 <td>Order ID</td>
-                                <td>Customer</td>
-                                <td>Deliver ID</td>
-                                <td>Date</td>
-                                <td>Payment</td>
+                                <td>User ID</td>
+                                <td>Address</td>
+                                <td>Name</td>
                                 <td>Total price</td>
                                 <td>Status</td>
-                                <td>Detail</td>
                                 <td>Action</td>
                             </tr>
+                            <%
+                                List<Order> orders = (List<Order>) request.getAttribute("orders");
+                                for (Order order : orders) {
+                            %>
                             <tr>
-                                <td><input type="checkbox"></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td><a href="order_details.html"><i class="fa fa-eye"></i></a></td>
+                                <td><%=order.getOrderID()%>/td>
+                                <td><%=order.getUserID()%></td>
+                                <td><%=order.getAddress()%></td>
+                                <td><%=order.getName()%></td>
+                                <td><%=order.getPayment()%></td>
+                                <td><%=order.getStatus()%></td>
                                 <td><span>
                                     <i class="icon-edit"></i>
                                     <i class=" fa fa-times-circle"></i>
                                 </span></td>
                             </tr>
-                            <tr>
-                                <td><input type="checkbox"></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td><a href="order_details.html"><i class="fa fa-eye"></i></a></td>
-                                <td><span>
-                                    <i class="icon-edit"></i>
-                                    <i class=" fa fa-times-circle"></i>
-                                </span></td>
-                            </tr>
-                            <tr>
-                                <td><input type="checkbox"></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td><a href="order_details.html"><i class="fa fa-eye"></i></a></td>
-                                <td><span>
-                                    <i class="icon-edit"></i>
-                                    <i class=" fa fa-times-circle"></i>
-                                </span></td>
-                            </tr>
-                            <tr>
-                                <td><input type="checkbox"></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td><a href="order_details.html"><i class="fa fa-eye"></i></a></td>
-                                <td><span>
-                                    <i class="icon-edit"></i>
-                                    <i class=" fa fa-times-circle"></i>
-                                </span></td>
-                            </tr>
-                            <tr>
-                                <td><input type="checkbox"></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td><a href="order_details.html"><i class="fa fa-eye"></i></a></td>
-                                <td><span>
-                                    <i class="icon-edit"></i>
-                                    <i class=" fa fa-times-circle"></i>
-                                </span></td>
-                            </tr>
-                            <tr>
-                                <td><input type="checkbox"></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td><a href="order_details.html"><i class="fa fa-eye"></i></a></td>
-                                <td><span>
-                                    <i class="icon-edit"></i>
-                                    <i class=" fa fa-times-circle"></i>
-                                </span></td>
-                            </tr>
-                            <tr>
-                                <td><input type="checkbox"></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td><a href="order_details.html"><i class="fa fa-eye"></i></a></td>
-                                <td><span>
-                                    <i class="icon-edit"></i>
-                                    <i class=" fa fa-times-circle"></i>
-                                </span></td>
-                            </tr>
-                            <tr>
-                                <td><input type="checkbox"></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td><a href="order_details.html"><i class="fa fa-eye"></i></a></td>
-                                <td><span>
-                                    <i class="icon-edit"></i>
-                                    <i class=" fa fa-times-circle"></i>
-                                </span></td>
-                            </tr>
-                            <tr>
-                                <td><input type="checkbox"></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td><a href="order_details.html"><i class="fa fa-eye"></i></a></td>
-                                <td><span>
-                                    <i class="icon-edit"></i>
-                                    <i class=" fa fa-times-circle"></i>
-                                </span></td>
-                            </tr>
-                            <tr>
-                                <td><input type="checkbox"></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td><a href="order_details.html"><i class="fa fa-eye"></i></a></td>
-                                <td><span>
-                                    <i class="icon-edit"></i>
-                                    <i class=" fa fa-times-circle"></i>
-                                </span></td>
-                            </tr>
-                            <tr>
-                                <td><input type="checkbox"></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td><a href="order_details.html"><i class="fa fa-eye"></i></a></td>
-                                <td><span>
-                                    <i class="icon-edit"></i>
-                                    <i class=" fa fa-times-circle"></i>
-                                </span></td>
-                            </tr>
-                            <tr>
-                                <td><input type="checkbox"></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td><a href="order_details.html"><i class="fa fa-eye"></i></a></td>
-                                <td><span>
-                                    <i class="icon-edit"></i>
-                                    <i class=" fa fa-times-circle"></i>
-                                </span></td>
-                            </tr>
+                            <%
+                                }
+                            %>
 
                         </table>
                         <footer class="panel-footer col-xs-12 col-md-12">
