@@ -7,23 +7,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0d357641-bbbd-4759-b636-0ddeaa3b4d02" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/service/ActiveCodeService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/service/ActiveCodeServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/forgotPassword.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/newPassword.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BookStore.iws" beforeDir="false" afterPath="$PROJECT_DIR$/BookStore.iws" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/vn/edu/nlu/fit/admin/servlet/ManageMessagesServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/admin/servlet/ManageMessagesServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/vn/edu/nlu/fit/database/ConnectionUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/database/ConnectionUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/vn/edu/nlu/fit/database/GPDataSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/database/GPDataSource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/vn/edu/nlu/fit/service/BookServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/service/BookServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/vn/edu/nlu/fit/service/CategoryServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/service/CategoryServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/vn/edu/nlu/fit/service/SendMail.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/service/SendMail.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/vn/edu/nlu/fit/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/vn/edu/nlu/fit/service/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/service/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/vn/edu/nlu/fit/servlet/ChangePasswordServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/servlet/ChangePasswordServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sql/book.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sql/category.sql" beforeDir="false" afterPath="$PROJECT_DIR$/sql/category.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sql/comment.sql" beforeDir="false" afterPath="$PROJECT_DIR$/sql/comment.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sql/user.sql" beforeDir="false" afterPath="$PROJECT_DIR$/sql/user.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/vn/edu/nlu/fit/service/ActiveCodeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/service/ActiveCodeServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/vn/edu/nlu/fit/servlet/ForgetPasswordServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/servlet/ForgetPasswordServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/cart.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/cart.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/include/footer.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/include/footer.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/forgotPassword.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/forgotPassword.jsp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -313,7 +304,7 @@
       <workItem from="1578472824152" duration="1105000" />
       <workItem from="1578473977953" duration="1635000" />
       <workItem from="1578476161186" duration="18011000" />
-      <workItem from="1578496542601" duration="1496000" />
+      <workItem from="1578496542601" duration="3992000" />
     </task>
     <task id="LOCAL-00001" summary="Login and redirect back to previous page">
       <created>1576561432382</created>
@@ -385,7 +376,14 @@
       <option name="project" value="LOCAL" />
       <updated>1578487768168</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="changes">
+      <created>1578498056082</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1578498056082</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -412,34 +410,8 @@
     <MESSAGE value="add book to cart on progress" />
     <MESSAGE value="more features" />
     <MESSAGE value="add sql files" />
-    <MESSAGE value="changes" />
     <MESSAGE value="put order to session" />
-    <option name="LAST_COMMIT_MESSAGE" value="put order to session" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/vn/edu/nlu/fit/servlet/ChangePasswordServlet.java</url>
-          <line>28</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/vn/edu/nlu/fit/servlet/IndexServlet.java</url>
-          <line>25</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/vn/edu/nlu/fit/servlet/IndexServlet.java</url>
-          <line>22</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/vn/edu/nlu/fit/database/GPDataSource.java</url>
-          <line>15</line>
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="changes" />
   </component>
 </project>

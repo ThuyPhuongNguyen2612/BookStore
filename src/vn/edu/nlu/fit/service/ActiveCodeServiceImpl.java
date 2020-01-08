@@ -22,10 +22,12 @@ public class ActiveCodeServiceImpl implements ActiveCodeService{
     @Override
     public String getCode(String userName) throws SQLException {
         Connection connection = GPDataSource.getConnection();
-        PreparedStatement ps = connection.prepareStatement("SELECT code FROM activecode WHERE userID=? AND active = 0");
+        PreparedStatement ps = connection.prepareStatement("SELECT code FROM activecode WHERE userName=? AND active = 0");
+        ps.setString(1, userName);
         ResultSet rs = ps.executeQuery();
         GPDataSource.releaseConnection(connection);
         if (rs.next()){
+            rs.last();
             return rs.getString("code");
         } else {
             return null;

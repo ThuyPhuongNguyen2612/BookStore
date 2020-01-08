@@ -57,11 +57,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             if (request.getAttribute("error")!=null){
         %>
         <div class="alert alert-danger" role="alert">
-            <strong>Oh snap!</strong> <%=request.getAttribute("error")%>
+            <strong>Oh snap!</strong> Your email email is wrong!
         </div>
         <%
             }
-            if (request.getAttribute("resultSend")==null){
         %>
         <div class="form">
             <div class="panel panel-default">
@@ -91,17 +90,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 </div>
             </div>
         </div>
-        <%
-            } else if (request.getAttribute("resultSend")=="true"){
-        %>
-        Please check your email!
-        <%
-            } else {
-        %>
-        Send mail system error!
-        <%
-            }
-        %>
     </div>
 </div>
 <jsp:include page="/footer"></jsp:include>
