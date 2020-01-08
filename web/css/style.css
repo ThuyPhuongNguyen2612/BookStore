@@ -27,6 +27,8 @@ body a:hover{
 .header-grid{
 	padding:1em 0;
 	border-bottom:1px solid #DEDEDE;
+    position: relative;
+    z-index: 1;
 }
 .logo-nav{
 	padding:2em 0;

@@ -4,6 +4,11 @@
 <%@ page import="java.util.List" %>
 <%@ page import="vn.edu.nlu.fit.model.Author" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<%
+    String url = request.getRequestURL().toString();
+    String baseURL = url.substring(0, url.length() - request.getRequestURI().length()) + request.getContextPath() + "/";
+%>
 <div class="header">
     <div class="container">
         <div class="header-grid">
@@ -26,7 +31,7 @@
                     %>
                     <li class="dropdown">
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                            <img alt="" src="<%=user.getImage()%>">
+                            <img alt="" src="<%=baseURL%><%=user.getImage()%>">
                             <span class="username"><%=user.getName()%></span>
                             <b class="caret"></b>
                         </a>
@@ -77,7 +82,7 @@
                     </div>
                     <div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
                         <ul class="nav navbar-nav">
-                            <li class="active"><a href="" class="act">Home</a></li>
+                            <li class="active"><a href="/" class="act">Home</a></li>
                             <!-- Mega Menu -->
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Categories <b
@@ -161,8 +166,8 @@
                     </div>
                 </div>
                 <!-- search-scripts -->
-                <script src="js/classie.js"></script>
-                <script src="js/uisearch.js"></script>
+                <script src="<%=baseURL%>js/classie.js"></script>
+                <script src="<%=baseURL%>js/uisearch.js"></script>
                 <script>
                     new UISearch(document.getElementById('sb-search'));
                     $(document).on('change', 'input#searchBook', function(){

@@ -9,6 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.sql.SQLException;
 
@@ -16,7 +17,13 @@ import java.sql.SQLException;
 public class RegisterServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("register.jsp").forward(request, response);
+        HttpSession session = request.getSession();
+        User user = (User) session.getAttribute("user");
+        if (user == null) {
+            request.getRequestDispatcher("register.jsp").forward(request, response);
+        } else {
+            request.getRequestDispatcher("").forward(request, response);
+        }
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -31,7 +38,7 @@ public class RegisterServlet extends HttpServlet {
             try {
                 userService.addUser(user);
                 response.sendRedirect("/login?userName="+email);
-            } catch (SQLException e){
+            } catch (SQLException e) {
 
             }
         } else {

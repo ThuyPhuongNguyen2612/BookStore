@@ -23,6 +23,19 @@ public class Cart {
             .sum();
     }
 
+    public double getDiscount() {
+        return 0;
+    }
+
+    public double getDeliveryPrice() {
+        if(getPrice() > 0) return 20;
+        return 0;
+    }
+
+    public double getTotal() {
+        return getPrice() - getDiscount() + getDeliveryPrice();
+    }
+
     public HashMap<Book, Integer> getBooks() {
         return books;
     }

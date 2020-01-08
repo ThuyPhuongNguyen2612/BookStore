@@ -33,7 +33,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <!-- //for bootstrap working -->
     <!-- animation-effect -->
     <link href="css/animate.min.css" rel="stylesheet">
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="js/wow.min.js"></script>
     <script>
         new WOW().init();

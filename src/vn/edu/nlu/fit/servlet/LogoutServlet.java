@@ -13,9 +13,7 @@ public class LogoutServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
-        String currentPath = (String) session.getAttribute("currentPath");
         session.invalidate();
-        response.sendRedirect(currentPath);
+        request.getRequestDispatcher("").forward(request, response);
     }
-
 }

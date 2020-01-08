@@ -51,7 +51,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <div class="breadcrumbs">
     <div class="container">
         <ol class="breadcrumb breadcrumb1 animated wow slideInLeft" data-wow-delay=".5s">
-            <li><a href="index.jsp"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Home</a></li>
+            <li><a href="/"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Home</a></li>
             <li class="active">Checkout Page</li>
         </ol>
     </div>
@@ -94,8 +94,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <tr class="rem rem<%=book.getBookID()%>">
                     <td class="invert"><%=i++%>
                     </td>
-                    <td class="invert-image"><a href="/bookDetail?bookID=<%=book.getBookID()%>"><img src="<%=book.getImage()%>" alt=" "
-                                                                       class="img-responsive"/></a></td>
+                    <td class="invert-image"><a href="/bookDetail?bookID=<%=book.getBookID()%>"><img
+                            src="<%=book.getImage()%>" alt=" "
+                            class="img-responsive"/></a></td>
                     <td class="invert">
                         <div class="quantity">
                             <div class="quantity-select">
@@ -115,13 +116,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     </td>
                     <td class="invert">
                         <div class="rem">
-                            <div onclick="removeAllItemsOfABookFromCart('/',<%=book.getBookID()%>);" class="close close<%=book.getBookID()%>"></div>
+                            <div onclick="removeAllItemsOfABookFromCart('/',<%=book.getBookID()%>);"
+                                 class="close close<%=book.getBookID()%>"></div>
                         </div>
                         <script>$(document).ready(function (c) {
                             $('.close<%=book.getBookID()%>').on('click', function (c) {
                                 $('.rem<%=book.getBookID()%>').fadeOut('slow', function (c) {
                                     $('.rem<%=book.getBookID()%>').remove();
-
                                 });
                             });
                         });
@@ -149,12 +150,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <div class="checkout-left">
             <div class="checkout-left-basket animated wow slideInLeft" data-wow-delay=".5s">
                 <ul>
-                    <li>Price <i>-</i> <span>$<%=cart.getPrice()%> </span></li>
-                    <li>Delivery Charges <i>-</i> <span>$<%=cart.getPrice()!=0.0?2.0:0.0%> </span></li>
-                    <li>Total <i>-</i> <span>$<%=cart.getPrice()+cart.getPrice()!=0.0?2.0:0.0%></span></li>
+                    <li>Total <i>-</i> <span>$<%=cart.getPrice()%> </span></li>
+                    <li>Discount <i>-</i> <span>$<%=cart.getDiscount()%> </span></li>
+                    <li>Delivery Charges <i>-</i> <span>$<%=cart.getDeliveryPrice()%> </span></li>
+                    <li>Total <i>-</i> <span>$<%=cart.getTotal()%></span></li>
                 </ul>
-                <a href="/order/step1"><input type="submit" value="ORDER" class="form-button"></a>
+                <a href="/order"><input type="submit" value="ORDER" class="form-button"></a>
             </div>
+            <%
+                }
+            %>
             <div class="checkout-right-basket animated wow slideInRight" data-wow-delay=".5s">
                 <a href="/"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>Continue
                     Shopping</a>

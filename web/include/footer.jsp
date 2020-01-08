@@ -18,41 +18,47 @@
             </div>
             <div class="col-md-3 footer-grid animated wow slideInLeft" data-wow-delay=".7s">
                 <h3>Flickr Posts</h3>
+                <%
+                    String url = request.getRequestURL().toString();
+                    String baseURL = url.substring(0, url.length() - request.getRequestURI().length()) + request.getContextPath() + "/";
+                %>
+                %>
                 <div class="footer-grid-left">
-                    <a href=""><img src="img/footer(1).png" alt=" " class="img-responsive"/></a>
+                    <a href=""><img src="<%=baseURL%>img/footer(1).png" alt=" " class="img-responsive"/></a>
                 </div>
                 <div class="footer-grid-left">
-                    <a href=""><img src="img/footer(2).png" alt=" " class="img-responsive"/></a>
+                    <a href=""><img src="<%=baseURL%>img/footer(2).png" alt=" " class="img-responsive"/></a>
                 </div>
                 <div class="footer-grid-left">
-                    <a href=""><img src="img/footer(3).png" alt=" " class="img-responsive"/></a>
+                    <a href=""><img src="<%=baseURL%>img/footer(3).png" alt=" "
+                                    class="img-responsive"/></a>
                 </div>
                 <div class="footer-grid-left">
-                    <a href=""><img src="img/footer(4).png" alt=" " class="img-responsive"/></a>
+                    <a href=""><img src="<%=baseURL%>img/footer(4).png" alt=" " class="img-responsive"/></a>
                 </div>
                 <div class="footer-grid-left">
-                    <a href=""><img src="img/footer(5).png" alt=" " class="img-responsive"/></a>
+                    <a href=""><img src="<%=baseURL%>img/footer(5).png" alt=" " class="img-responsive"/></a>
                 </div>
                 <div class="footer-grid-left">
-                    <a href=""><img src="img/footer(6).png" alt=" " class="img-responsive"/></a>
+                    <a href=""><img src="<%=baseURL%>img/footer(6).png" alt=" " class="img-responsive"/></a>
                 </div>
                 <div class="footer-grid-left">
-                    <a href=""><img src="img/footer(7).png" alt=" " class="img-responsive"/></a>
+                    <a href=""><img src="<%=baseURL%>img/footer(7).png" alt=" " class="img-responsive"/></a>
                 </div>
                 <div class="footer-grid-left">
-                    <a href=""><img src="img/footer(8).png" alt=" " class="img-responsive"/></a>
+                    <a href=""><img src="<%=baseURL%>img/footer(8).png" alt=" " class="img-responsive"/></a>
                 </div>
                 <div class="footer-grid-left">
-                    <a href=""><img src="img/footer(2).png" alt=" " class="img-responsive"/></a>
+                    <a href=""><img src="<%=baseURL%>img/footer(2).png" alt=" " class="img-responsive"/></a>
                 </div>
                 <div class="footer-grid-left">
-                    <a href=""><img src="img/footer(5).png" alt=" " class="img-responsive"/></a>
+                    <a href=""><img src="<%=baseURL%>img/footer(5).png" alt=" " class="img-responsive"/></a>
                 </div>
                 <div class="footer-grid-left">
-                    <a href=""><img src="img/footer(1).png" alt=" " class="img-responsive"/></a>
+                    <a href=""><img src="<%=baseURL%>img/footer(1).png" alt=" " class="img-responsive"/></a>
                 </div>
                 <div class="footer-grid-left">
-                    <a href=""><img src="img/footer(4).png" alt=" " class="img-responsive"/></a>
+                    <a href=""><img src="<%=baseURL%>img/footer(4).png" alt=" " class="img-responsive"/></a>
                 </div>
                 <div class="clearfix"></div>
             </div>
@@ -60,7 +66,7 @@
                 <h3>Blog Posts</h3>
                 <div class="footer-grid-sub-grids">
                     <div class="footer-grid-sub-grid-left">
-                        <a href=""><img src="img/imgfooter(1).jpg" alt=" " class="img-responsive"/></a>
+                        <a href=""><img src="<%=baseURL%>img/imgfooter(1).jpg" alt=" " class="img-responsive"/></a>
                     </div>
                     <div class="footer-grid-sub-grid-right">
                         <h4><a href="">culpa qui officia deserunt</a></h4>
@@ -70,7 +76,7 @@
                 </div>
                 <div class="footer-grid-sub-grids">
                     <div class="footer-grid-sub-grid-left">
-                        <a href=""><img src="img/imgfooter(2).jpg" alt=" " class="img-responsive"/></a>
+                        <a href=""><img src="<%=baseURL%>img/imgfooter(2).jpg" alt=" " class="img-responsive"/></a>
                     </div>
                     <div class="footer-grid-sub-grid-right">
                         <h4><a href="">Quis autem vel eum iure</a></h4>

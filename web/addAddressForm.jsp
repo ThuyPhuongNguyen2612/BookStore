@@ -14,29 +14,29 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         window.scrollTo(0, 1);
     } </script>
     <!-- //for-mobile-apps -->
-    <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all"/>
-    <link href="css/style.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/bootstrap.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/style.css" rel="stylesheet" type="text/css" media="all"/>
     <!-- js -->
-    <script src="js/jquery.min.js"></script>
+    <script src="../js/jquery.min.js"></script>
     <!-- //js -->
     <!-- cart -->
-    <script src="js/simpleCart.min.js"></script>
+    <script src="../js/simpleCart.min.js"></script>
     <!-- cart -->
     <!-- for bootstrap working -->
-    <script type="text/javascript" src="js/bootstrap-3.1.1.min.js"></script>
+    <script type="text/javascript" src="../js/bootstrap-3.1.1.min.js"></script>
     <!-- //for bootstrap working -->
     <!-- timer -->
-    <link rel="stylesheet" href="css/jquery.countdown.css"/>
+    <link rel="stylesheet" href="../css/jquery.countdown.css"/>
     <!-- //timer -->
     <!-- animation-effect -->
-    <link href="css/animate.min.css" rel="stylesheet">
-    <script src="js/wow.min.js"></script>
+    <link href="../css/animate.min.css" rel="stylesheet">
+    <script src="../js/wow.min.js"></script>
     <script>
         new WOW().init();
     </script>
     <link rel="stylesheet" href="../FontAwesome/css/all.css">
-    <link rel="stylesheet" href="css/order.css">
-    <link rel="stylesheet" href="css/form.css">
+    <link rel="stylesheet" href="../css/order.css">
+    <link rel="stylesheet" href="../css/form.css">
     <!-- //animation-effect -->
 
 </head>
@@ -88,8 +88,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <p>Country: US</p>
                 <p>Phone number: 09563257576</p>
                 <br>
-                <button class="form-button"><a href="order2.html">Delivery to this address</a></button>
-                <button class="form-button-default">Edit</button>
+                <button class="form-button"><a href="/order/payment">Delivery to this address</a></button>
             </div>
             <p>You want to ship to another address? <a>Add new shipping address</a></p>
             <h3>New address</h3>
@@ -133,8 +132,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <div class="form-group">
                     <label class="col-md-3 control-label"></label>
                     <div class="row col-md-9">
-                        <button class="form-button-default">Cancel</button>
-                        <button class="form-button"><a href="order2.html">Delivery to this address</a></button>
+                        <button class="form-button"><a href="/order/payment">Delivery to this address</a></button>
                     </div>
                 </div>
             </form>

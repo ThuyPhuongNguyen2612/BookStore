@@ -4,6 +4,9 @@ import vn.edu.nlu.fit.model.Cart;
 import vn.edu.nlu.fit.model.Order;
 import vn.edu.nlu.fit.model.User;
 
+import vn.edu.nlu.fit.model.Cart;
+import vn.edu.nlu.fit.model.Order;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -14,7 +17,6 @@ import java.io.IOException;
 
 @WebServlet("/order/*")
 public class OrderServlet extends HttpServlet {
-    private Order order;
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         if (request.getPathInfo() != null) {
@@ -31,46 +33,48 @@ public class OrderServlet extends HttpServlet {
         HttpSession session = request.getSession();
         session.setAttribute("currentPath", request.getRequestURI().concat(request.getQueryString() != null ? "?" + request.getQueryString() : ""));
 
-        if (request.getPathInfo() != null) {
-            if (request.getPathInfo().equals("/step1")) {
-                getOrderStep1(request, response);
-            } else if (request.getPathInfo().equals("/step2")) {
-                getOrderStep2(request, response);
-            } else if (request.getPathInfo().equals("/step3")) {
-                getOrderStep3(request, response);
+        if (request.getPathInfo() == null) {
+            orderLoginStep(request, response);
+        } else {
+            if (request.getPathInfo().equals("/address")) {
+                orderAddressStep(request, response);
+            } else if (request.getPathInfo().equals("/payment")) {
+                orderPaymentStep(request, response);
             }
         }
     }
 
 
-    private void getOrderStep1(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    private void orderLoginStep(HttpServletRequest request, HttpServletResponse response) throws IOException {
         HttpSession session = request.getSession();
-        session.setAttribute("currentPath", request.getRequestURI().concat(request.getQueryString() != null ? "?" + request.getQueryString() : ""));
 
-        User user = (User) session.getAttribute("user");
-        Cart cart = (Cart) session.getAttribute("cart");
-        if (cart.isEmpty()) {
-            response.sendRedirect("/cart?error=cartEmpty");
-        }
-        if (user == null) {
+        if (session.getAttribute("user") == null) {
             response.sendRedirect("/login");
         } else {
-            order = new Order(user.getUserID(), cart);
-            response.sendRedirect("/order/step2");
+            Cart cart = (Cart) session.getAttribute("cart");
+            if (cart.isEmpty()) {
+                response.sendRedirect("/cart?error=cartEmpty");
+            }
+            response.sendRedirect("/order/address");
         }
     }
 
-    private void getOrderStep2(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    private void orderAddressStep(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
-        session.setAttribute("currentPath", request.getRequestURI().concat(request.getQueryString() != null ? "?" + request.getQueryString() : ""));
-
-        request.getRequestDispatcher("addAddressForm.jsp").forward(request, response);
+        if (session.getAttribute("user") == null) {
+            response.sendRedirect("/login");
+        } else {
+            request.getRequestDispatcher("/addAddressForm.jsp").forward(request, response);
+        }
     }
 
-    private void getOrderStep3(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    private void orderPaymentStep(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         HttpSession session = request.getSession();
-        session.setAttribute("currentPath", request.getRequestURI().concat(request.getQueryString() != null ? "?" + request.getQueryString() : ""));
-        response.sendRedirect("addPaymentForm.jsp");
+        if (session.getAttribute("user") == null) {
+            response.sendRedirect("/login");
+        } else {
+            request.getRequestDispatcher("/addPaymentForm.jsp").forward(request, response);
+        }
 
     }
 

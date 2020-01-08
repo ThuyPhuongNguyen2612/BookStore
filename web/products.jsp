@@ -197,8 +197,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         </p>
                         <div class="simpleCart_shelfItem products-right-grid1-add-cart">
                             <p><i>$<%=book.getPrice()%>
-                            </i> <span class="item_price">$250</span><a
-                                    onclick="addBookToCart('/',<%=books.get(i).getBookID()%>)" class="item_add">add to
+                            </i> <span class="item_price">$<%=book.getPrice()%></span><a
+                                    onclick="addBookToCart('/',<%=book.getBookID()%>)" class="item_add">add to
                                 cart </a></p>
                         </div>
                     </div>
