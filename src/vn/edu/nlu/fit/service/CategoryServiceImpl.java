@@ -48,7 +48,7 @@ public class CategoryServiceImpl implements CategoryService {
     @Override
     public int addCategory(String name, int active) throws SQLException {
         Connection connection = GPDataSource.getConnection();
-        PreparedStatement ps = connection.prepareStatement("INSERT INTO category (name,quantity,active) VALUES(?,0,?)");
+        PreparedStatement ps = connection.prepareStatement("INSERT INTO category (`name`,quantity,active) VALUES(?,0,?)");
         ps.setString(1, name);
         ps.setInt(2, active);
         GPDataSource.releaseConnection(connection);
@@ -58,7 +58,7 @@ public class CategoryServiceImpl implements CategoryService {
     @Override
     public int editCategory(int categoryID, String name, int quantity, int active) throws SQLException {
         Connection connection = GPDataSource.getConnection();
-        PreparedStatement ps = connection.prepareStatement("UPDATE category SET name=?,quantity=?,active=? WHERE categoryID=?");
+        PreparedStatement ps = connection.prepareStatement("UPDATE category SET `name`=?,quantity=?,active=? WHERE categoryID=?");
         ps.setString(1, name);
         ps.setInt(2, quantity);
         ps.setInt(3, active);

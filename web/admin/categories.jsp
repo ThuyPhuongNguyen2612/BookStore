@@ -85,8 +85,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             </tr>
                             <script>$(document).ready(function (c) {
                                 $('.close<%=category.getCategoryID()%>').on('click', function (c) {
+                                        removeCategory(<%=category.getCategoryID()%>);
                                     <%--$('.rem<%=category.getCategoryID()%>').fadeOut('slow', function (c) {--%>
-                                        $('.rem<%=category.getCategoryID()%>').remove();
                                     // });
                                 });
                             });
@@ -110,5 +110,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!--[if lte IE 8]>
 <script language="javascript" type="text/javascript" src="js/flot-chart/excanvas.min.js"></script><![endif]-->
 <script src="js/jquery.scrollTo.js"></script>
+<script src="js/index.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </body>
 </html>

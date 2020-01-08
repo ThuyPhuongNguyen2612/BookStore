@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <header class="header fixed-top clearfix">
     <!--logo start-->
     <div class="brand">

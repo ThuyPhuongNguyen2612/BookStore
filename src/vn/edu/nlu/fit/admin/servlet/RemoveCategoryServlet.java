@@ -10,7 +10,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.sql.SQLException;
 
 @WebServlet("/admin/removeCategory")
 public class RemoveCategoryServlet extends HttpServlet {
@@ -20,23 +19,16 @@ public class RemoveCategoryServlet extends HttpServlet {
         if (session.getAttribute("adminUser") == null) {
             response.sendRedirect("/admin/login");
         } else {
-            String categoryIDString = request.getParameter("categoryID");
+            String categoryIDString = request.getParameter("categoryId");
 
             int categoryID;
             try {
                 categoryID = Integer.parseInt(categoryIDString);
+                CategoryService categoryService = new CategoryServiceImpl();
+                categoryService.removeCategory(categoryID);
+                response.setStatus(200);
             } catch (Exception e) {
-                categoryID = 0;
-            }
-            CategoryService categoryService = new CategoryServiceImpl();
-            try {
-                if (categoryService.removeCategory(categoryID) > 0) {
-                    response.setStatus(200);
-                } else {
-                    response.setStatus(500);
-                }
-            } catch (SQLException e) {
-
+                response.setStatus(500);
             }
         }
     }
