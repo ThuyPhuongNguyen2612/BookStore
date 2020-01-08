@@ -51,7 +51,7 @@ public class ManageMessagesServlet extends HttpServlet {
         String message = getParameter(request, "message");
 
         try {
-            SendMail.sendEmail(host, port, user, pass, recipient, subject, message);
+            SendMail.sendEmail(host, port, user, pass, recipient, message, subject);
         } catch (Exception ex) {
             ex.printStackTrace();
         }

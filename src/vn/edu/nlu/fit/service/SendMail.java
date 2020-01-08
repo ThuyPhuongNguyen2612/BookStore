@@ -10,7 +10,7 @@ import java.util.Properties;
 public class SendMail {
     public static void sendEmail(String host, String port,
                                  final String userName, final String password, String toAddress,
-                                 String name, String message) throws AddressException,
+                                 String message, String subject) throws AddressException,
             MessagingException {
 
         // sets SMTP server properties
@@ -35,9 +35,8 @@ public class SendMail {
         msg.setFrom(new InternetAddress(userName));
         InternetAddress[] toAddresses = {new InternetAddress(toAddress)};
         msg.setRecipients(Message.RecipientType.TO, toAddresses);
-        String sub = "Hello " + name;
 
-        msg.setSubject(sub);
+        msg.setSubject(subject);
         msg.setSentDate(new Date());
         msg.setText(message);
 

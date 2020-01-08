@@ -29,8 +29,7 @@
                     <a href=""><img src="<%=baseURL%>img/footer(2).png" alt=" " class="img-responsive"/></a>
                 </div>
                 <div class="footer-grid-left">
-                    <a href=""><img src="<%=baseURL%>img/footer(3).png" alt=" "
-                                    class="img-responsive"/></a>
+                    <a href=""><img src="<%=baseURL%>img/footer(3).png" alt=" " class="img-responsive"/></a>
                 </div>
                 <div class="footer-grid-left">
                     <a href=""><img src="<%=baseURL%>img/footer(4).png" alt=" " class="img-responsive"/></a>

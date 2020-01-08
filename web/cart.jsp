@@ -157,9 +157,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 </ul>
                 <a href="/order"><input type="submit" value="ORDER" class="form-button"></a>
             </div>
-            <%
-                }
-            %>
             <div class="checkout-right-basket animated wow slideInRight" data-wow-delay=".5s">
                 <a href="/"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>Continue
                     Shopping</a>

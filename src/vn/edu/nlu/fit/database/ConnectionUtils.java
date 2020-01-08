@@ -7,7 +7,7 @@ import java.sql.SQLException;
 class ConnectionUtils {
 
     private static final String userName = "root";
-    private static final String password = "password";
+    private static final String password = "";
 
     static Connection openConnection() throws SQLException, ClassNotFoundException {
          Class.forName("com.mysql.jdbc.Driver");

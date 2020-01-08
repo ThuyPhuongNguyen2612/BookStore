@@ -23,7 +23,6 @@ public class UserServiceImpl implements UserService {
             rs.getString("address"),
             rs.getInt("gentle"),
             rs.getInt("group"));
-
     }
 
     @Override
@@ -103,6 +102,18 @@ public class UserServiceImpl implements UserService {
             ps.setInt(7, userID);
             GPDataSource.releaseConnection(connection);
             ps.executeUpdate();
+        }
+    }
+
+    @Override
+    public void changePassword(String userName, String password) throws SQLException {
+        try (
+                Connection connection = GPDataSource.getConnection()
+        ) {
+            PreparedStatement ps = connection.prepareStatement("UPDATE user SET password=? WHERE userName=?");
+            ps.setString(1, password);
+            ps.setString(2, userName);
+            GPDataSource.releaseConnection(connection);
         }
     }
 }

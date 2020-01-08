@@ -75,8 +75,7 @@ public class CategoryServiceImpl implements CategoryService {
             ps.setInt(3, active);
             ps.setInt(4, categoryID);
             GPDataSource.releaseConnection(connection);
-            return ps.executeUpdate();
-        }
+            return ps.executeUpdate();}
     }
 
     @Override
@@ -87,10 +86,10 @@ public class CategoryServiceImpl implements CategoryService {
             PreparedStatement ps1 = connection.prepareStatement("DELETE FROM category WHERE categoryID=?");
             ps1.setInt(1, categoryID);
 
-            PreparedStatement ps2 = connection.prepareStatement("DELETE FROM book WHERE categoryID=?");
-            ps2.setInt(1, categoryID);
-            ps2.executeUpdate();
-            GPDataSource.releaseConnection(connection);
+        PreparedStatement ps2 = connection.prepareStatement("DELETE FROM book WHERE categoryID=?");
+        ps2.setInt(1, categoryID);
+        ps2.executeUpdate();
+        GPDataSource.releaseConnection(connection);
             return ps1.executeUpdate();
         }
     }
