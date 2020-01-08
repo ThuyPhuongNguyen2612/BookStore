@@ -109,40 +109,25 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <div class="form-group">
                     <label for="city" class="col-md-3 control-label">City</label>
                     <div class="row col-md-9">
-                        <select id="city" class="form-control m-bot15">
-                            <option>New York</option>
-                            <option>San Fransisco</option>
-                            <option>Los Angeles</option>
-                            <option>Washington D.C</option>
-                            <option>Seattle</option>
-                            <option>Las Vegas</option>
-                        </select>
+                        <input id="city" name="city" class="col-xs-12 col-md-8 form-control" type="tel" value="">
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="district" class="col-md-3 control-label">District</label>
                     <div class="row col-md-9">
-                        <select id="district" class="form-control m-bot15">
-                            <option>Manhattan</option>
-                            <option>Staten Island</option>
-                            <option>Bronx</option>
-                        </select>
+                        <input id="district" name="district" class="col-xs-12 col-md-8 form-control" type="tel" value="">
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="ward" class="col-md-3 control-label">Ward</label>
                     <div class="row col-md-9">
-                        <select id="ward" class="form-control m-bot15">
-                            <option>Ward 1</option>
-                            <option>Ward 2</option>
-                            <option>Ward 3</option>
-                        </select>
+                        <input id="ward" name="ward" class="col-xs-12 col-md-8 form-control" type="tel" value="">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="ward" class="col-md-3 control-label">Address</label>
+                    <label for="address" class="col-md-3 control-label">Address</label>
                     <div class="row col-md-9">
-                        <textarea class="form-control m-bot15"></textarea>
+                        <textarea id="address" name="address" class="form-control m-bot15"></textarea>
                     </div>
                 </div>
                 <div class="form-group">

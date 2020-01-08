@@ -2,9 +2,7 @@ package vn.edu.nlu.fit.servlet;
 
 import vn.edu.nlu.fit.model.Book;
 import vn.edu.nlu.fit.model.Cart;
-import vn.edu.nlu.fit.service.BookServiceImpl;
-import vn.edu.nlu.fit.service.CategoryService;
-import vn.edu.nlu.fit.service.CategoryServiceImpl;
+import vn.edu.nlu.fit.service.*;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -20,6 +18,7 @@ public class HeaderServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         CategoryService categoryService = new CategoryServiceImpl();
+        AuthorService authorService = new AuthorServiceImpl();
         try {
             Cart cart = (Cart) request.getSession().getAttribute("cart");
             int amount = 0;
@@ -30,6 +29,7 @@ public class HeaderServlet extends HttpServlet {
             request.setAttribute("amount", amount);
             request.setAttribute("allBooks", books);
             request.setAttribute("listCategories", categoryService.getCategories());
+            request.setAttribute("authors", authorService.getAuthors());
             request.getRequestDispatcher("include/header.jsp").include(request, response);
         } catch (SQLException ignored) {
         }

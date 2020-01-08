@@ -14,6 +14,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
 <!-- js -->
 <script src="js/jquery.min.js"></script>
+<script src="js/index.js"></script>
 <!-- //js -->
 <!-- cart -->
 	<script src="js/simpleCart.min.js"> </script>
@@ -49,24 +50,39 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- mail -->
 	<div class="mail animated wow zoomIn" data-wow-delay=".5s">
 		<div class="container">
+			<%
+				if (request.getAttribute("result").equals("true")){
+			%>
+			<div class="alert alert-success" role="alert">
+				<strong>Well done!</strong> Your message sent!
+			</div>
+			<%
+				} else if (request.getAttribute("result").equals("false")){
+			%>
+			<div class="alert alert-danger" role="alert">
+				<strong>Oh snap!</strong> Your email is wrong!
+			</div>
+			<%
+				}
+			%>
 			<h3>Mail Us</h3>
 			<div class="mail-grids">
 				<div class="col-md-8 mail-grid-left animated wow slideInLeft" data-wow-delay=".5s">
 					<form>
-						<input type="text" value="Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Name';}" required="">
-						<input type="email" value="Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}" required="">
-						<input type="text" value="Subject" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Subject';}" required="">
-						<textarea type="text"  onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Message...';}" required="">Message...</textarea>
+						<input name="name" type="text" value="Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Name';}" required="">
+						<input name="email" type="email" value="Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}" required="">
+						<input name="subject" type="text" value="Subject" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Subject';}" required="">
+						<textarea name="message" type="text"  onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Message...';}" required="">Message...</textarea>
 						<input type="submit" value="Submit Now" >
 					</form>
 				</div>
 				<div class="col-md-4 mail-grid-right animated wow slideInRight" data-wow-delay=".5s">
 					<div class="mail-grid-right1">
-						<img src="images/3.png" alt=" " class="img-responsive" />
-						<h4>Rita Williumson <span>Manager</span></h4>
+						<img src="img/3.png" alt=" " class="img-responsive" />
+						<h4>Phuong Nguyen <span>Manager</span></h4>
 						<ul class="phone-mail">
 							<li><i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>Phone: +1234 567 893</li>
-							<li><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i>Email: <a href="mailto:info@example.com">info@example.com</a></li>
+							<li><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i>Email: <a href="mailto:info@example.com">thuyphuong261299@gmail.com</a></li>
 						</ul>
 						<ul class="social-icons">
 							<li><a href="#" class="facebook"></a></li>

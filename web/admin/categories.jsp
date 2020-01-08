@@ -83,8 +83,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <span>Feedback</span>
                         </a>
                         <ul class="sub">
-                            <li><a href="mail.html">Mail</a></li>
-                            <li><a href="mail_compose.html">Compose Mail</a></li>
+                            <li><a href="mail.jsp">Mail</a></li>
+                            <li><a href="mail_compose.jsp">Compose Mail</a></li>
                             <li><a href="comment.jsp">Comment</a></li>
                         </ul>
                     </li>
@@ -130,18 +130,27 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 ArrayList<Category> categories = (ArrayList<Category>) request.getAttribute("categories");
                                 for (Category category: categories) {
                             %>
-                            <tr>
+                            <tr class="rem<%=category.getCategoryID()%>">
                                 <td><%=category.getCategoryID()%></td>
                                 <td><%=category.getName()%></td>
                                 <td><input type="checkbox" disabled <%=category.getActive()==1?"checked":""%>></td>
                                 <td><span>
                                     <a href="/admin/editCategory?categoryID=<%=category.getCategoryID()%>"><i class="fa fa-edit"></i></a>
-                                    <a href="#"><i class="fa fa-times-circle"></i></a>
+                                    <a href="" class="close<%=category.getCategoryID()%>"><i class="fa fa-times-circle"></i></a>
                                 </span></td>
                             </tr>
+                            <script>$(document).ready(function (c) {
+                                $('.close<%=category.getCategoryID()%>').on('click', function (c) {
+                                    <%--$('.rem<%=category.getCategoryID()%>').fadeOut('slow', function (c) {--%>
+                                        $('.rem<%=category.getCategoryID()%>').remove();
+                                    // });
+                                });
+                            });
+                            </script>
                             <%
                                 }
                             %>
+
                         </table>
                     </div>
                 </div>

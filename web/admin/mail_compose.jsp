@@ -2,30 +2,30 @@
 <head>
     <title>Admin</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="keywords" content="Visitors Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
-Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
-    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design"/>
+    <script type="application/x-javascript"> addEventListener("load", function () {
+        setTimeout(hideURLbar, 0);
+    }, false);
+
+    function hideURLbar() {
+        window.scrollTo(0, 1);
+    } </script>
     <!-- bootstrap-css -->
-    <link rel="stylesheet" href="css/bootstrap.min.css" >
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <!-- //bootstrap-css -->
     <!-- Custom CSS -->
-    <link href="css/style.css" rel='stylesheet' type='text/css' />
+    <link href="css/style.css" rel='stylesheet' type='text/css'/>
     <link href="css/style-responsive.css" rel="stylesheet"/>
     <!-- font CSS -->
-    <link href='//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic'
+          rel='stylesheet' type='text/css'>
     <!-- font-awesome icons -->
     <link rel="stylesheet" href="css/font.css" type="text/css"/>
     <link href="css/font-awesome.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/morris.css" type="text/css"/>
-    <!-- calendar -->
-    <link rel="stylesheet" href="css/monthly.css">
-    <!-- //calendar -->
     <!-- //font-awesome icons -->
     <script src="js/jquery2.0.3.min.js"></script>
-    <script src="js/raphael-min.js"></script>
-    <script src="js/morris.js"></script>
-    <link rel="stylesheet" href="css/form.css">
 </head>
 <body>
 <section id="container">
@@ -33,6 +33,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <header class="header fixed-top clearfix">
         <!--logo start-->
         <div class="brand">
+
             <a href="index.jsp" class="logo">
                 VISITORS
             </a>
@@ -41,6 +42,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             </div>
         </div>
         <!--logo end-->
+
         <div class="nav notify-row" id="top_menu">
             <!--  notification start -->
             <ul class="nav top-menu">
@@ -59,7 +61,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 <div class="task-info clearfix">
                                     <div class="desc pull-left">
                                         <h5>Target Sell</h5>
-                                        <p>25% , Deadline  12 June’13</p>
+                                        <p>25% , Deadline 12 June’13</p>
                                     </div>
                                     <span class="notification-pie-chart pull-right" data-percent="45">
                             <span class="percent"></span>
@@ -72,7 +74,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 <div class="task-info clearfix">
                                     <div class="desc pull-left">
                                         <h5>Product Delivery</h5>
-                                        <p>45% , Deadline  12 June’13</p>
+                                        <p>45% , Deadline 12 June’13</p>
                                     </div>
                                     <span class="notification-pie-chart pull-right" data-percent="78">
                             <span class="percent"></span>
@@ -85,7 +87,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 <div class="task-info clearfix">
                                     <div class="desc pull-left">
                                         <h5>Payment collection</h5>
-                                        <p>87% , Deadline  12 June’13</p>
+                                        <p>87% , Deadline 12 June’13</p>
                                     </div>
                                     <span class="notification-pie-chart pull-right" data-percent="60">
                             <span class="percent"></span>
@@ -98,7 +100,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 <div class="task-info clearfix">
                                     <div class="desc pull-left">
                                         <h5>Target Sell</h5>
-                                        <p>33% , Deadline  12 June’13</p>
+                                        <p>33% , Deadline 12 June’13</p>
                                     </div>
                                     <span class="notification-pie-chart pull-right" data-percent="90">
                             <span class="percent"></span>
@@ -258,7 +260,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         </a>
                     </li>
                     <li>
-                        <a href="order.html">
+                        <a href="order.jsp">
                             <i class="fa fa-shopping-cart"></i>
                             <span>Order</span>
                         </a>
@@ -270,26 +272,26 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         </a>
                     </li>
                     <li>
-                        <a class="active" href="categories.html">
+                        <a href="categories.html">
                             <i class="fa fa-tags"></i>
                             <span>Categories</span>
                         </a>
                     </li>
                     <li>
-                        <a href="users.html">
+                        <a href="users.jsp">
                             <i class="fa fa-users"></i>
                             <span>Users</span>
                         </a>
                     </li>
                     <li class="sub-menu">
-                        <a href="javascript:;">
+                        <a class="active" href="javascript:;">
                             <i class="fa fa-backward"></i>
                             <span>Feedback</span>
                         </a>
                         <ul class="sub">
-                            <li><a href="mail.html">Mail</a></li>
-                            <li><a href="mail_compose.html">Compose Mail</a></li>
-                            <li><a href="comment.html">Comment</a></li>
+                            <li><a href="mail.jsp">Mail</a></li>
+                            <li><a class="active" href="mail_compose.jsp">Compose Mail</a></li>
+                            <li><a href="comment.jsp">Comment</a></li>
                         </ul>
                     </li>
                     <li>
@@ -304,85 +306,146 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         </div>
     </aside>
     <!--sidebar end-->
+    <!--main content start-->
     <section id="main-content">
         <section class="wrapper">
-            <div class="form-w3layouts col-xs-12 col-md-12">
-                <section class="panel">
-                    <header class="panel-heading">
-                        Add category form
-                    </header>
-                    <div class="panel-body">
-                        <form class="form-horizontal bucket-form" method="post">
-                            <div class="form-group">
-                                <label for="categoryName" class="col-lg-2 col-sm-2 control-label">Name</label>
-                                <div class="col-sm-10">
-                                    <input id="categoryName" type="text" class="form-control">
+            <!-- page start-->
+            <div class="mail-w3agile">
+                <div class="row">
+                    <div class="col-sm-3 com-w3ls">
+                        <section class="panel">
+                            <div class="panel-body">
+                                <a href="mail_compose.jsp" class="btn btn-compose">
+                                    Compose Mail
+                                </a>
+                                <ul class="nav nav-pills nav-stacked mail-nav">
+                                    <li class="active"><a href="mail.jsp"> <i class="fa fa-inbox"></i> Inbox <span
+                                            class="label label-danger pull-right inbox-notification">9</span></a></li>
+                                    <li><a href="#"> <i class="fa fa-envelope-o"></i> Send Mail</a></li>
+                                    <li><a href="#"> <i class="fa fa-certificate"></i> Important</a></li>
+                                    <li><a href="#"> <i class="fa fa-file-text-o"></i> Drafts <span
+                                            class="label label-info pull-right inbox-notification">123</span></a></li>
+                                    <li><a href="#"> <i class="fa fa-trash-o"></i> Trash</a></li>
+                                </ul>
+                            </div>
+                        </section>
+
+                        <section class="panel">
+                            <div class="panel-body">
+                                <ul class="nav nav-pills nav-stacked labels-info ">
+                                    <li><h4>Buddy online</h4></li>
+                                    <li><a href="#"> <i class="fa fa-comments-o text-success"></i> Jonathan Smith <p>I
+                                        do not think</p></a></li>
+                                    <li><a href="#"> <i class="fa fa-comments-o text-danger"></i> iRon <p>Busy with
+                                        coding</p></a></li>
+                                    <li><a href="#"> <i class="fa fa-comments-o text-muted "></i> Anjelina Joli <p>I out
+                                        of control</p></a></li>
+                                    <li><a href="#"> <i class="fa fa-comments-o text-muted "></i> Samual Daren <p>I am
+                                        not here</p></a></li>
+                                    <li><a href="#"> <i class="fa fa-comments-o text-muted "></i> Tis man <p>I do not
+                                        think</p></a></li>
+                                </ul>
+                                <a href="#"> + Add More</a>
+
+                                <div class="inbox-body text-center inbox-action">
+                                    <div class="btn-group">
+                                        <a class="btn mini btn-default" href="javascript:;">
+                                            <i class="fa fa-power-off"></i>
+                                        </a>
+                                    </div>
+                                    <div class="btn-group">
+                                        <a class="btn mini btn-default" href="javascript:;">
+                                            <i class="fa fa-cog"></i>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label for="path" class="col-lg-2 col-sm-2 control-label">Path</label>
-                                <div class="col-sm-10">
-                                    <input id="path" type="text" class="form-control">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-lg-2 col-sm-2 control-label">Action</label>
-                                <div class="row col-sm-10">
-                                    <input type="checkbox"> Show <br>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-lg-2 col-sm-2 control-label"></label>
-                                <div class="col-lg-offset-2 col-lg-10">
-                                    <button type="submit" class="btn btn-primary">Save</button>
-                                    <button type="submit" class="btn btn-default">Cancel</button>
-                                </div>
-                            </div>
-                        </form>
+                        </section>
                     </div>
-                </section>
+                    <div class="col-sm-9 mail-w3agile">
+                        <section class="panel">
+                            <header class="panel-heading wht-bg">
+                                <h4 class="gen-case"> Compose Mail
+                                    <form action="#" class="pull-right mail-src-position">
+                                        <div class="input-append">
+                                            <input type="text" class="form-control " placeholder="Search Mail">
+                                        </div>
+                                    </form>
+                                </h4>
+                            </header>
+                            <div class="panel-body">
+                                <div class="compose-btn pull-right">
+                                    <button class="btn btn-primary btn-sm"><i class="fa fa-check"></i> Send</button>
+                                    <button class="btn btn-sm"><i class="fa fa-times"></i> Discard</button>
+                                    <button class="btn btn-sm">Draft</button>
+                                </div>
+                                <div class="compose-mail">
+                                    <form role="form-horizontal" method="post">
+                                        <div class="form-group">
+                                            <label for="to" class="">To:</label>
+                                            <input name="email" type="text" tabindex="1" id="to" class="form-control">
+
+                                            <div class="compose-options">
+                                                <a onclick="$(this).hide(); $('#cc').parent().removeClass('hidden'); $('#cc').focus();"
+                                                   href="javascript:;">Cc</a>
+                                                <a onclick="$(this).hide(); $('#bcc').parent().removeClass('hidden'); $('#bcc').focus();"
+                                                   href="javascript:;">Bcc</a>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group hidden">
+                                            <label for="cc" class="">Cc:</label>
+                                            <input type="text" tabindex="2" id="cc" class="form-control">
+                                        </div>
+
+                                        <div class="form-group hidden">
+                                            <label for="bcc" class="">Bcc:</label>
+                                            <input type="text" tabindex="2" id="bcc" class="form-control">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="subject" class="">Subject:</label>
+                                            <input name="subject" type="text" tabindex="1" id="subject" class="form-control">
+                                        </div>
+
+                                        <div class="compose-editor">
+                                            <textarea class="form-control" rows="9"></textarea>
+                                            <input name="message" type="file" class="default">
+                                        </div>
+                                        <div class="compose-btn">
+                                            <button class="btn btn-primary btn-sm"><i class="fa fa-check"></i> Send
+                                            </button>
+                                            <button class="btn btn-sm"><i class="fa fa-times"></i> Discard</button>
+                                            <button class="btn btn-sm">Draft</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+
+                <!-- page end-->
             </div>
         </section>
+        <!-- footer -->
+        <div class="footer">
+            <div class="wthree-copyright">
+                Best store
+            </div>
+        </div>
+        <!-- / footer -->
     </section>
+
+    <!--main content end-->
 </section>
 <script src="js/bootstrap.js"></script>
 <script src="js/jquery.dcjqaccordion.2.7.js"></script>
 <script src="js/scripts.js"></script>
 <script src="js/jquery.slimscroll.js"></script>
 <script src="js/jquery.nicescroll.js"></script>
-<!--[if lte IE 8]><script language="javascript" type="text/javascript" src="js/flot-chart/excanvas.min.js"></script><![endif]-->
+<!--[if lte IE 8]>
+<script language="javascript" type="text/javascript" src="js/flot-chart/excanvas.min.js"></script><![endif]-->
 <script src="js/jquery.scrollTo.js"></script>
-<!-- calendar -->
-<script type="text/javascript" src="js/monthly.js"></script>
-<script type="text/javascript">
-    $(window).load( function() {
-
-        $('#mycalendar').monthly({
-            mode: 'event',
-
-        });
-
-        $('#mycalendar2').monthly({
-            mode: 'picker',
-            target: '#mytarget',
-            setWidth: '250px',
-            startHidden: true,
-            showTrigger: '#mytarget',
-            stylePast: true,
-            disablePast: true
-        });
-
-        switch(window.location.protocol) {
-            case 'http:':
-            case 'https:':
-                // running on a server, should be good.
-                break;
-            case 'file:':
-                alert('Just a heads-up, events will not work when run locally.');
-        }
-
-    });
-</script>
-<!-- //calendar -->
 </body>
 </html>

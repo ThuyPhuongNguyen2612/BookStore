@@ -18,6 +18,8 @@ import java.sql.SQLException;
 public class LoginServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setAttribute("userName", request.getParameter("userName"));
+        request.setAttribute("error", request.getParameter("error"));
         request.getRequestDispatcher("login.jsp").forward(request, response);
     }
 

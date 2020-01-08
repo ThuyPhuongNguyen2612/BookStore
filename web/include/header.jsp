@@ -2,6 +2,7 @@
 <%@ page import="vn.edu.nlu.fit.model.Category" %>
 <%@ page import="vn.edu.nlu.fit.model.User" %>
 <%@ page import="java.util.List" %>
+<%@ page import="vn.edu.nlu.fit.model.Author" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <div class="header">
     <div class="container">
@@ -25,7 +26,7 @@
                     %>
                     <li class="dropdown">
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                            <img alt="" src="img/avatar.png">
+                            <img alt="" src="<%=user.getImage()%>">
                             <span class="username"><%=user.getName()%></span>
                             <b class="caret"></b>
                         </a>
@@ -39,7 +40,7 @@
                             <%
                                 }
                             %>
-                            <li><a href="login.html"><i class="fa fa-key"></i> Log Out</a></li>
+                            <li><a href="/logout"><i class="fa fa-key"></i> Log Out</a></li>
                         </ul>
                     </li>
                     <%
@@ -101,15 +102,21 @@
                                         <div class="col-sm-6">
                                             <ul class="multi-column-dropdown">
                                                 <h6>Author</h6>
-                                                <li><a href="products.html"></a></li>
-                                                <li><a href="products.html"></a></li>
+<%--                                                <%--%>
+<%--                                                    List<Author> authors = (List<Author>) request.getAttribute("authors");--%>
+<%--                                                    for (Author author :authors) {--%>
+<%--                                                %>--%>
+<%--                                                <li><a href=""><%=author.getName()%></a></li>--%>
+<%--                                                <%--%>
+<%--                                                    }--%>
+<%--                                                %>--%>
                                             </ul>
                                         </div>
                                         <div class="clearfix"></div>
                                     </div>
                                 </ul>
                             </li>
-                            <li><a href="mail.html">Mail Us</a></li>
+                            <li><a href="/mail">Mail Us</a></li>
                         </ul>
                     </div>
                 </nav>

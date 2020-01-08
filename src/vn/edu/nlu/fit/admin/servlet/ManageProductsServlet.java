@@ -1,4 +1,4 @@
-package vn.edu.nlu.fit.servlet;
+package vn.edu.nlu.fit.admin.servlet;
 
 import vn.edu.nlu.fit.database.DBConnect;
 import vn.edu.nlu.fit.model.Book;
@@ -23,7 +23,6 @@ public class ManageProductsServlet extends HttpServlet {
         try {
             BookService bookService = new BookServiceImpl();
             request.setAttribute("books", bookService.getBooks());
-            
         } catch (Exception e) {
             e.printStackTrace();
         }

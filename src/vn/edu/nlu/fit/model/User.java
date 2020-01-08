@@ -10,13 +10,14 @@ public class User {
     private String phone;
     private String image;
     private Date dob;
+    private String address;
     private int gentle;
     private int group;
 
     public User() {
     }
 
-    public User(int userID, String userName, String password, String name, String phone, String image, Date dob, int gentle, int group) {
+    public User(int userID, String userName, String password, String name, String phone, String image, Date dob, String address, int gentle, int group) {
         this.userID = userID;
         this.userName = userName;
         this.password = password;
@@ -24,6 +25,7 @@ public class User {
         this.phone = phone;
         this.image = image;
         this.dob = dob;
+        this.address = address;
         this.gentle = gentle;
         this.group = group;
     }
@@ -67,5 +69,9 @@ public class User {
 
     public int getGroup() {
         return group;
+    }
+
+    public String getAddress() {
+        return address;
     }
 }

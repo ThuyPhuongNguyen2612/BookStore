@@ -1,7 +1,7 @@
-package vn.edu.nlu.fit.servlet;
+package vn.edu.nlu.fit.admin.servlet;
 
-import vn.edu.nlu.fit.service.UserService;
-import vn.edu.nlu.fit.service.UserServiceImpl;
+import vn.edu.nlu.fit.service.CommentService;
+import vn.edu.nlu.fit.service.CommentServiceImpl;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -11,17 +11,17 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.SQLException;
 
-@WebServlet("/admin/users")
-public class ManageUsersServlet extends HttpServlet {
+@WebServlet("/admin/comments")
+public class ManageCommentsServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         doGet(request, response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        UserService userService = new UserServiceImpl();
+        CommentService commentService = new CommentServiceImpl();
         try{
-            request.setAttribute("users", userService.getUsers());
-            request.getRequestDispatcher("users.jsp").forward(request, response);
+            request.setAttribute("comments", commentService.getAllComments());
+            request.getRequestDispatcher("comment.jsp").forward(request, response);
         } catch (SQLException e){
 
         }

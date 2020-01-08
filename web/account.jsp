@@ -1,3 +1,4 @@
+<%@ page import="vn.edu.nlu.fit.model.User" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -49,6 +50,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </div>
 <div class="account">
     <div class="container">
+        <%
+            User user = (User) request.getAttribute("user");
+        %>
         <div class="bootstrap-tab animated wow slideInUp" data-wow-delay=".5s">
             <div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
                 <ul id="myTab" class="nav nav-tabs" role="tablist">
@@ -63,67 +67,55 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                          aria-labelledby="account-tab">
                         <div class="col-md-4 mail-grid-right animated wow slideInLeft" data-wow-delay=".5s">
                             <div class="mail-grid-right1">
-                                <img src="images/3.png" alt=" " class="img-responsive" />
-                                <h4>Rita Williumson </h4>
+                                <img src="<%=user.getImage()%>" alt=" " class="img-responsive" />
+                                <h4><%=user.getName()%> </h4>
                                 <ul class="phone-mail">
-                                    <li><i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>Phone: +1234 567 893</li>
-                                    <li><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i>Email: <a href="mailto:info@example.com">info@example.com</a></li>
+                                    <li><i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>Phone: <%=user.getPhone()%></li>
+                                    <li><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i>Email: <a href="mailto:info@example.com"><%=user.getUserName()%></a></li>
                                 </ul>
                             </div>
                         </div>
                         <div class="user-info-form col-md-8 animated wow slideInRight">
+
                             <form action="#">
+                                <input name="userID" type="hidden" value="<%=user.getUserID()%>">
                                 <div class="form-group">
                                     <label for="name" class="col-sm-3 control-label">Name</label>
                                     <div class="col-sm-9">
-                                        <input id="name" class="row col-xs-12 col-md-8 form-control" type="text" value="">
+                                        <input id="name" class="row col-xs-12 col-md-8 form-control" type="text" value="<%=user.getName()%>">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="phone" class="col-sm-3 control-label">Phone number</label>
                                     <div class="col-sm-9">
-                                        <input id="phone" class="row col-xs-12 col-md-8 form-control" type="tel" value="">
+                                        <input id="phone" class="row col-xs-12 col-md-8 form-control" type="tel" value="<%=user.getPhone()%>">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="email" class="col-sm-3 control-label">Email</label>
                                     <div class="col-sm-9">
-                                        <input id="email" class="row col-xs-12 col-md-8 form-control" type="email" value="">
+                                        <input id="email" class="row col-xs-12 col-md-8 form-control" type="email" value="<%=user.getUserName()%>">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-sm-3 control-label">Gentle</label>
                                     <div class="col-sm-9">
-                                        <input name="gentle" class="row col-xs-3 col-md-2" type="radio" value="">
+                                        <input name="gentle" class="row col-xs-3 col-md-2" type="radio" value="Male" <%=user.getGentle()==1?"checked":""%>>
                                         <p class="row col-xs-3 col-md-2">Male</p>
-                                        <input name="gentle" class="row col-xs-3 col-md-2" type="radio" value="">
+                                        <input name="gentle" class="row col-xs-3 col-md-2" type="radio" value="Female" <%=user.getGentle()==2?"checked":""%>>
                                         <p class="row col-xs-3 col-md-2">Female</p>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-sm-3 control-label">Birthday</label>
-                                    <div id="dob" class="row col-sm-9">
-                                        <select name="day" class="form-control col-xs-3">
-                                            <option value="0">Day</option>
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                        </select>
-                                        <select name="month" class="form-control col-xs-3">
-                                            <option value="0">Month</option>
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                        </select>
-                                        <select name="year" class="form-control col-xs-3">
-                                            <option value="0">Year</option>
-                                            <option value="1">1900</option>
-                                            <option value="2">1999</option>
-                                        </select>
+                                    <div class="col-sm-9">
+                                        <input id="dob" class="row col-xs-12 col-md-8 form-control" type="date" value="<%=user.getDob()%>">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-sm-3 control-label">Address</label>
                                     <div class="col-sm-9">
-                                        <textarea class="row col-xs-12 col-md-8 form-control" type="text" value=""></textarea>
+                                        <textarea class="row col-xs-12 col-md-8 form-control" type="text" value="<%=user.getAddress()%>"></textarea>
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -134,42 +126,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                         </div>
                                     </div>
                                 </div>
-                                <div id="change-pass" class="form-group">
-                                    <label class="col-sm-3 control-label"></label>
-                                    <div class="col-sm-8">
-                                        <div class="row form-group">
-                                            <label class="col-sm-3 control-label">Current</label>
-                                            <div class="col-sm-8">
-                                                <input type="password" class="form-control">
-                                            </div>
-                                        </div>
-                                        <div class="row form-group">
-                                            <label class="col-sm-3 control-label">New</label>
-                                            <div class="col-sm-8">
-                                                <input type="password" class="form-control">
-                                            </div>
-                                        </div>
-                                        <div class="row form-group">
-                                            <label class="col-sm-3 control-label">Retype new</label>
-                                            <div class="col-sm-8">
-                                                <input type="password" class="form-control">
-                                            </div>
-                                        </div>
-                                        <div class="row form-group">
-                                            <label class="col-sm-3 control-label"></label>
-                                            <div class="col-sm-8">
-                                                <button type="submit" class="btn btn-primary">Save</button>
-                                                <button type="submit" class="btn btn-default">Cancel</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <script>
-                                    $("#change-pass").hide();
-                                    $("#change-pass-bt").onclick(function () {
-                                        $("#change-pass").show();
-                                    });
-                                </script>
+                                <jsp:include page="changePasswordForm.jsp"></jsp:include>
                                 <div class="form-group">
                                     <label class="col-sm-3 control-label"></label>
                                     <div class="row col-sm-9">

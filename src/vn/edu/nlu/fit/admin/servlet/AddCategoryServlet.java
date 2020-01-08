@@ -1,4 +1,4 @@
-package vn.edu.nlu.fit.servlet;
+package vn.edu.nlu.fit.admin.servlet;
 
 import vn.edu.nlu.fit.model.Category;
 import vn.edu.nlu.fit.service.CategoryService;

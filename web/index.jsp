@@ -43,7 +43,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     </script>
     <link rel="stylesheet" href="../FontAwesome/css/all.css">
     <!-- //animation-effect -->
-
 </head>
 <body>
 <jsp:include page="/header"></jsp:include>
@@ -328,9 +327,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         </div>
     </div>
 </div>
-<%
-    //    session.setAttribute("recentPath",request.getRequestURI()+request.getQueryString()!=null?request.getQueryString():"");
-%>
 <!-- //collections-bottom -->
 <!-- footer -->
 <jsp:include page="/footer"></jsp:include>

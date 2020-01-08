@@ -290,8 +290,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <span>Feedback</span>
                         </a>
                         <ul class="sub">
-                            <li><a class="active" href="mail.html">Mail</a></li>
-                            <li><a href="mail_compose.html">Compose Mail</a></li>
+                            <li><a class="active" href="mail.jsp">Mail</a></li>
+                            <li><a href="mail_compose.jsp">Compose Mail</a></li>
                             <li><a href="comment.jsp">Comment</a></li>
                         </ul>
                     </li>
@@ -316,11 +316,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <div class="col-sm-3 com-w3ls">
                         <section class="panel">
                             <div class="panel-body">
-                                <a href="mail_compose.html" class="btn btn-compose">
+                                <a href="mail_compose.jsp" class="btn btn-compose">
                                     Compose Mail
                                 </a>
                                 <ul class="nav nav-pills nav-stacked mail-nav">
-                                    <li class="active"><a href="mail.html"> <i class="fa fa-inbox"></i> Inbox <span
+                                    <li class="active"><a href="mail.jsp"> <i class="fa fa-inbox"></i> Inbox <span
                                             class="label label-danger pull-right inbox-notification">9</span></a></li>
                                     <li><a href="#"> <i class="fa fa-envelope-o"></i> Send Mail</a></li>
                                     <li><a href="#"> <i class="fa fa-certificate"></i> Important</a></li>

@@ -104,7 +104,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 </div>
                 <div class="description">
                     <h5><i>Description</i></h5>
-                    <p><%=book.getDescription()%>
+                    <p><%=book.getDescription()%><br>
+                        Published year: <%=book.getPublishedYear()%><br>
+                        Page: <%=book.getPage()%><br>
+                        Quantity: <%=book.getQuantity()%><br>
                     </p>
                 </div>
                 <div class="occasion-cart">

@@ -60,7 +60,7 @@
                 <h3>Blog Posts</h3>
                 <div class="footer-grid-sub-grids">
                     <div class="footer-grid-sub-grid-left">
-                        <a href=""><img src="img/imgfooter%20(1).jpg" alt=" " class="img-responsive"/></a>
+                        <a href=""><img src="img/imgfooter(1).jpg" alt=" " class="img-responsive"/></a>
                     </div>
                     <div class="footer-grid-sub-grid-right">
                         <h4><a href="">culpa qui officia deserunt</a></h4>
@@ -82,7 +82,7 @@
             <div class="clearfix"></div>
         </div>
         <div class="footer-logo animated wow slideInUp" data-wow-delay=".5s">
-            <h2><a href="index.jsp">Best Store <span>shop anywhere</span></a></h2>
+            <h2><a href="/">Best Store <span>shop anywhere</span></a></h2>
         </div>
     </div>
 </div>

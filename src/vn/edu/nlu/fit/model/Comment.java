@@ -7,13 +7,15 @@ public class Comment {
     private int productID;
     private int userID;
     private String userName;
+    private String userImage;
     private Date date;
     private String content;
 
-    public Comment(int commentID, int productID, int userID, String userName, Date date, String content) {
+    public Comment(int commentID, int productID, int userID, String userName, String userImage, Date date, String content) {
         this.commentID = commentID;
         this.productID = productID;
         this.userID = userID;
+        this.userImage = userImage;
         this.userName = userName;
         this.date = date;
         this.content = content;
@@ -41,5 +43,9 @@ public class Comment {
 
     public Date getDate() {
         return date;
+    }
+
+    public String getUserImage() {
+        return userImage;
     }
 }

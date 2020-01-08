@@ -58,8 +58,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <%
             if (request.getAttribute("error")!=null){
         %>
-
-        <%=request.getAttribute("error")%>
+        <div class="alert alert-danger" role="alert">
+            <strong>Oh snap!</strong> <%=request.getAttribute("error")%>
+        </div>
         <%
             }
         %>
@@ -67,7 +68,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <div class="login-form-grids">
             <h5 class="animated wow slideInUp" data-wow-delay=".5s">profile information</h5>
             <form id="register-form" class="animated wow slideInUp" data-wow-delay=".5s" method="post">
-                <input id="email" name="email" type="email" placeholder="Email Address *" required=>
+                <input id="email" name="email" type="email" placeholder="Email Address *" required value="<%=request.getAttribute("email")!=null?request.getAttribute("email"):""%>">
                 <input id="pass" name="pass" type="password" placeholder="Password *" required>
                 <input id="retypePass" name="retypePass" type="password" placeholder="Password Confirmation *" required>
                 <div class="register-check-box">
@@ -88,7 +89,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             },
                             pass: {
                                 required: true,
-                                minlength: 1,
+                                minlength: 8,
                             },
                             retypePass: {
                                 required: true,
@@ -97,18 +98,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         },
                         messages: {
                             email: {
-                                required: "Please enter your phone number",
-                                // equalTo: "Your phone number fotmat is wrong"
+                                required: "Please enter your email",
                             },
                             pass: {
-                                required: "Please enter your phone number",
-                                minlength: "Phone number is at least 10 characters",
-                                // equalTo: "Your phone number fotmat is wrong"
+                                required: "Please enter password",
+                                minlength: "Phone number is at least 8 characters",
                             },
                             retypePass: {
-                                required: "Please enter your phone number",
-                                // minlength: "Phone number is at least 10 characters",
-                                // equalTo: "Your phone number fotmat is wrong"
+                                required: "Please enter retype password",
+                                equalTo: ""
                             }
                         }
                     })
@@ -122,7 +120,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             </div>
         </div>
         <div class="register-home animated wow slideInUp" data-wow-delay=".5s">
-            <a href="index.jsp">Home</a>
+            <a href="/">Home</a>
         </div>
     </div>
 </div>

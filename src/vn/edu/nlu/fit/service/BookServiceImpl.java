@@ -1,6 +1,8 @@
 package vn.edu.nlu.fit.service;
 
+import sun.security.pkcs11.Secmod;
 import vn.edu.nlu.fit.database.DBConnect;
+import vn.edu.nlu.fit.database.GPDataSource;
 import vn.edu.nlu.fit.model.Book;
 
 import java.sql.Connection;
@@ -11,11 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BookServiceImpl implements BookService {
-    static Connection connection;
-
-    public BookServiceImpl() {
-        connection = DBConnect.getConnection();
-    }
+    Connection connection;
 
     private Book createBookObject(ResultSet rs) throws SQLException {
         return new Book(rs.getInt("bookID"),
@@ -24,7 +22,10 @@ public class BookServiceImpl implements BookService {
             rs.getString("image"),
             rs.getInt("price"),
             rs.getString("description"),
-            rs.getString("details"));
+            rs.getString("details"),
+            rs.getInt("quantity"),
+            rs.getInt("page"),
+            rs.getInt("published"));
     }
 
     @Override
@@ -94,7 +95,8 @@ public class BookServiceImpl implements BookService {
         return list;
     }
 
-    private static ResultSet getResultSet(String sqlStatement) throws SQLException {
+    private ResultSet getResultSet(String sqlStatement) throws SQLException {
+        connection = GPDataSource.getConnection();
         PreparedStatement ps = connection.prepareStatement(sqlStatement);
         return ps.executeQuery();
     }

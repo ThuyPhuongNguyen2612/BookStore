@@ -62,6 +62,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <div class="container">
         <%
             Cart cart = (Cart) request.getAttribute("cart");
+            if (request.getAttribute("error")!=null){
+        %>
+        <div class="alert alert-danger" role="alert">
+            <strong>Oh snap!</strong> Your cart is empty!
+        </div>
+        <%
+            }
         %>
         <h3 class="animated wow slideInLeft" data-wow-delay=".5s">Your shopping cart contains:
             <span><%=cart.getNumberOfBookTitles()%> Products</span></h3>
@@ -114,6 +121,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             $('.close<%=book.getBookID()%>').on('click', function (c) {
                                 $('.rem<%=book.getBookID()%>').fadeOut('slow', function (c) {
                                     $('.rem<%=book.getBookID()%>').remove();
+
                                 });
                             });
                         });
@@ -141,14 +149,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <div class="checkout-left">
             <div class="checkout-left-basket animated wow slideInLeft" data-wow-delay=".5s">
                 <ul>
-                    <%
-                    %>
-                    <li>Total <i>-</i> <span>$<%=cart.getPrice()%> </span></li>
-                    <li>Discount <i>-</i> <span>$250.00 </span></li>
-                    <li>Delivery Charges <i>-</i> <span>$250.00 </span></li>
-                    <li>Total <i>-</i> <span>$854.00</span></li>
+                    <li>Price <i>-</i> <span>$<%=cart.getPrice()%> </span></li>
+                    <li>Delivery Charges <i>-</i> <span>$<%=cart.getPrice()!=0.0?2.0:0.0%> </span></li>
+                    <li>Total <i>-</i> <span>$<%=cart.getPrice()+cart.getPrice()!=0.0?2.0:0.0%></span></li>
                 </ul>
-                <a href="<%=request.getSession().getAttribute("user")!=null?"":""%>"><input type="submit" value="ORDER" class="form-button"></a>
+                <a href="/order/step1"><input type="submit" value="ORDER" class="form-button"></a>
             </div>
             <div class="checkout-right-basket animated wow slideInRight" data-wow-delay=".5s">
                 <a href="/"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>Continue

@@ -295,8 +295,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <span>Feedback</span>
                         </a>
                         <ul class="sub">
-                            <li><a href="mail.html">Mail</a></li>
-                            <li><a href="mail_compose.html">Compose Mail</a></li>
+                            <li><a href="mail.jsp">Mail</a></li>
+                            <li><a href="mail_compose.jsp">Compose Mail</a></li>
                             <li><a href="comment.jsp">Comment</a></li>
                         </ul>
                     </li>

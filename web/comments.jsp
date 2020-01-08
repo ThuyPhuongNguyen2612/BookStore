@@ -6,12 +6,11 @@
 %>
 <div class="bootstrap-tab-text-grid">
     <div class="bootstrap-tab-text-grid-left">
-        <img src="img/2.png" alt=" " class="img-responsive"/>
+        <img src="<%=comment.getUserImage()%>" alt=" " class="img-responsive"/>
     </div>
     <div class="bootstrap-tab-text-grid-right">
         <ul>
-            <li><a href="#"><%=comment.getUserName()%>
-            </a></li>
+            <li><a href="#"><%=comment.getUserName()%></a></li>
         </ul>
         <p><%=comment.getContent()%>
         </p>

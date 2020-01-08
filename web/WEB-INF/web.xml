@@ -16,12 +16,12 @@
 
     <context-param>
         <param-name>user</param-name>
-        <param-value>thuyphuong261299@gmail.com</param-value>
+        <param-value>MomoiroNyanko2612@gmail.com</param-value>
     </context-param>
 
     <context-param>
         <param-name>pass</param-name>
-        <param-value>kes5A9j7C42U</param-value>
+        <param-value>peDIA2612!</param-value>
     </context-param>
 
 </web-app>

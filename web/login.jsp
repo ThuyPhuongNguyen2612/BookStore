@@ -49,21 +49,22 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- login -->
 	<div class="login">
 		<div class="container">
+            <%
+                if (request.getAttribute("error")!=null){
+            %>
+            <div class="alert alert-danger" role="alert">
+                <strong>Oh snap!</strong> <%=request.getAttribute("error")%>
+            </div>
+            <%
+                }
+            %>
 			<h3 class="animated wow zoomIn" data-wow-delay=".5s">Login Form</h3>
-			<%
-				if (request.getAttribute("error")!=null){
-			%>
-			<p style="color: red"><%=request.getAttribute("error")%></p>
-			<%
-				}
-			%>
 			<div class="login-form-grids animated wow slideInUp" data-wow-delay=".5s">
 				<form method="post" action="/login">
-					<input name="uname" type="text" placeholder="Email" required=" " >
+					<input name="uname" type="text" placeholder="Email" required=" " value="<%=request.getAttribute("userName")!=null?request.getAttribute("userName"):""%>">
 					<input name="pass" type="password" placeholder="Password" required=" " >
-					<input type="hidden" name="from" value="${param.from}">
 					<div class="forgot">
-						<a href="#">Forgot Password?</a>
+						<a href="/forgotPassword">Forgot Password?</a>
 					</div>
 					<input type="submit" value="Login">
 				</form>
@@ -74,7 +75,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</div>
 			</div>
 			<h4 class="animated wow slideInUp" data-wow-delay=".5s">For New People</h4>
-			<p class="animated wow slideInUp" data-wow-delay=".5s"><a href="register.jsp">Register Here</a> (Or) go back to <a href="index.jsp">Home<span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></a></p>
+			<p class="animated wow slideInUp" data-wow-delay=".5s"><a href="/register">Register Here</a> (Or) go back to <a href="/">Home<span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></a></p>
 		</div>
 	</div>
 <!-- //login -->

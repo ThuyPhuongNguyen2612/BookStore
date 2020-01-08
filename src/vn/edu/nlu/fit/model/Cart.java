@@ -36,4 +36,8 @@ public class Cart {
             books.put(book, books.getOrDefault(book, 0) - 1);
         }
     }
+
+    public boolean isEmpty(){
+        return books.size()==0;
+    }
 }

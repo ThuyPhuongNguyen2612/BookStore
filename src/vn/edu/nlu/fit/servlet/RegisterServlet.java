@@ -23,20 +23,20 @@ public class RegisterServlet extends HttpServlet {
         String email = getParameter(request, "email");
         String password = getParameter(request, "pass");
         String retypePassword = getParameter(request, "retypePass");
-        String checkbox = request.getParameter("checkbox");
+        String checkbox = getParameter(request,"checkbox");
 
         UserService userService = new UserServiceImpl();
         if (checkEmail(email) && checkPassword(password, retypePassword) && checkCheckBox(checkbox)) {
             User user = new User(email, password);
             try {
                 userService.addUser(user);
+                response.sendRedirect("/login?userName="+email);
             } catch (SQLException e){
 
             }
-            request.setAttribute("userName", email);
-            request.getRequestDispatcher("login").forward(request, response);
         } else {
-            request.setAttribute("error", "error");
+            request.setAttribute("error", "Invalid information!");
+            request.setAttribute("email", email);
             request.getRequestDispatcher("register.jsp").forward(request, response);
         }
     }

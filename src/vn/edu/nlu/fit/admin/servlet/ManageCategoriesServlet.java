@@ -1,4 +1,4 @@
-package vn.edu.nlu.fit.servlet;
+package vn.edu.nlu.fit.admin.servlet;
 
 import vn.edu.nlu.fit.service.CategoryService;
 import vn.edu.nlu.fit.service.CategoryServiceImpl;
@@ -18,9 +18,10 @@ public class ManageCategoriesServlet extends HttpServlet {
         CategoryService categoryService = new CategoryServiceImpl();
         try {
             request.setAttribute("categories", categoryService.getCategories());
+            request.getRequestDispatcher("categories.jsp").forward(request,response);
         } catch (SQLException e){
             e.getStackTrace();
         }
-        request.getRequestDispatcher("categories.jsp").forward(request,response);
+
     }
 }
