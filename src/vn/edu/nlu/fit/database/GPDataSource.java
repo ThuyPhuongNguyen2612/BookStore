@@ -4,7 +4,7 @@ import java.sql.Connection;
 
 public class GPDataSource {
 
-    public static final int DB_MAX_CONNECTIONS = 100;
+    private static final int DB_MAX_CONNECTIONS = 100;
 
     private static final GPConnectionPool gpPool = new GPConnectionPoolImpl(DB_MAX_CONNECTIONS);
 
@@ -18,7 +18,8 @@ public class GPDataSource {
         return connection;
     }
 
-    public static boolean releaseConnection(Connection connection) {
-        return gpPool.releaseConnection(connection);
+    public static void releaseConnection(Connection connection) {
+        gpPool.releaseConnection(connection);
+        System.out.println("GPPool status: " + gpPool);
     }
 }

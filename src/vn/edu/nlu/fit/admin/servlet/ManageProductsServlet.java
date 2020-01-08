@@ -1,7 +1,5 @@
 package vn.edu.nlu.fit.admin.servlet;
 
-import vn.edu.nlu.fit.database.DBConnect;
-import vn.edu.nlu.fit.model.Book;
 import vn.edu.nlu.fit.service.BookService;
 import vn.edu.nlu.fit.service.BookServiceImpl;
 
@@ -11,7 +9,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.sql.PreparedStatement;
 
 @WebServlet("/admin/products")
 public class ManageProductsServlet extends HttpServlet {

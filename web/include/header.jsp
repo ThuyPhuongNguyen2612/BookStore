@@ -2,7 +2,6 @@
 <%@ page import="vn.edu.nlu.fit.model.Category" %>
 <%@ page import="vn.edu.nlu.fit.model.User" %>
 <%@ page import="java.util.List" %>
-<%@ page import="vn.edu.nlu.fit.model.Author" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <%

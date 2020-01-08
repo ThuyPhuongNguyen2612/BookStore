@@ -29,7 +29,7 @@ public class HeaderServlet extends HttpServlet {
             request.setAttribute("amount", amount);
             request.setAttribute("allBooks", books);
             request.setAttribute("listCategories", categoryService.getCategories());
-            request.setAttribute("authors", authorService.getAuthors());
+            //request.setAttribute("authors", authorService.getAuthors());
             request.getRequestDispatcher("include/header.jsp").include(request, response);
         } catch (SQLException ignored) {
         }

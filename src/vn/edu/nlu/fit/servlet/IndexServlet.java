@@ -23,9 +23,9 @@ public class IndexServlet extends HttpServlet {
             request.setAttribute("newBooks", bookService.getNewBook());
             request.setAttribute("highlightedBooks", bookService.getHighlightedBook());
             request.setAttribute("randomBooks", bookService.getRandomBook());
+            request.getRequestDispatcher("index.jsp").forward(request, response);
         } catch (SQLException ignored) {
 
         }
-        request.getRequestDispatcher("index.jsp").forward(request, response);
     }
 }

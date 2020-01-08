@@ -10,7 +10,7 @@ public class GPConnectionPoolImpl implements GPConnectionPool {
 
     private int maxConnection;
 
-    public GPConnectionPoolImpl(int maxConnection) {
+    GPConnectionPoolImpl(int maxConnection) {
         this.maxConnection = maxConnection;
         initializeConnectionPool();
     }
@@ -33,7 +33,7 @@ public class GPConnectionPoolImpl implements GPConnectionPool {
 
     @Override
     public synchronized Connection getConnection() {
-        while(availableConnections.size() == 0) {
+        while (availableConnections.size() == 0) {
             // Wait for an existing connection to be freed up.
             try {
                 wait();
@@ -67,8 +67,7 @@ public class GPConnectionPoolImpl implements GPConnectionPool {
         StringBuilder sb = new StringBuilder()
                 .append("Max=" + maxConnection)
                 .append(" | Available=" + availableConnections.size())
-                .append(" | Busy=" + (maxConnection - availableConnections.size()))
-                ;
+                .append(" | Busy=" + (maxConnection - availableConnections.size()));
         return sb.toString();
     }
 }

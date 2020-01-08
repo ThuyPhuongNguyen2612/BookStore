@@ -22,7 +22,6 @@
                     String url = request.getRequestURL().toString();
                     String baseURL = url.substring(0, url.length() - request.getRequestURI().length()) + request.getContextPath() + "/";
                 %>
-                %>
                 <div class="footer-grid-left">
                     <a href=""><img src="<%=baseURL%>img/footer(1).png" alt=" " class="img-responsive"/></a>
                 </div>
