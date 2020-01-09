@@ -85,7 +85,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 for (Order order : orders) {
                             %>
                             <tr>
-                                <td><%=order.getOrderID()%>/td>
+                                <td><%=order.getOrderID()%></td>
                                 <td><%=order.getUserID()%></td>
                                 <td><%=order.getAddress()%></td>
                                 <td><%=order.getName()%></td>
