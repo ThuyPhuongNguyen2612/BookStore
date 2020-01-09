@@ -12,6 +12,6 @@ class ConnectionUtils {
     static Connection openConnection() throws SQLException, ClassNotFoundException {
          Class.forName("com.mysql.jdbc.Driver");
 
-        return DriverManager.getConnection("jdbc:mysql://db4free.net/bookstore1234?useUnicode=true&characterEncoding=utf-8", userName, password);
+        return DriverManager.getConnection("jdbc:mysql://www.db4free.net/bookstore1234?useUnicode=true&characterEncoding=utf-8", userName, password);
     }
 }
