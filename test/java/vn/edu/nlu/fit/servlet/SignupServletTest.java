@@ -1,4 +1,4 @@
-package vn.edu.nlu.fit.servlet;
+package java.vn.edu.nlu.fit.servlet;
 
 import org.junit.Test;
 

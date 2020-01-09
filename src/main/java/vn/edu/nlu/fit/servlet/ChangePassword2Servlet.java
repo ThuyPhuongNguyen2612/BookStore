@@ -1,8 +1,6 @@
 package vn.edu.nlu.fit.servlet;
 
 import vn.edu.nlu.fit.model.User;
-import vn.edu.nlu.fit.service.ActiveCodeService;
-import vn.edu.nlu.fit.service.ActiveCodeServiceImpl;
 import vn.edu.nlu.fit.service.UserService;
 import vn.edu.nlu.fit.service.UserServiceImpl;
 

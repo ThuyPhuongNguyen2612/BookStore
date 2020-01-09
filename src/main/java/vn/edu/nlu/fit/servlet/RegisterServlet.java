@@ -1,9 +1,9 @@
 package vn.edu.nlu.fit.servlet;
 
-import vn.edu.nlu.fit.model.User;
 import vn.edu.nlu.fit.service.SendMail;
-import vn.edu.nlu.fit.service.UserService;
 import vn.edu.nlu.fit.service.UserServiceImpl;
+import vn.edu.nlu.fit.model.User;
+import vn.edu.nlu.fit.service.UserService;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
@@ -13,7 +13,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.sql.SQLException;
 
 @WebServlet("/register")
 public class RegisterServlet extends HttpServlet {

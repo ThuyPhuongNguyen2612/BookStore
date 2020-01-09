@@ -6,7 +6,6 @@ import vn.edu.nlu.fit.model.User;
 import vn.edu.nlu.fit.service.OrderService;
 import vn.edu.nlu.fit.service.OrderServiceImpl;
 
-import javax.mail.Session;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;

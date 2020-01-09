@@ -1,7 +1,7 @@
 package vn.edu.nlu.fit.admin.servlet;
 
-import vn.edu.nlu.fit.model.User;
 import vn.edu.nlu.fit.service.UserServiceImpl;
+import vn.edu.nlu.fit.model.User;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

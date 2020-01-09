@@ -2,9 +2,7 @@ package vn.edu.nlu.fit.servlet;
 
 import vn.edu.nlu.fit.service.MessageService;
 import vn.edu.nlu.fit.service.MessageServiceImpl;
-import vn.edu.nlu.fit.service.SendMail;
 
-import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
