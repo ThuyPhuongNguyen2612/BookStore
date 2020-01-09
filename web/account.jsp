@@ -62,7 +62,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             if (request.getParameter("info") != null) {
         %>
         <div class="info" role="alert">
-            Password changed!!!
+            Account information updated!!!
         </div>
 
         <%
@@ -101,26 +101,26 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         </div>
                         <div class="user-info-form col-md-8 animated wow slideInRight">
 
-                            <form action="#">
+                            <form action="/account" method="post">
                                 <input name="userID" type="hidden" value="<%=user.getUserID()%>">
                                 <div class="form-group">
                                     <label for="name" class="col-sm-3 control-label">Name</label>
                                     <div class="col-sm-9">
-                                        <input id="name" class="row col-xs-12 col-md-8 form-control" type="text"
+                                        <input id="name" name="name" class="row col-xs-12 col-md-8 form-control" type="text"
                                                value="<%=user.getName()%>">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="phone" class="col-sm-3 control-label">Phone number</label>
                                     <div class="col-sm-9">
-                                        <input id="phone" class="row col-xs-12 col-md-8 form-control" type="tel"
+                                        <input id="phone" name="phone" class="row col-xs-12 col-md-8 form-control" type="tel"
                                                value="<%=user.getPhone()%>">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="email" class="col-sm-3 control-label">Email</label>
                                     <div class="col-sm-9">
-                                        <input id="email" class="row col-xs-12 col-md-8 form-control" type="email"
+                                        <input id="email" name="email" class="row col-xs-12 col-md-8 form-control" type="email"
                                                value="<%=user.getUserName()%>">
                                     </div>
                                 </div>
@@ -138,14 +138,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 <div class="form-group">
                                     <label class="col-sm-3 control-label">Birthday</label>
                                     <div class="col-sm-9">
-                                        <input id="dob" class="row col-xs-12 col-md-8 form-control" type="date"
+                                        <input id="dob" name="dob" class="row col-xs-12 col-md-8 form-control" type="date"
                                                value="<%=user.getDob()%>">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-sm-3 control-label">Address</label>
                                     <div class="col-sm-9">
-                                            <textarea class="row col-xs-12 col-md-8 form-control" type="text"
+                                            <textarea name="address" class="row col-xs-12 col-md-8 form-control" type="text"
                                                       value="<%=user.getAddress()%>"></textarea>
                                     </div>
                                 </div>

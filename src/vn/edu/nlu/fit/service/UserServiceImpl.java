@@ -87,8 +87,8 @@ public class UserServiceImpl implements UserService {
         ps.setString(5, address);
         ps.setInt(6, gentle);
         ps.setInt(7, userID);
-        GPDataSource.releaseConnection(connection);
         ps.executeUpdate();
+        GPDataSource.releaseConnection(connection);
     }
 
     @Override

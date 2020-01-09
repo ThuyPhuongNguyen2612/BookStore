@@ -25,12 +25,12 @@ public class AccountProfileServlet extends HttpServlet {
         String email = getParameter(request, "email");
         String gentleString = getParameter(request, "gentle");
         String address = getParameter(request, "address");
-        String[] availableDate = request.getParameterValues("availableDate");
+        String dobString = request.getParameter("dob");
         SimpleDateFormat availDate = new SimpleDateFormat("dd-MM-yyyy");
         Date dob;
         try {
-            dob = availDate.parse(availableDate[0]);
-        } catch (ParseException e) {
+            dob = availDate.parse(dobString);
+        } catch (Exception e) {
             dob = null;
         }
         int gentle;
@@ -42,11 +42,10 @@ public class AccountProfileServlet extends HttpServlet {
         UserService userService = new UserServiceImpl();
         try {
             userService.updateUser(userID, email, name, phone, dob, address, gentle);
+            response.sendRedirect("/account?info=account-changed");
         } catch (SQLException e) {
-
+            response.sendRedirect("/account?error=error");
         }
-
-
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
