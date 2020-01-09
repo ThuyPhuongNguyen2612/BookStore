@@ -18,14 +18,14 @@ public class OrderServiceImpl implements OrderService {
     @Override
     public void addOrder(Order order) throws SQLException {
         Connection connection = GPDataSource.getConnection();
-        PreparedStatement ps = connection.prepareStatement("INSERT INTO order VALUES (?,?,?,CURRENT_TIMESTAMP,?,?,'new')");
+        PreparedStatement ps = connection.prepareStatement("INSERT INTO `order`(userId, address, payment,  date, phone,  status, name) VALUES (?,?,?,CURRENT_TIMESTAMP,?,?,'new')");
         ps.setInt(1, order.getUserID());
         ps.setString(2, order.getAddress());
         ps.setString(3, order.getPayment());
         ps.setString(4, order.getPhone());
         ps.setString(5, order.getName());
         ps.executeUpdate();
-        PreparedStatement ps1 = connection.prepareStatement("SELECT orderID FROM order WHERE userID=? and address=? and payment=? and phone=? and name=?");
+        PreparedStatement ps1 = connection.prepareStatement("SELECT orderID FROM `order` WHERE userID=? and address=? and payment=? and phone=? and name=?");
         ps1.setInt(1, order.getUserID());
         ps1.setString(2, order.getAddress());
         ps1.setString(3, order.getPayment());

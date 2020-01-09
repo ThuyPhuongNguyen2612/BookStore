@@ -16,7 +16,14 @@ function addBookToCart(hostUrl, bookId) {
 }
 
 function addCart() {
-    $.ajax( {url: '/order/payment', type: "post"});
+    $.ajax( {url: '/order/payment', type: "post", statusCode: {
+            500: function () {
+                swal("", "Failed", "error");
+            },
+            200: function () {
+                window.location = "/order/end";
+            }
+        }});
 }
 
 function removeAllItemsOfABookFromCart(hostUrl, bookID) {

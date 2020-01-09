@@ -110,9 +110,11 @@ public class OrderServlet extends HttpServlet {
         try {
             orderService.addOrder(order);
             session.setAttribute("cart", null);
+            response.setStatus(200);
         } catch (SQLException e){
+            response.setStatus(500);
         }
-        request.getRequestDispatcher("/order/end").forward(request, response);
+
     }
 
     private void endOrder(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
