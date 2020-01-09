@@ -52,7 +52,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <%
                         if (request.getParameter("notify") != null) {
                     %>
-                    New book just added!!!
+                    <div class="alert alert-success" role="alert">
+                        <strong>Success!</strong>
+                    </div>
                     <%
                         }
                     %>
@@ -112,7 +114,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 <td><%=book.getCategoryID()%></td>
                                 <td><%=book.getTitle()%>
                                 </td>
-                                <td><img src="<%=book.getImage()%>"/></td>
+                                <td><img src="../<%=book.getImage()%>"/></td>
                                 <td><%=book.getQuantity()%></td>
                                 <td><input type="checkbox"></td>
                                 <td><input type="checkbox"></td>

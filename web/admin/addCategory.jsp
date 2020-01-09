@@ -50,7 +50,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     if (request.getParameter("error") != null) {
                 %>
                 <div class="alert alert-danger" role="alert">
-                    <strong>Oh snap!</strong> Error happened%>
+                    <strong>Oh snap!</strong> Error happened
                 </div>
                 <%
                     }
@@ -60,7 +60,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         Add category form
                     </header>
                     <div class="panel-body">
-                        <form action="/admin/addCategory" class="form-horizontal bucket-form" method="post">
+                        <form class="form-horizontal bucket-form" method="post">
                             <div class="form-group">
                                 <label for="categoryName" class="col-lg-2 col-sm-2 control-label">Name</label>
                                 <div class="col-sm-10">

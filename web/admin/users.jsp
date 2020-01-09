@@ -104,7 +104,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 </td>
                                 <td><%=user.getName()%>
                                 </td>
-                                <td><img src="<%=user.getImage()%>"></td>
+                                <td><img src="../<%=user.getImage()%>"></td>
                                 <td><%=user.getPhone() != null ? user.getPhone() : "..."%>
                                 </td>
                                 <td><%=user.getGentle() == 1 ? "Male" : "Female"%>

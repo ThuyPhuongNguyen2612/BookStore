@@ -65,22 +65,20 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                     <div class="form-group">
                                         <label class="col-sm-3 control-label" style="margin-top: 10px">Code<span class="ip1" style="color: red">*</span></label>
                                         <div class="col-sm-9" style="margin-top: 10px">
-                                            <input name="code" type="text" placeholder="Code"
-                                                   style="margin-left: 25px;height: 30px; width: 80%; border: 1px solid lightgray">
+                                            <input name="code" type="text" placeholder="Code" class="form-control">
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="col-sm-3 control-label" style="margin-top: 10px">New password<span class="ip1" style="color: red">*</span></label>
                                         <div class="col-sm-9" style="margin-top: 10px">
-                                            <input name="pass" type="password" placeholder="New password"
-                                                   style="margin-left: 25px;height: 30px; width: 80%; border: 1px solid lightgray">
+                                            <input name="pass" type="password" placeholder="New password" class="form-control">
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-sm-3 control-label" style="margin-top: 10px">Re- enter new password<span class="ip1" style="color: red">*</span></label>
+                                        <label class="col-sm-3 control-label" style="margin-top: 10px">Retype password<span class="ip1" style="color: red">*</span></label>
                                         <div class="col-sm-9" style="margin-top: 10px">
                                             <input name="retypePass" type="password" placeholder="Confirm password"
-                                                   style="margin-left: 25px;height: 30px; width: 80%; border: solid 1px lightgray">
+                                                   class="form-control">
                                         </div>
                                     </div>
                                 </div>

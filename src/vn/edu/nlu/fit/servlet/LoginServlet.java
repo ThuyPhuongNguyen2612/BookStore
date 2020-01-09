@@ -18,24 +18,35 @@ import java.sql.SQLException;
 public class LoginServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("login.jsp").forward(request, response);
+        HttpSession session =  request.getSession();
+        if (session.getAttribute("user")==null) {
+            request.getRequestDispatcher("login.jsp").forward(request, response);
+        } else {
+            response.sendRedirect("/");
+        }
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String uname = request.getParameter("uname");
-        String pass = request.getParameter("pass");
-        UserService userService = new UserServiceImpl();
-        try {
-            User user = userService.getUser(uname, pass);
-            if (user != null) {
-                HttpSession session = request.getSession();
-                session.setAttribute("user", user);
-                response.sendRedirect((String) session.getAttribute("currentPath"));
-            } else {
-                response.sendRedirect("/login?error=\"Username or Password is wrong\"");
-            }
-        } catch (SQLException ignored) {
+        HttpSession session = request.getSession();
+        if (session.getAttribute("user")==null) {
+            String uname = request.getParameter("uname");
+            String pass = request.getParameter("pass");
+            UserService userService = new UserServiceImpl();
+            try {
+                User user = userService.getUser(uname, pass);
+                if (user != null) {
 
+                    session.setAttribute("user", user);
+                    if (user.getGroup() > 1) session.setAttribute("adminUser", user.getUserName());
+                    response.sendRedirect((String) session.getAttribute("currentPath"));
+                } else {
+                    response.sendRedirect("/login?error=\"Username or Password is wrong\"");
+                }
+            } catch (SQLException ignored) {
+
+            }
+        } else {
+            response.sendRedirect("/");
         }
     }
 }

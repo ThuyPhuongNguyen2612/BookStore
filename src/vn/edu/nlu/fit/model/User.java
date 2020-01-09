@@ -14,7 +14,9 @@ public class User {
     private int gentle;
     private int group;
 
-    public User() {
+    public User(String userName) {
+        this.userName = userName;
+        group = 2;
     }
 
     public User(int userID, String userName, String password, String name, String phone, String image, Date dob, String address, int gentle, int group) {

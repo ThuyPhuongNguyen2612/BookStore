@@ -58,7 +58,21 @@ public class OrderServiceImpl implements OrderService {
         return list;
     }
 
-    public Order createOrderObject(ResultSet rs) throws SQLException {
+    @Override
+    public List getMyOrders(int userID) throws SQLException {
+        Connection connection = GPDataSource.getConnection();
+        List list = new ArrayList();
+        PreparedStatement ps = connection.prepareStatement("SELECT * FROM `order` WHERE userID=?");
+        ps.setInt(1, userID);
+        ResultSet rs = ps.executeQuery();
+        while (rs.next()){
+            list.add(createOrderObject(rs));
+        }
+        GPDataSource.releaseConnection(connection);
+        return list;
+    }
+
+    private Order createOrderObject(ResultSet rs) throws SQLException {
         return new Order(rs.getInt("orderID"),
             rs.getInt("userID"),
             rs.getString("address"),

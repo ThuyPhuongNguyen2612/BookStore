@@ -1,4 +1,6 @@
 <%@ page import="vn.edu.nlu.fit.model.User" %>
+<%@ page import="java.util.List" %>
+<%@ page import="vn.edu.nlu.fit.model.Order" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -61,14 +63,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             }
             if (request.getParameter("info") != null) {
         %>
-        <div class="info" role="alert">
-            Account information updated!!!
+        <div class="alert alert-success" role="alert">
+            <strong>Oh snap!</strong> Change password success!!
         </div>
-
         <%
             }
         %>
-
         <%
             User user = (User) request.getAttribute("user");
         %>
@@ -100,7 +100,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             </div>
                         </div>
                         <div class="user-info-form col-md-8 animated wow slideInRight">
-
                             <form action="/account" method="post">
                                 <input name="userID" type="hidden" value="<%=user.getUserID()%>">
                                 <div class="form-group">
@@ -158,6 +157,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                         </div>
                                     </div>
                                 </div>
+                                <jsp:include page="changePasswordForm.jsp"></jsp:include>
                                 <div class="form-group">
                                     <label class="col-sm-3 control-label"></label>
                                     <div class="row col-sm-9">
@@ -165,7 +165,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                     </div>
                                 </div>
                             </form>
-                            <jsp:include page="changePasswordForm.jsp"></jsp:include>
                         </div>
                         <div class="clearfix"></div>
                     </div>
@@ -182,24 +181,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 </tr>
                                 </thead>
                                 <tbody>
+                                <%
+                                    List<Order> orders = (List<Order>)request.getAttribute("orders");
+                                    for (Order order: orders) {
+                                %>
                                 <tr>
-                                    <td>1</td>
-                                    <td>14-06-2017, 14:42:28</td>
-                                    <td><i class="fa fa-eye"></i></td>
-                                    <td>complete</td>
+                                    <td><%=order.getOrderID()%></td>
+                                    <td><%=order.getDate()%></td>
+                                    <td><a><i class="fa fa-eye"></i></a></td>
+                                    <td><%=order.getStatus()%></td>
                                 </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>20-08-2019,12:15:06</td>
-                                    <td><i class="fa fa-eye"></i></td>
-                                    <td>complete</td>
-                                </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td>30-09-2019, 7:30:07</td>
-                                    <td><i class="fa fa-eye"></i></td>
-                                    <td>complete</td>
-                                </tr>
+                                <%
+                                    }
+                                %>
                                 </tbody>
                             </table>
                         </div>

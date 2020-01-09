@@ -65,7 +65,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <%
                                 }
                             %>
-
                         </datalist>
                         <form action="/admin/addBook" class="form-horizontal bucket-form" method="post">
                             <div class="form-group">
@@ -78,7 +77,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <div class="form-group">
                                 <label for="searchCategory" class="col-lg-2 col-sm-2 control-label">Category</label>
                                 <div class="col-sm-10">
-                                    <input class="sb-search-input" name="category" placeholder="select categories" type="search"
+                                    <input class="sb-search-input form-control" name="category" placeholder="select categories" type="search"
                                            id="searchCategory" list="categories">
                                 </div>
                             </div>

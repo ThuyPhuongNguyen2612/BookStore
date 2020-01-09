@@ -39,6 +39,12 @@
                         <span>Profile</span>
                     </a>
                 </li>
+                <li>
+                    <a href="/">
+                        <i class="fa fa-user"></i>
+                        <span>User page</span>
+                    </a>
+                </li>
             </ul>
         </div>
         <!-- sidebar menu end-->

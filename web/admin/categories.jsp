@@ -46,6 +46,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <!--sidebar end-->
     <section id="main-content">
         <section class="wrapper">
+            <%
+                if (request.getParameter("notify")!=null){
+            %>
+            <div class="alert alert-success" role="alert">
+                <strong>Success!</strong>
+            </div>
+            <%
+                }
+            %>
             <div class="table-agile-info col-xs-12 col-md-12">
                 <div class="panel panel-default">
                     <div class="panel-heading">

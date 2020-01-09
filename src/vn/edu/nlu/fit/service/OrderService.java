@@ -8,4 +8,5 @@ import java.util.List;
 public interface OrderService {
     public void addOrder(Order order) throws SQLException;
     public List getAllOrders() throws SQLException;
+    public List getMyOrders(int userID) throws SQLException;
 }

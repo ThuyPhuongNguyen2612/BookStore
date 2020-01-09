@@ -25,6 +25,7 @@ public class AdminLoginServlet extends HttpServlet {
             if (checkAdminUser(userName, password)) {
                 HttpSession session = request.getSession();
                 session.setAttribute("adminUser", userName);
+                //session.setAttribute("user", new User(userName));
                 response.sendRedirect("/admin");
             } else {
                 response.sendRedirect("/admin/login?error=\"Username or Password is wrong\"");

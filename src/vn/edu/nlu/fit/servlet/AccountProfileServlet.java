@@ -1,5 +1,8 @@
 package vn.edu.nlu.fit.servlet;
 
+import vn.edu.nlu.fit.model.User;
+import vn.edu.nlu.fit.service.OrderService;
+import vn.edu.nlu.fit.service.OrderServiceImpl;
 import vn.edu.nlu.fit.service.UserService;
 import vn.edu.nlu.fit.service.UserServiceImpl;
 
@@ -18,7 +21,7 @@ import java.util.Date;
 @WebServlet("/account")
 public class AccountProfileServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        HttpSession session = request.getSession();
         int userID = Integer.parseInt(getParameter(request, "userID"));
         String name = getParameter(request, "name");
         String phone = getParameter(request, "phone");
@@ -42,6 +45,7 @@ public class AccountProfileServlet extends HttpServlet {
         UserService userService = new UserServiceImpl();
         try {
             userService.updateUser(userID, email, name, phone, dob, address, gentle);
+            session.setAttribute("user", userService.getUser(userID));
             response.sendRedirect("/account?info=account-changed");
         } catch (SQLException e) {
             response.sendRedirect("/account?error=error");
@@ -52,7 +56,10 @@ public class AccountProfileServlet extends HttpServlet {
         HttpSession session = request.getSession();
         session.setAttribute("currentPath", request.getRequestURI().concat(request.getQueryString() != null ? "?" + request.getQueryString() : ""));
         try {
-            request.setAttribute("user", session.getAttribute("user"));
+            User user = (User) session.getAttribute("user");
+            request.setAttribute("user", user);
+            OrderService orderService = new OrderServiceImpl();
+            request.setAttribute("orders", orderService.getMyOrders(user.getUserID()));
         } catch (Exception ignored) {
         }
         request.getRequestDispatcher("account.jsp").forward(request, response);

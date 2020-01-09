@@ -72,12 +72,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         </div>
                         <table class="col-xs-12 col-lg-12">
                             <tr>
-                                <td>Order ID</td>
+                                <td>#</td>
                                 <td>User ID</td>
-                                <td>Address</td>
                                 <td>Name</td>
+                                <td>Address</td>
                                 <td>Total price</td>
                                 <td>Status</td>
+                                <td>Detail</td>
                                 <td>Action</td>
                             </tr>
                             <%
@@ -87,19 +88,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <tr>
                                 <td><%=order.getOrderID()%>/td>
                                 <td><%=order.getUserID()%></td>
-                                <td><%=order.getAddress()%></td>
                                 <td><%=order.getName()%></td>
+                                <td><%=order.getAddress()%></td>
                                 <td><%=order.getPayment()%></td>
                                 <td><%=order.getStatus()%></td>
+                                <td><a href="#"><i class="icon-eye-open"></i></a></td>
                                 <td><span>
-                                    <i class="icon-edit"></i>
-                                    <i class=" fa fa-times-circle"></i>
+                                    <a href="#"><i class="icon-edit"></i></a>
+                                    <a href="#"><i class=" fa fa-times-circle"></i></a>
                                 </span></td>
                             </tr>
                             <%
                                 }
                             %>
-
                         </table>
                         <footer class="panel-footer col-xs-12 col-md-12">
                             <div class="row">
