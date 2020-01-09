@@ -1,9 +1,9 @@
 package vn.edu.nlu.fit.servlet;
 
-import vn.edu.nlu.fit.service.SendMail;
-import vn.edu.nlu.fit.service.UserServiceImpl;
 import vn.edu.nlu.fit.model.User;
+import vn.edu.nlu.fit.service.SendMail;
 import vn.edu.nlu.fit.service.UserService;
+import vn.edu.nlu.fit.service.UserServiceImpl;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
@@ -50,14 +50,12 @@ public class RegisterServlet extends HttpServlet {
                 SendMail.sendEmail(host, port, userName, pass, email, message, subject);
                 userService.addUser(user);
                 request.setAttribute("userName", email);
-                request.setAttribute("notify", "activeAccount");
-                request.getRequestDispatcher("/login").forward(request, response);
+                response.sendRedirect("/login?notify=activeAccount");
             } catch (Exception  e) {
+                response.sendRedirect("/register?error=Mail doesn't send");
             }
         } else {
-            request.setAttribute("error", "Invalid information!");
-            request.setAttribute("email", email);
-            request.getRequestDispatcher("/register").forward(request, response);
+            response.sendRedirect("/register?error=Email or password is wrong");
         }
     }
 
@@ -71,10 +69,6 @@ public class RegisterServlet extends HttpServlet {
 
     boolean checkEmail(String email) {
         return email.matches("^[A-Za-z0-9.-_]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}$");
-    }
-
-    private boolean checkPhone(String phone) {
-        return phone.matches("(09|01[2|6|8|9])+([0-9]{8})\\b");
     }
 
     private String getParameter(HttpServletRequest request, String parameterName) {

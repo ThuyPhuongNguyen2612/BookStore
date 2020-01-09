@@ -25,17 +25,14 @@ public class MailServlet extends HttpServlet {
             if (checkEmail(email)) {
                 messageService.addMessage(name, email, subject, message);
                 request.setAttribute("result", "true");
-                request.getRequestDispatcher("mail.jsp").forward(request, response);
+                request.getRequestDispatcher("/mail").forward(request, response);
             } else {
-                request.setAttribute("result", "false");
-                request.getRequestDispatcher("mail.jsp").forward(request, response);
+                request.setAttribute("error", "false");
+                request.getRequestDispatcher("/mail").forward(request, response);
             }
         }catch (SQLException e){
 
         }
-
-
-
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
