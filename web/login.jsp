@@ -50,14 +50,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<div class="login">
 		<div class="container">
             <%
-                if (request.getAttribute("error")!=null){
+                if (request.getParameter("error")!=null){
             %>
             <div class="alert alert-danger" role="alert">
                 <strong>Oh snap!</strong> <%=request.getAttribute("error")%>
             </div>
             <%
                 }
-                if (request.getAttribute("notify")!=null){
+                if (request.getParameter("notify")!=null){
             %>
 			<div class="alert alert-info" role="alert">
 				<strong>Oh snap!</strong> Please check your email to active account!

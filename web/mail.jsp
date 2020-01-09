@@ -51,13 +51,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<div class="mail animated wow zoomIn" data-wow-delay=".5s">
 		<div class="container">
 			<%
-				if (request.getAttribute("result").equals("true")){
+				if (request.getAttribute("result")!=null){
 			%>
 			<div class="alert alert-success" role="alert">
 				<strong>Well done!</strong> Your message sent!
 			</div>
 			<%
-				} else if (request.getAttribute("result").equals("false")){
+				}
+				if (request.getAttribute("error")!=null){
 			%>
 			<div class="alert alert-danger" role="alert">
 				<strong>Oh snap!</strong> Your email is wrong!

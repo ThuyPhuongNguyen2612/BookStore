@@ -32,7 +32,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <div class="w3layouts-main">
         <h2>Sign In Now</h2>
         <%
-            if (request.getParameter("error") != null) {
+            if (request.getAttribute("error") != null) {
         %>
         <div class="alert alert-danger" role="alert">
             <strong>Oh snap!</strong> <%=request.getParameter("error")%>

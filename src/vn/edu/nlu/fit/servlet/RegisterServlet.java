@@ -51,14 +51,12 @@ public class RegisterServlet extends HttpServlet {
                 SendMail.sendEmail(host, port, userName, pass, email, message, subject);
                 userService.addUser(user);
                 request.setAttribute("userName", email);
-                request.setAttribute("notify", "activeAccount");
-                request.getRequestDispatcher("/login").forward(request, response);
+                response.sendRedirect("/login?notify=activeAccount");
             } catch (Exception  e) {
+                response.sendRedirect("/register?error=Mail doesn't send");
             }
         } else {
-            request.setAttribute("error", "Invalid information!");
-            request.setAttribute("email", email);
-            request.getRequestDispatcher("/register").forward(request, response);
+            response.sendRedirect("/register?error=Email or password is wrong");
         }
     }
 

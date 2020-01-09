@@ -56,10 +56,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <div class="register">
     <div class="container">
         <%
-            if (request.getAttribute("error")!=null){
+            if (request.getParameter("error")!=null){
         %>
         <div class="alert alert-danger" role="alert">
-            <strong>Oh snap!</strong> <%=request.getAttribute("error")%>
+            <strong>Oh snap!</strong> <%=request.getParameter("error")%>
         </div>
         <%
             }
@@ -68,7 +68,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <div class="login-form-grids">
             <h5 class="animated wow slideInUp" data-wow-delay=".5s">profile information</h5>
             <form id="register-form" class="animated wow slideInUp" data-wow-delay=".5s" method="post">
-                <input id="email" name="email" type="email" placeholder="Email Address *" required value="<%=request.getAttribute("email")!=null?request.getAttribute("email"):""%>">
+                <input id="email" name="email" type="email" placeholder="Email Address *" required value="">
                 <input id="pass" name="pass" type="password" placeholder="Password *" required>
                 <input id="retypePass" name="retypePass" type="password" placeholder="Password Confirmation *" required>
                 <div class="register-check-box">
