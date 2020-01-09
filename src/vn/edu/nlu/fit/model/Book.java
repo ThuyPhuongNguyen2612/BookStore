@@ -18,8 +18,9 @@ public class Book {
     public Book() {
     }
 
-    public Book(int bookID, String title, String author, String image, int price, String description, String detail, int quantity, int page, int publishedYear) {
+    public Book(int bookID, int categoryID, String title, String author, String image, int price, String description, String detail, int quantity, int page, int publishedYear) {
         this.bookID = bookID;
+        this.categoryID = categoryID;
         this.title = title;
         this.author = author;
         this.image = image;

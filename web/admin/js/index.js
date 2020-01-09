@@ -11,3 +11,17 @@ function removeCategory(categoryId) {
         }
     });
 }
+
+function removeBook(bookId) {
+    $.ajax('/admin/removeBook?bookId=' + bookId, {
+        statusCode: {
+            500: function () {
+                swal("", "Failed", "error");
+            },
+            200: function () {
+                swal("", "Remove book successfully!!!", "success");
+                $('.rem' + bookId).remove();
+            }
+        }
+    });
+}

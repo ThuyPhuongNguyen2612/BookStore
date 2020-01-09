@@ -46,6 +46,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <section id="main-content">
         <section class="wrapper">
             <div class="form-w3layouts col-xs-12 col-md-12">
+                <%
+                    if (request.getParameter("error") != null) {
+                %>
+                <div class="alert alert-danger" role="alert">
+                    <strong>Oh snap!</strong> Error happened%>
+                </div>
+                <%
+                    }
+                %>
                 <section class="panel">
                     <header class="panel-heading">
                         Add category form

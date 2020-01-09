@@ -21,4 +21,9 @@ public interface BookService {
     List<Book> getRandomBook() throws SQLException;
 
     Book getBook(int bookID) throws SQLException;
+
+    int removeBook(int bookId) throws SQLException;
+
+    int addBook(String name, String image, String author, String price, String amount, String category, String description) throws SQLException;
+
 }

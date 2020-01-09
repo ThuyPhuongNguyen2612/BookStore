@@ -16,7 +16,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="/admin/books">
+                    <a href="/admin/books?page=1">
                         <i class="fa fa-product-hunt"></i>
                         <span>Books</span>
                     </a>

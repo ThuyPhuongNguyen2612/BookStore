@@ -14,6 +14,7 @@ public class BookServiceImpl implements BookService {
 
     private Book createBookObject(ResultSet rs) throws SQLException {
         return new Book(rs.getInt("bookID"),
+            rs.getInt("categoryID"),
             rs.getString("name"),
             rs.getString("author"),
             rs.getString("image"),
@@ -48,7 +49,7 @@ public class BookServiceImpl implements BookService {
     @Override
     public List<Book> getBooksWithPage(int page) throws SQLException {
         Connection connection = GPDataSource.getConnection();
-        PreparedStatement ps = connection.prepareStatement("SELECT * FROM book WHERE active = 1 LIMIT (page-1)*9,9");
+        PreparedStatement ps = connection.prepareStatement("SELECT * FROM book WHERE active = 1 LIMIT " + (page - 1) * 20 + ",20");
         ResultSet rs = ps.executeQuery();
         GPDataSource.releaseConnection(connection);
         return getBooks(rs);
@@ -113,6 +114,27 @@ public class BookServiceImpl implements BookService {
         GPDataSource.releaseConnection(connection);
         return book;
 
+    }
+
+    @Override
+    public int removeBook(int bookId) throws SQLException {
+        Connection connection = GPDataSource.getConnection();
+        PreparedStatement preparedStatement = connection.prepareStatement("DELETE FROM book WHERE bookID=?");
+        preparedStatement.setInt(1, bookId);
+        preparedStatement.executeUpdate();
+        GPDataSource.releaseConnection(connection);
+        return preparedStatement.executeUpdate();
+    }
+
+    @Override
+    public int addBook(String name, String image, String author, String price, String amount, String category, String description) throws SQLException {
+        Connection connection = GPDataSource.getConnection();
+        PreparedStatement ps = connection.prepareStatement("INSERT INTO book (`name`,image,quantity,active) VALUES(?,?,?,1)");
+        ps.setString(1, name);
+        ps.setString(2, image);
+        ps.setString(3, amount);
+        GPDataSource.releaseConnection(connection);
+        return ps.executeUpdate();
     }
 
     private List<Book> getBooks(ResultSet rs) throws SQLException {

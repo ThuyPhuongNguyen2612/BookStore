@@ -11,26 +11,25 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-@WebServlet("/admin/books")
-public class ManageBooksServlet extends HttpServlet {
+@WebServlet("/admin/removeBook")
+public class RemoveBookServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
         if (session.getAttribute("adminUser") == null) {
             response.sendRedirect("/admin/login");
         } else {
+            String bookIdString = request.getParameter("bookId");
+
+            int bookId;
             try {
-                String pageString = request.getParameter("page");
-                int page = Integer.parseInt(pageString);
+                bookId = Integer.parseInt(bookIdString);
                 BookService bookService = new BookServiceImpl();
-                request.setAttribute("books", bookService.getBooksWithPage(page));
-                final int allBooks = bookService.getBooks().size();
-                int numberOfPages = (int) (allBooks % 20 == 0 ? allBooks / 20.0 : allBooks / 20.0 + 1);
-                request.setAttribute("numberOfPages", numberOfPages);
-                request.getRequestDispatcher("/admin/books.jsp").forward(request, response);
-            } catch (Exception ignored) {
+                bookService.removeBook(bookId);
+                response.setStatus(200);
+            } catch (Exception e) {
+                response.setStatus(500);
             }
         }
-
     }
 }

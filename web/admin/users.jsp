@@ -1,5 +1,5 @@
-<%@ page import="java.util.ArrayList" %>
 <%@ page import="vn.edu.nlu.fit.model.User" %>
+<%@ page import="java.util.ArrayList" %>
 <!DOCTYPE html>
 <head>
     <title>Admin</title>
@@ -10,6 +10,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <script type="application/x-javascript"> addEventListener("load", function () {
         setTimeout(hideURLbar, 0);
     }, false);
+
     function hideURLbar() {
         window.scrollTo(0, 1);
     } </script>
@@ -62,7 +63,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <div class="col-sm-5">
                                 <div class="input-group">
                                     <input type="text" class="input-sm form-control" placeholder="Search">
-                                    <span class="input-group-btn"><button class="btn btn-sm btn-default" type="button"><i class="fa fa-search"></i></button></span>
+                                    <span class="input-group-btn"><button class="btn btn-sm btn-default"
+                                                                          type="button"><i
+                                            class="fa fa-search"></i></button></span>
                                 </div>
                             </div>
                             <div class="col-sm-4 m-b-xs">
@@ -71,7 +74,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                     <option value="1">Find by email</option>
                                     <option value="2">Find by group</option>
                                 </select>
-                                <a href="#"><button class="btn btn-sm btn-default" style="float: right">Add<i class="fa fa-plus"></i></button></a>
+                                <a href="#">
+                                    <button class="btn btn-sm btn-default" style="float: right">Add<i
+                                            class="fa fa-plus"></i></button>
+                                </a>
                             </div>
                         </div>
                         <table class="col-xs-12 col-md-12">
@@ -88,18 +94,25 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 <td>Action</td>
                             </tr>
                             <%
-                                ArrayList<User> users = (ArrayList<User>)request.getAttribute("users");
-                                for (User user: users) {
+                                ArrayList<User> users = (ArrayList<User>) request.getAttribute("users");
+                                for (User user : users) {
                             %>
                             <tr>
-                                <td><%=user.getUserID()%></td>
-                                <td><%=user.getUserName()%></td>
-                                <td><%=user.getName()%></td>
+                                <td><%=user.getUserID()%>
+                                </td>
+                                <td><%=user.getUserName()%>
+                                </td>
+                                <td><%=user.getName()%>
+                                </td>
                                 <td><img src="<%=user.getImage()%>"></td>
-                                <td><%=user.getPhone()!=null?user.getPhone():"..."%></td>
-                                <td><%=user.getGentle()==1?"Male":"Female"%></td>
-                                <td><%=user.getGroup()%></td>
-                                <td><%=user.getDob()%></td>
+                                <td><%=user.getPhone() != null ? user.getPhone() : "..."%>
+                                </td>
+                                <td><%=user.getGentle() == 1 ? "Male" : "Female"%>
+                                </td>
+                                <td><%=user.getGroup()%>
+                                </td>
+                                <td><%=user.getDob()%>
+                                </td>
                                 <td></td>
                                 <td><span><a href="#"><i class="fa fa-edit"></i></a>  <a href="#"><i
                                         class="fa fa-times-circle"></i></a></span></td>
@@ -108,23 +121,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 }
                             %>
 
+
                         </table>
-                        <footer class="panel-footer col-xs-12 col-md-12">
-                            <div class="row">
-                                <div class="col-sm-5">
-                                </div>
-                                <div class="col-sm-7 text-right text-center-xs">
-                                    <ul class="pagination pagination-sm m-t-none m-b-none">
-                                        <li><a href=""><i class="fa fa-chevron-left"></i></a></li>
-                                        <li><a href="">1</a></li>
-                                        <li><a href="">2</a></li>
-                                        <li><a href="">3</a></li>
-                                        <li><a href="">4</a></li>
-                                        <li><a href=""><i class="fa fa-chevron-right"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </footer>
                     </div>
                 </div>
             </div>

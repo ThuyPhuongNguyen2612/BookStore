@@ -1,3 +1,5 @@
+<%@ page import="vn.edu.nlu.fit.model.Category" %>
+<%@ page import="java.util.List" %>
 <!DOCTYPE html>
 <head>
     <title>Admin</title>
@@ -34,141 +36,80 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <jsp:include page="include/header.jsp"></jsp:include>
     <!--header end-->
     <!--sidebar start-->
-    <aside>
-        <div id="sidebar" class="nav-collapse">
-            <!-- sidebar menu start-->
-            <div class="leftside-navigation">
-                <ul class="sidebar-menu" id="nav-accordion">
-                    <li>
-                        <a href="/admin">
-                            <i class="fa fa-home"></i>
-                            <span>Home</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/admin/orders">
-                            <i class="fa fa-shopping-cart"></i>
-                            <span>Order</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="active" href="/admin/products">
-                            <i class="fa fa-product-hunt"></i>
-                            <span>Product</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/admin/categories">
-                            <i class="fa fa-tags"></i>
-                            <span>Categories</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/admin/users">
-                            <i class="fa fa-users"></i>
-                            <span>Users</span>
-                        </a>
-                    </li>
-                    <li class="sub-menu">
-                        <a href="javascript:;">
-                            <i class="fa fa-backward"></i>
-                            <span>Feedback</span>
-                        </a>
-                        <ul class="sub">
-                            <li><a href="/admin/message">Mail</a></li>
-                            <li><a href="/admin/message/replyMail">Compose Mail</a></li>
-                            <li><a href="/admin/comments">Comment</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="/">
-                            <i class="fa fa-user"></i>
-                            <span>User page</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <!-- sidebar menu end-->
-        </div>
-    </aside>
+    <jsp:include page="include/sideBar.jsp"></jsp:include>
     <!--sidebar end-->
     <!--main content start-->
     <section id="main-content">
         <section class="wrapper">
             <div class="form-w3layouts col-xs-12 col-md-12">
                 <section class="panel">
+                    <%
+                        if (request.getParameter("error") != null) {
+                    %>
+                    <div class="alert alert-danger" role="alert">
+                        <strong>Oh snap!</strong> Error happened%>
+                    </div>
+                    <%
+                        }
+                    %>
                     <header class="panel-heading">
-                        Add product form
+                        Add book form
                     </header>
                     <div class="panel-body">
-                        <form class="form-horizontal bucket-form" method="post">
+                        <datalist id="categories">
+                            <%
+                                List<Category> categories = (List<Category>) request.getAttribute("categories");
+                                for (Category category : categories) {
+                            %>
+                            <option categoryId="<%=category.getCategoryID()%>" value="<%=category.getName()%>" />
+                            <%
+                                }
+                            %>
+
+                        </datalist>
+                        <form action="/admin/addBook" class="form-horizontal bucket-form" method="post">
                             <div class="form-group">
                                 <label for="image" class="col-lg-2 col-sm-2 control-label">Image</label>
                                 <div class="col-sm-10">
-                                    <input id="image" type="file" class="form-control">
+                                    <input id="image" name="image" type="file" class="form-control">
                                     <button class="right img-bt"><i class="fa fa-plus"></i></button>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="category" class="col-lg-2 col-sm-2 control-label">Category</label>
+                                <label for="searchCategory" class="col-lg-2 col-sm-2 control-label">Category</label>
                                 <div class="col-sm-10">
-                                    <select id="category" class="form-control m-bot15">
-                                        <option>Romance</option>
-                                        <option>Horror</option>
-                                        <option>Comedy</option>
-                                    </select>
+                                    <input class="sb-search-input" name="category" placeholder="select categories" type="search"
+                                           id="searchCategory" list="categories">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="book-name" class="col-lg-2 col-sm-2 control-label">Name</label>
                                 <div class="col-sm-10">
-                                    <input id="book-name" type="text" class="form-control">
+                                    <input id="book-name" name="name" type="text" class="form-control">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="book-author" class="col-lg-2 col-sm-2 control-label">Author</label>
                                 <div class="col-sm-10">
-                                    <input id="book-author" type="text" class="form-control">
+                                    <input id="book-author" name="author" type="text" class="form-control">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="price" class="col-lg-2 col-sm-2 control-label">Price</label>
                                 <div class="col-sm-10">
-                                    <input id="price" type="text" class="form-control" placeholder="$200">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="discount" class="col-lg-2 col-sm-2 control-label">Discount</label>
-                                <div class="col-sm-10">
-                                    <select id="discount" class="form-control m-bot15">
-                                        <option>MaKM1 - 20%</option>
-                                        <option>MaKM2 - 10%</option>
-                                        <option>MaKM3 - 50%</option>
-                                    </select>
+                                    <input id="price" name="price" type="text" class="form-control" placeholder="$200">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="description" class="col-lg-2 col-sm-2 control-label">Description</label>
                                 <div class="col-sm-10">
-                                    <textarea id="description" class="form-control" type=""></textarea>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="detail" class="col-lg-2 col-sm-2 control-label">Detail</label>
-                                <div class="col-sm-10">
-                                    <textarea id="detail" class="form-control" type=""></textarea>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="path" class="col-lg-2 col-sm-2 control-label">Path</label>
-                                <div class="col-sm-10">
-                                    <input id="path" type="text" class="form-control" placeholder="">
+                                    <textarea id="description" name="description" class="form-control" type=""></textarea>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="amount" class="col-lg-2 col-sm-2 control-label">Amount</label>
                                 <div class="col-sm-10">
-                                    <input id="amount" type="number" min="1" class="form-control" placeholder="">
+                                    <input id="amount" name="amount" type="number" min="1" class="form-control" placeholder="">
                                 </div>
                             </div>
                             <div class="form-group">
@@ -176,13 +117,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 <div class="col-sm-10">
                                     <input type="checkbox"> New <br>
                                     <input type="checkbox"> Highlight <br>
-                                    <input type="checkbox"> Show <br>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="col-lg-offset-2 col-lg-10">
                                     <button type="submit" class="btn btn-primary">Save</button>
-                                    <button type="button" class="btn btn-default">Cancel</button>
                                 </div>
                             </div>
                         </form>

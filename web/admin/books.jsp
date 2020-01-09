@@ -49,6 +49,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <section class="wrapper">
             <div class="table-agile-info col-xs-12 col-md-12">
                 <div class="panel panel-default">
+                    <%
+                        if (request.getParameter("notify") != null) {
+                    %>
+                    New book just added!!!
+                    <%
+                        }
+                    %>
                     <div class="panel-heading">
                         Books
                     </div>
@@ -66,7 +73,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <div class="col-sm-5">
                                 <div class="input-group">
                                     <input type="text" class="input-sm form-control" placeholder="Search">
-                                    <span class="input-group-btn"><button class="btn btn-sm btn-default" type="button"><i class="fa fa-search"></i></button></span>
+                                    <span class="input-group-btn"><button class="btn btn-sm btn-default"
+                                                                          type="button"><i
+                                            class="fa fa-search"></i></button></span>
                                 </div>
                             </div>
                             <div class="col-sm-4 m-b-xs">
@@ -75,7 +84,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                     <option value="1">New</option>
                                     <option value="2">Highlight</option>
                                 </select>
-                                <a href="addProduct.jsp"><button class="btn btn-sm btn-default" style="float: right">Add<i class="fa fa-plus"></i></button></a>
+                                <a href="/admin/addBook">
+                                    <button class="btn btn-sm btn-default" style="float: right">Add<i
+                                            class="fa fa-plus"></i></button>
+                                </a>
                             </div>
                         </div>
                         <table class="col-xs-12 col-md-12">
@@ -92,24 +104,35 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             </tr>
                             <%
                                 List<Book> books = (List<Book>) request.getAttribute("books");
-                                for (Book book:books) {
+                                for (Book book : books) {
                             %>
                             <tr>
-                                <td><%=book.getBookID()%></td>
-                                <td></td>
-                                <td><%=book.getTitle()%></td>
+                                <td><%=book.getBookID()%>
+                                </td>
+                                <td><%=book.getCategoryID()%></td>
+                                <td><%=book.getTitle()%>
+                                </td>
                                 <td><img src="<%=book.getImage()%>"/></td>
-                                <td></td>
+                                <td><%=book.getQuantity()%></td>
                                 <td><input type="checkbox"></td>
                                 <td><input type="checkbox"></td>
                                 <td><input type="checkbox" checked></td>
-                                <td><span><a href="#"><i class="fa fa-edit"></i></a>  <a href="#"><i
+                                <td><span><a href="#"><i class="fa fa-edit"></i></a>
+                                    <a href="" class="close<%=book.getBookID()%>"><i
                                         class="fa fa-times-circle"></i></a></span></td>
                             </tr>
+                            <script>$(document).ready(function (c) {
+                                $('.close<%=book.getBookID()%>').on('click', function (c) {
+                                    removeBook(<%=book.getBookID()%>);
+                                });
+                            });
+                            </script>
                             <%
                                 }
                             %>
                         </table>
+
+
                         <footer class="panel-footer col-xs-12 col-md-12">
                             <div class="row">
                                 <div class="col-sm-5">
@@ -117,10 +140,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 <div class="col-sm-7 text-right text-center-xs">
                                     <ul class="pagination pagination-sm m-t-none m-b-none">
                                         <li><a href=""><i class="fa fa-chevron-left"></i></a></li>
-                                        <li><a href="">1</a></li>
-                                        <li><a href="">2</a></li>
-                                        <li><a href="">3</a></li>
-                                        <li><a href="">4</a></li>
+                                        <%
+                                            int numberOfPages = (int) request.getAttribute("numberOfPages");
+                                            for (int i = 1; i < numberOfPages + 1; i++) {
+                                        %>
+                                        <li><a href=""><%=i%></a></li>
+                                        <%
+                                            }
+                                        %>
                                         <li><a href=""><i class="fa fa-chevron-right"></i></a></li>
                                     </ul>
                                 </div>
