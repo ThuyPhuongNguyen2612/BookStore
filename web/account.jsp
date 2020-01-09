@@ -11,6 +11,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <script type="application/x-javascript"> addEventListener("load", function () {
         setTimeout(hideURLbar, 0);
     }, false);
+
     function hideURLbar() {
         window.scrollTo(0, 1);
     } </script>
@@ -51,6 +52,24 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <div class="account">
     <div class="container">
         <%
+            if (request.getParameter("error") != null) {
+        %>
+        <div class="alert alert-danger" role="alert">
+            <strong>Oh snap!</strong> <%=request.getParameter("error")%>
+        </div>
+        <%
+            }
+            if (request.getParameter("info") != null) {
+        %>
+        <div class="info" role="alert">
+            Password changed!!!
+        </div>
+
+        <%
+            }
+        %>
+
+        <%
             User user = (User) request.getAttribute("user");
         %>
         <div class="bootstrap-tab animated wow slideInUp" data-wow-delay=".5s">
@@ -67,11 +86,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                          aria-labelledby="account-tab">
                         <div class="col-md-4 mail-grid-right animated wow slideInLeft" data-wow-delay=".5s">
                             <div class="mail-grid-right1">
-                                <img src="<%=user.getImage()%>" alt=" " class="img-responsive" />
-                                <h4><%=user.getName()%> </h4>
+                                <img src="<%=user.getImage()%>" alt=" " class="img-responsive"/>
+                                <h4><%=user.getName()%>
+                                </h4>
                                 <ul class="phone-mail">
-                                    <li><i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>Phone: <%=user.getPhone()%></li>
-                                    <li><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i>Email: <a href="mailto:info@example.com"><%=user.getUserName()%></a></li>
+                                    <li><i class="glyphicon glyphicon-earphone"
+                                           aria-hidden="true"></i>Phone: <%=user.getPhone()%>
+                                    </li>
+                                    <li><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i>Email: <a
+                                            href="mailto:info@example.com"><%=user.getUserName()%>
+                                    </a></li>
                                 </ul>
                             </div>
                         </div>
@@ -82,51 +106,58 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 <div class="form-group">
                                     <label for="name" class="col-sm-3 control-label">Name</label>
                                     <div class="col-sm-9">
-                                        <input id="name" class="row col-xs-12 col-md-8 form-control" type="text" value="<%=user.getName()%>">
+                                        <input id="name" class="row col-xs-12 col-md-8 form-control" type="text"
+                                               value="<%=user.getName()%>">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="phone" class="col-sm-3 control-label">Phone number</label>
                                     <div class="col-sm-9">
-                                        <input id="phone" class="row col-xs-12 col-md-8 form-control" type="tel" value="<%=user.getPhone()%>">
+                                        <input id="phone" class="row col-xs-12 col-md-8 form-control" type="tel"
+                                               value="<%=user.getPhone()%>">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="email" class="col-sm-3 control-label">Email</label>
                                     <div class="col-sm-9">
-                                        <input id="email" class="row col-xs-12 col-md-8 form-control" type="email" value="<%=user.getUserName()%>">
+                                        <input id="email" class="row col-xs-12 col-md-8 form-control" type="email"
+                                               value="<%=user.getUserName()%>">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-sm-3 control-label">Gentle</label>
                                     <div class="col-sm-9">
-                                        <input name="gentle" class="row col-xs-3 col-md-2" type="radio" value="Male" <%=user.getGentle()==1?"checked":""%>>
+                                        <input name="gentle" class="row col-xs-3 col-md-2" type="radio"
+                                               value="Male" <%=user.getGentle()==1?"checked":""%>>
                                         <p class="row col-xs-3 col-md-2">Male</p>
-                                        <input name="gentle" class="row col-xs-3 col-md-2" type="radio" value="Female" <%=user.getGentle()==2?"checked":""%>>
+                                        <input name="gentle" class="row col-xs-3 col-md-2" type="radio"
+                                               value="Female" <%=user.getGentle()==2?"checked":""%>>
                                         <p class="row col-xs-3 col-md-2">Female</p>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-sm-3 control-label">Birthday</label>
                                     <div class="col-sm-9">
-                                        <input id="dob" class="row col-xs-12 col-md-8 form-control" type="date" value="<%=user.getDob()%>">
+                                        <input id="dob" class="row col-xs-12 col-md-8 form-control" type="date"
+                                               value="<%=user.getDob()%>">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-sm-3 control-label">Address</label>
                                     <div class="col-sm-9">
-                                        <textarea class="row col-xs-12 col-md-8 form-control" type="text" value="<%=user.getAddress()%>"></textarea>
+                                            <textarea class="row col-xs-12 col-md-8 form-control" type="text"
+                                                      value="<%=user.getAddress()%>"></textarea>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-sm-3 control-label">Password</label>
                                     <div class="col-sm-9">
                                         <div class="form-group" style="float: right">
-                                            <a id="change-pass-bt"><p class="col-sm-12 control-label">Change password?</p></a>
+                                            <a id="change-pass-bt"><p class="col-sm-12 control-label">Change
+                                                password?</p></a>
                                         </div>
                                     </div>
                                 </div>
-                                <jsp:include page="changePasswordForm.jsp"></jsp:include>
                                 <div class="form-group">
                                     <label class="col-sm-3 control-label"></label>
                                     <div class="row col-sm-9">
@@ -134,8 +165,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                     </div>
                                 </div>
                             </form>
+                            <jsp:include page="changePasswordForm.jsp"></jsp:include>
                         </div>
-                        <div class="clearfix"> </div>
+                        <div class="clearfix"></div>
                     </div>
                     <div role="tabpanel" class="tab-pane fade bootstrap-tab-text" id="myOrder"
                          aria-labelledby="myOrder-tab">

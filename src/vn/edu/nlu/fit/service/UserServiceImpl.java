@@ -97,6 +97,7 @@ public class UserServiceImpl implements UserService {
         PreparedStatement ps = connection.prepareStatement("UPDATE user SET password=? WHERE userName=?");
         ps.setString(1, password);
         ps.setString(2, userName);
+        ps.executeUpdate();
         GPDataSource.releaseConnection(connection);
     }
 
