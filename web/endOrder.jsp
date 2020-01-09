@@ -10,26 +10,26 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
     function hideURLbar(){ window.scrollTo(0,1); } </script>
     <!-- //for-mobile-apps -->
-    <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
-    <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="../css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="../css/style.css" rel="stylesheet" type="text/css" media="all" />
     <!-- js -->
-    <script src="js/jquery.min.js"></script>
+    <script src="../js/jquery.min.js"></script>
     <!-- //js -->
     <!-- cart -->
-    <script src="js/simpleCart.min.js"> </script>
+    <script src="../js/simpleCart.min.js"> </script>
     <!-- cart -->
-    <link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" href="../css/jquery-ui.css">
     <!-- for bootstrap working -->
-    <script type="text/javascript" src="js/bootstrap-3.1.1.min.js"></script>
+    <script type="text/javascript" src="../js/bootstrap-3.1.1.min.js"></script>
     <!-- //for bootstrap working -->
     <!-- animation-effect -->
-    <link href="css/animate.min.css" rel="stylesheet">
-    <script src="js/wow.min.js"></script>
+    <link href="../css/animate.min.css" rel="stylesheet">
+    <script src="../js/wow.min.js"></script>
     <script>
         new WOW().init();
     </script>
     <link rel="stylesheet" href="../FontAwesome/css/all.css">
-    <link rel="stylesheet" href="css/order.css">
+    <link rel="stylesheet" href="../css/order.css">
     <!-- //animation-effect -->
 </head>
 <body>
@@ -39,7 +39,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <div class="breadcrumbs">
     <div class="container">
         <ol class="breadcrumb breadcrumb1 animated wow slideInLeft" data-wow-delay=".5s">
-            <li><a href="index.jsp"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Home</a></li>
+            <li><a href="/"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Home</a></li>
             <li class="active">Order</li>
         </ol>
     </div>
@@ -71,10 +71,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             </div>
         </div>
         <div class="check-box">
-            <img src="img/check-box.png" height="auto" width="100%">
+            <img src="../img/check-box.png" height="auto" width="100%">
         </div>
         <div class="checkout-right-basket animated wow slideInRight" data-wow-delay=".5s">
-            <a href="index.jsp"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>Continue Shopping</a>
+            <a href="/"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>Continue Shopping</a>
         </div>
     </div>
 </div>

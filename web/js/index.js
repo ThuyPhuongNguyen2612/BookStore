@@ -15,6 +15,10 @@ function addBookToCart(hostUrl, bookId) {
     });
 }
 
+function addCart() {
+    $.ajax( {url: '/order/payment', type: "post"});
+}
+
 function removeAllItemsOfABookFromCart(hostUrl, bookID) {
     $.ajax(hostUrl + 'cart/removeAll?bookID=' + bookID);
 }

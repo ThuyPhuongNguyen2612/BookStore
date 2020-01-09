@@ -81,7 +81,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <h3 class="animated wow zoomIn animated" data-wow-delay=".5s"
             style="visibility: visible; animation-delay: 0.5s; animation-name: zoomIn;">2. ADDRESS</h3>
         <div>
-            <form class="form">
+            <form class="form" action="/order/address" method="post">
                 <div class="form-group">
                     <label for="name" class="col-md-3 control-label">Name</label>
                     <div class="row col-md-9">
@@ -103,7 +103,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <div class="form-group">
                     <label class="col-md-3 control-label"></label>
                     <div class="row col-md-9">
-                        <button class="form-button"><a href="/order/payment">Delivery to this address</a></button>
+                        <button class="form-button" type="submit">Delivery to this address</button>
                     </div>
                 </div>
             </form>

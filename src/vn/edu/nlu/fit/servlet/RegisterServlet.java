@@ -46,19 +46,19 @@ public class RegisterServlet extends HttpServlet {
 
         UserService userService = new UserServiceImpl();
         if (checkEmail(email) && checkPassword(password, retypePassword) && checkCheckBox(checkbox)) {
-
             User user = new User(email, password);
             try {
                 SendMail.sendEmail(host, port, userName, pass, email, message, subject);
                 userService.addUser(user);
-                response.sendRedirect("/login?userName="+email);
+                request.setAttribute("userName", email);
+                request.setAttribute("notify", "activeAccount");
+                request.getRequestDispatcher("/login").forward(request, response);
             } catch (Exception  e) {
-
             }
         } else {
             request.setAttribute("error", "Invalid information!");
             request.setAttribute("email", email);
-            request.getRequestDispatcher("register.jsp").forward(request, response);
+            request.getRequestDispatcher("/register").forward(request, response);
         }
     }
 

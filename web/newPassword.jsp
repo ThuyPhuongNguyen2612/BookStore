@@ -11,6 +11,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         addEventListener("load", function () {
             setTimeout(hideURLbar, 0);
         }, false);
+
         function hideURLbar() {
             window.scrollTo(0, 1);
         } </script>
@@ -43,39 +44,51 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <body>
 <jsp:include page="/header"></jsp:include>
 <div class="breadcrumbs">
-  <div class="container">
-    <ol class="breadcrumb breadcrumb1 animated wow slideInLeft" data-wow-delay=".5s">
-      <li><a href="index.jsp"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Home</a></li>
-      <li class="active">New password</li>
-    </ol>
-  </div>
+    <div class="container">
+        <ol class="breadcrumb breadcrumb1 animated wow slideInLeft" data-wow-delay=".5s">
+            <li><a href="index.jsp"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Home</a></li>
+            <li class="active">New password</li>
+        </ol>
+    </div>
 </div>
 <div class="container">
-    <div class="row">
-        <div class="col-md-4 col-md-offset-4">
-            <div class="panel panel-default" style="padding-top:50px;">
+    <div class="row" style="padding-top:50px;">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="panel panel-default">
                 <div class="panel-body" style="border: 1px solid black">
                     <div class="text-center">
                         <h3 class="text-center">Enter your password bellow</h3>
-                        <div class="panel-body">
                             <form id="register-form" role="form" autocomplete="off" class="form" method="post">
                                 <div class="form-group">
-                                    <div class="input-group">
-                                        <input name="userName" type="hidden" class="hide" id="token" value="<%=request.getAttribute("userName")%>">
-                                        <p style="margin-right: 195px">Code<span class="ip1" style="color: red">*</span></p>
-                                        <input name="code" type="text" placeholder="Code" style="margin-left: 25px;height: 30px; width: 320px">
-                                        <p style="margin-right: 195px">New password<span class="ip1" style="color: red">*</span></p>
-                                        <input name="pass" type="password" placeholder="New password" style="margin-left: 25px;height: 30px; width: 320px">
-                                        <p style="margin-right: 135px">Re- enter new password<span class="ip1" style="color: red">*</span></p>
-                                        <input name="retypePass" type="password" placeholder="Confirm password" style="margin-left: 28px;height: 30px; width: 320px">
+                                    <input name="userName" type="hidden" class="hide" id="token"
+                                           value="<%=request.getAttribute("userName")%>">
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label" style="margin-top: 10px">Code<span class="ip1" style="color: red">*</span></label>
+                                        <div class="col-sm-9" style="margin-top: 10px">
+                                            <input name="code" type="text" placeholder="Code"
+                                                   style="margin-left: 25px;height: 30px; width: 80%; border: 1px solid lightgray">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label" style="margin-top: 10px">New password<span class="ip1" style="color: red">*</span></label>
+                                        <div class="col-sm-9" style="margin-top: 10px">
+                                            <input name="pass" type="password" placeholder="New password"
+                                                   style="margin-left: 25px;height: 30px; width: 80%; border: 1px solid lightgray">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label" style="margin-top: 10px">Re- enter new password<span class="ip1" style="color: red">*</span></label>
+                                        <div class="col-sm-9" style="margin-top: 10px">
+                                            <input name="retypePass" type="password" placeholder="Confirm password"
+                                                   style="margin-left: 25px;height: 30px; width: 80%; border: solid 1px lightgray">
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <input name="recover-submit" class="btn btn-lg btn-primary btn-block" value="Save" type="submit">
+                                    <input name="recover-submit" class="btn btn-lg btn-primary btn-block" value="Save"
+                                           type="submit">
                                 </div>
-
                             </form>
-                        </div>
                     </div>
                 </div>
             </div>

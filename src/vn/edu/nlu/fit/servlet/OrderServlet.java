@@ -6,6 +6,7 @@ import vn.edu.nlu.fit.model.User;
 import vn.edu.nlu.fit.service.OrderService;
 import vn.edu.nlu.fit.service.OrderServiceImpl;
 
+import javax.mail.Session;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -19,11 +20,16 @@ import java.sql.SQLException;
 public class OrderServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        if (request.getPathInfo() != null) {
-            if (request.getPathInfo().equals("/address")) {
-                postOrderAddress(request, response);
-            } else if (request.getPathInfo().equals("/payment")) {
-                postOrderPayment(request, response);
+        HttpSession session = request.getSession();
+        if (session.getAttribute("user") == null) {
+            response.sendRedirect("/login");
+        } else {
+            if (request.getPathInfo() != null) {
+                if (request.getPathInfo().equals("/address")) {
+                    postOrderAddress(request, response);
+                } else if (request.getPathInfo().equals("/payment")) {
+                    postOrderPayment(request, response);
+                }
             }
         }
 
@@ -36,13 +42,16 @@ public class OrderServlet extends HttpServlet {
         if (request.getPathInfo() == null) {
             orderLoginStep(request, response);
         } else {
-            if (request.getPathInfo().equals("/address")) {
-                orderAddressStep(request, response);
-            } else if (request.getPathInfo().equals("/payment")) {
-                orderPaymentStep(request, response);
-            } else if (request.getPathInfo().equals("/end")){
-                endOrder(request, response);
-                request.getRequestDispatcher("endOrder.jsp").forward(request, response);
+            if (session.getAttribute("user") == null) {
+                response.sendRedirect("/login");
+            } else {
+                if (request.getPathInfo().equals("/address")) {
+                    orderAddressStep(request, response);
+                } else if (request.getPathInfo().equals("/payment")) {
+                    orderPaymentStep(request, response);
+                } else if (request.getPathInfo().equals("/end")) {
+                    endOrder(request, response);
+                }
             }
         }
     }
@@ -50,15 +59,12 @@ public class OrderServlet extends HttpServlet {
 
     private void orderLoginStep(HttpServletRequest request, HttpServletResponse response) throws IOException {
         HttpSession session = request.getSession();
-        if (session.getAttribute("user") == null) {
-            response.sendRedirect("/login");
-        } else {
             Cart cart = (Cart) session.getAttribute("cart");
             if (cart.isEmpty()) {
                 response.sendRedirect("/cart?error=cartEmpty");
             }
             response.sendRedirect("/order/address");
-        }
+
     }
 
     private void orderAddressStep(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -71,34 +77,31 @@ public class OrderServlet extends HttpServlet {
 
     private void orderPaymentStep(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         HttpSession session = request.getSession();
-        session.setAttribute("currentPath", request.getRequestURI().concat(request.getQueryString()!=null?"?"+request.getQueryString():""));
-        request.getRequestDispatcher("/addPaymentForm.jsp").forward(request, response);
+            session.setAttribute("currentPath", request.getRequestURI().concat(request.getQueryString() != null ? "?" + request.getQueryString() : ""));
+            request.getRequestDispatcher("/addPaymentForm.jsp").forward(request, response);
     }
 
     private void postOrderAddress(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
-        String name = getParameter(request, "name");
-        String phone = getParameter(request, "phone");
-        String city = getParameter(request, "city");
-        String district = getParameter(request, "district");
-        String ward = getParameter(request, "ward");
-        String address = getParameter(request, "address");
-        User user = (User) session.getAttribute("user");
-        Cart cart = (Cart) session.getAttribute("cart");
-        Order order = new Order(user.getUserID(), cart);
-        order.setName(name);
-        order.setPhone(phone);
-        order.setAddress(city + "," + district + "," + ward + "," + address);
-        session.setAttribute("order", order);
-        response.sendRedirect("/order/step3");
+
+            String name = getParameter(request, "name");
+            String phone = getParameter(request, "phone");
+            String city = getParameter(request, "city");
+            String district = getParameter(request, "district");
+            String ward = getParameter(request, "ward");
+            String address = getParameter(request, "address");
+            User user = (User) session.getAttribute("user");
+            Cart cart = (Cart) session.getAttribute("cart");
+            Order order = new Order(user.getUserID(), cart);
+            order.setName(name);
+            order.setPhone(phone);
+            order.setAddress(city + "," + district + "," + ward + "," + address);
+            session.setAttribute("order", order);
+            response.sendRedirect("/order/payment");
+
     }
 
     private void postOrderPayment(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        endOrder(request, response);
-        request.getRequestDispatcher("endOrder.jsp").forward(request, response);
-    }
-
-    private void endOrder(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
         Order order = (Order) session.getAttribute("order");
         order.setPayment("cash");
@@ -106,8 +109,14 @@ public class OrderServlet extends HttpServlet {
         OrderService orderService= new OrderServiceImpl();
         try {
             orderService.addOrder(order);
+            session.setAttribute("cart", null);
         } catch (SQLException e){
         }
+        request.getRequestDispatcher("/order/end").forward(request, response);
+    }
+
+    private void endOrder(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.getRequestDispatcher("/endOrder.jsp").forward(request, response);
     }
 
     private String getParameter(HttpServletRequest request, String parameterName) {

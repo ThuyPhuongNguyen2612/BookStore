@@ -57,7 +57,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             </div>
             <%
                 }
+                if (request.getAttribute("notify")!=null){
             %>
+			<div class="alert alert-info" role="alert">
+				<strong>Oh snap!</strong> Please check your email to active account!
+			</div>
+			<%
+				}
+			%>
 			<h3 class="animated wow zoomIn" data-wow-delay=".5s">Login Form</h3>
 			<div class="login-form-grids animated wow slideInUp" data-wow-delay=".5s">
 				<form method="post" action="/login">

@@ -22,6 +22,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <!-- //js -->
     <!-- cart -->
     <script src="../js/simpleCart.min.js"></script>
+    <script src="../js/index.js"></script>
     <!-- cart -->
     <link rel="stylesheet" type="text/css" href="../css/jquery-ui.css">
     <!-- for bootstrap working -->
@@ -97,7 +98,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <div id="myTabContent" class="tab-content">
                     <div role="tabpanel" class="tab-pane fade in active bootstrap-tab-text" id="cash"
                          aria-labelledby="cash-tab" style="height: 300px">
-                        <input type="checkbox" onchange="window.location.href='/order/end'"> We also accept Credit/Debit card on delivery. Please check with the agent.
+                        <input type="checkbox" onchange="addCart()"> We also accept Credit/Debit card on delivery. Please check with the agent.
                     </div>
                     <div role="tabpanel" class="tab-pane fade bootstrap-tab-text" id="credit" aria-labelledby="credit-tab">
                         <div class="payment-form-grids">
