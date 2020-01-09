@@ -144,7 +144,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                             int numberOfPages = (int) request.getAttribute("numberOfPages");
                                             for (int i = 1; i < numberOfPages + 1; i++) {
                                         %>
-                                        <li><a href=""><%=i%></a></li>
+                                        <li><a href="/admin/books?page=<%=i%>"><%=i%></a></li>
                                         <%
                                             }
                                         %>
