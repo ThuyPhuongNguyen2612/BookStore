@@ -6,12 +6,12 @@ import java.sql.SQLException;
 
 class ConnectionUtils {
 
-    private static final String userName = "root";
+    private static final String userName = "rootuser1234";
     private static final String password = "password";
 
     static Connection openConnection() throws SQLException, ClassNotFoundException {
          Class.forName("com.mysql.jdbc.Driver");
 
-        return DriverManager.getConnection("jdbc:mysql://localhost:3306/bookstore?useUnicode=true&characterEncoding=utf-8", userName, password);
+        return DriverManager.getConnection("jdbc:mysql://www.db4free.net//bookstore1234?useUnicode=true&characterEncoding=utf-8", userName, password);
     }
 }
