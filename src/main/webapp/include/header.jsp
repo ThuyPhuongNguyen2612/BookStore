@@ -90,7 +90,7 @@
                                     <div class="row">
                                         <div class="col-sm-6">
                                             <ul class="multi-column-dropdown">
-                                                <h6>Books</h6>
+                                                <h6>Categories</h6>
                                                 <%
                                                     List<Category> categoryList = (List<Category>) request.getAttribute("listCategories");
                                                     for (Category category : categoryList) {

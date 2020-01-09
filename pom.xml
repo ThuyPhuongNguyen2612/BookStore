@@ -3,8 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>vn.edu.nlu.fit</groupId>
     <artifactId>BookStore</artifactId>
-    <version>1.0-SNA
-        PSHOT</version>
+    <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
     <name>BookStore Maven Webapp</name>
     <url>http://maven.apache.org</url>
